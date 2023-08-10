@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Accueil
+{% endblock %}
+
+{% block body %}
+<h2>mes commandes</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">adresse</th>
+      <th scope="col">Total</th>
+      <th scope="col">Statut</th>
+      <th scope="col">Date de commande</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for purchase in purchases %}
+    <tr>
+      <th scope="row">{{ purchase.id }}</th>
+      <td>{{ purchase.address }}</td>
+      <td>{{ purchase.total }}</td>
+      <td>{{ purchase.status }}
+      <td>{{ purchase.purchasedat|date('Y-m-d h-m-s') }}</td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}

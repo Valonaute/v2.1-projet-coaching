@@ -1,0 +1,28 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog {% endblock %}
+
+{% block content %}
+
+<section class="menu">
+  <a class="on" href="{{ path ('blog')}}"> Tous les articles </a>
+  <a class="inactive" href="{{ path ('confidence')}}"> Confiance en soi </a>
+  <a class="inactive" href="{{ path ('relations')}}"> Relations </a>
+  <a class="inactive" href="{{ path ('communications')}}"> Communications </a>
+</section>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <img src="{{ asset('uploads/')}}{{ article.0.image }}" class="img-fluid">
+        </div>
+        <div class="col-6">
+            <h1>{{ article.0.title }}</h1>
+            <p>{{ article.0.description }} <p>
+            <p> Auteur : {{ article.0.Iduser.firstname }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

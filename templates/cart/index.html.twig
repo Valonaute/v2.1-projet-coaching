@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block content %}
+<h1>votre panier </h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.product.title }}</td>
+                <td>{{ item.product.price }} €</td>
+                <td>{{ item.qty }}</td>
+                <td>
+                    <a href="{{ path('cart_delete', {id: item.product.id })}}"><i class="fas fa-trash">Supprimer</i></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Total: </td>
+            <td colspan="2">{{ total }} € </td>
+        </tr>
+    </tfoot>
+</table>  
+
+<a class='btn btn-primary' href="{{ path('cart_validate')}}">Valider mon panier </a>
+
+{% endblock %}
+
+
