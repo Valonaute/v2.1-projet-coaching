@@ -12,22 +12,21 @@
   <a class="on" href="{{ path ('motivation')}}"> Motivation </a>
 </section>
 
-<div class="container-fluid">
+<div class="container-fluid my-5">
     <div class="row">
 
-    {% for product in products %}
-    <div class="card col-4" style="max-width: 25rem;">
-      <a href="{{ path('front_product', {id: product.id})}}"><img src="{{ asset('uploads/')}}{{ product.image }}" class="card-img-top" alt="{{ product.title}}" title="{{ product.title}}"></a>
-      <div class="card-body">
-        <h5 class="card-title">{{ product.title}}</h5>
-        <h5 class="card-title">{{ product.price}} €</h5>
-        <p class="card-text">{{ product.shortdescription}}</p>
-        <p> Garantie 100% Satisfait ou remboursé ! </p>
-        <a href="{{ path('cart_add', {id: product.id })}}" class="btn btn-perso">Ajouter au panier</a>
-        <a href="{{ path('front_product', {id: product.id})}}" class="btn btn-perso-dark">Details</a>
+      {% for product in products %}
+      <div class="card col-4" style="max-width: 25rem; min-height:40rem;">
+        <a class="my-4" href="{{ path('front_product', {id: product.id})}}"><img src="{{ asset('uploads/')}}{{ product.image }}" class="card-img-top" alt="{{ product.title}}" title="{{ product.title}}"></a>
+        <div class="card-body">
+          <h5 class="card-title my-4">{{ product.title}}</h5>
+          <h5 class="card-title my-4">{{ product.price}} €</h5>
+          <p class="card-text my-4">{{ product.shortdescription}}</p>
+          <a href="{{ path('cart_add', {id: product.id })}}" class="btn btn-perso">Ajouter au panier</a>
+          <a href="{{ path('front_product', {id: product.id})}}" class="btn btn-perso-dark">Details</a>
+        </div>
       </div>
-    </div>
-    {% endfor %}
+      {% endfor %}
 
 
     </div>

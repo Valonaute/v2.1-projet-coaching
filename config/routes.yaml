@@ -4,9 +4,9 @@ controllers:
         namespace: App\Controller
     type: attribute
 
-home:
-    path: /
-    controller: App\Controller\PublicController::showHome
+account:
+    path: /user/account
+    controller: App\Controller\UserSecurityController::showAccount
 
 app_login:
     path: /login
@@ -16,135 +16,13 @@ app_logout:
     path: /logout
     controller: App\Controller\UserSecurityController::logout
 
-formations:
-    path: /formations
-    controller: App\Controller\CategoryController::showFormations
-
-stages:
-    path: /stages
-    controller: App\Controller\CategoryController::showStages
-
-rdv:
-    path: /rdv
-    controller: App\Controller\CategoryController::showRdv
-
-ebook: 
-    path: /ebook
-    controller: App\Controller\CategoryController::showEbook
-
-motivation:
-    path: /motivation
-    controller: App\Controller\CategoryController::showMotivation
-
-forum:
-    path: /forum
-    controller: App\Controller\PublicController::showForum
-
-connexion:
-    path: /connexion
-    controller: App\Controller\PublicController::showConnexion
-
-inscription:
-    path: /inscription
-    controller: App\Controller\RegisterController::index
-
-mapsite:
-    path: /mapsite
-    controller: App\Controller\PublicController::showMapsite
-
-valonauteinc:
-    path: /valonauteinc
-    controller: App\Controller\PublicController::showValonauteinc
+blog:
+    path: /blog
+    controller: App\Controller\ArticleController::showArticlesFront
 
 careers:
     path: /careers
     controller: App\Controller\PublicController::showCareers
-
-cgu:
-    path: /cgu
-    controller: App\Controller\PublicController::showCgu
-
-rgpd:
-    path: /rgpd
-    controller: App\Controller\PublicController::showRgpd
-
-user_home:
-    path: /user/home
-    controller: App\Controller\UserSecurityController::showHome
-
-dashboard:
-    path: /admin/dashboard
-    controller: App\Controller\AdminSecurityController::showDashboard
-
-show_category:
-    path: /category/show
-    controller: App\Controller\CategoryController::showCategory
-
-create_category:
-    path: /admin/category/create
-    controller: App\Controller\CategoryController::createCategory
-
-update_category:
-    path: /admin/category/update/{id}
-    controller: App\Controller\CategoryController::updateCategory
-
-delete_category:
-    path: /admin/category/delete/{id}
-    controller: App\Controller\CategoryController::deleteCategory
-
-front_category:
-    path: /category/{id}
-    controller: App\Controller\CategoryController::showCategoryfront
-    requirements:
-        id: \d+
-
-front_product:
-    path: /product/{id}
-    controller: App\Controller\ProductController::showOneProductFront
-    requirements:
-        id: \d+
-
-show_product:
-    path: /product/show
-    controller: App\Controller\ProductController::showProducts
-
-create_product:
-    path: /admin/product/create
-    controller: App\Controller\ProductController::createproduct
-
-update_product:
-    path: /admin/product/update/{id}
-    controller: App\Controller\ProductController::updateProduct
-
-delete_product:
-    path: /admin/product/delete/{id}
-    controller: App\Controller\ProductController::deleteProduct
-
-create_article:
-    path: /admin/article/create
-    controller: App\Controller\ArticleController::createArticle
-
-show_article:
-    path: /articles/show
-    controller: App\Controller\ArticleController::showArticles
-
-update_article:
-    path: /admin/article/update/{id}
-    controller: App\Controller\ArticleController::updateArticle
-
-delete_article:
-    path: /admin/article/delete/{id}
-    controller: App\Controller\ArticleController::deleteArticle
-
-front_onearticle:
-    path: /article/{id}
-    controller: App\Controller\ArticleController::showOneArticleFront
-    requirements:
-        id: \d+
-
-blog:
-    path: /blog
-    controller: App\Controller\ArticleController::showArticlesFront
 
 cart_add:
     path: /cart/add/{id}
@@ -172,6 +50,104 @@ cart_delete_one:
     requirements: 
         id: '\d+'
 
+cgu:
+    path: /cgu
+    controller: App\Controller\PublicController::showCgu
+
+connexion:
+    path: /connexion
+    controller: App\Controller\PublicController::showConnexion
+
+confidence:
+    path: /blog/confidence
+    controller: App\Controller\ArticleController::showconfidence
+
+contact:
+    path: /contact
+    controller: App\Controller\ContactController::contactForm
+
+communications:
+    path: /blog/communications
+    controller: App\Controller\ArticleController::showcommunications
+
+create_category:
+    path: /admin/category/create
+    controller: App\Controller\CategoryController::createCategory
+
+create_product:
+    path: /admin/product/create
+    controller: App\Controller\ProductController::createproduct
+
+create_article:
+    path: /admin/article/create
+    controller: App\Controller\ArticleController::createArticle
+
+dashboard:
+    path: /admin/dashboard
+    controller: App\Controller\AdminSecurityController::showDashboard
+
+delete_article:
+    path: /admin/article/delete/{id}
+    controller: App\Controller\ArticleController::deleteArticle
+
+delete_category:
+    path: /admin/category/delete/{id}
+    controller: App\Controller\CategoryController::deleteCategory
+
+delete_product:
+    path: /admin/product/delete/{id}
+    controller: App\Controller\ProductController::deleteProduct
+
+ebook: 
+    path: /ebook
+    controller: App\Controller\CategoryController::showEbook
+
+formations:
+    path: /formations
+    controller: App\Controller\CategoryController::showFormations
+
+front_category:
+    path: /category/{id}
+    controller: App\Controller\CategoryController::showCategoryfront
+    requirements:
+        id: \d+
+
+front_onearticle:
+    path: /article/{id}
+    controller: App\Controller\ArticleController::showOneArticleFront
+    requirements:
+        id: \d+
+
+front_product:
+    path: /product/{id}
+    controller: App\Controller\ProductController::showOneProductFront
+    requirements:
+        id: \d+
+
+forum:
+    path: /forum
+    controller: App\Controller\PublicController::showForum
+
+home:
+    path: /
+    controller: App\Controller\PublicController::showHome
+
+inscription:
+    path: /inscription
+    controller: App\Controller\RegisterController::index
+
+mailer: 
+    path: /mailer
+    controller: App\Controller\MailerController::sendEmail
+
+mapsite:
+    path: /mapsite
+    controller: App\Controller\PublicController::showMapsite
+
+motivation:
+    path: /motivation
+    controller: App\Controller\CategoryController::showMotivation
+
 order_validation:
     path: /order/validation
     controller: App\Controller\Order\OrderConfirmationController::confirm
@@ -190,26 +166,50 @@ order_terminate:
     requirements:
         id: '\d+'
 
-account:
-    path: /user/account
-    controller: App\Controller\UserSecurityController::showaccount
-
-confidence:
-    path: /blog/confidence
-    controller: App\Controller\ArticleController::showconfidence
-
 relations:
     path: /blog/relations
     controller: App\Controller\ArticleController::showrelations
 
-communications:
-    path: /blog/communications
-    controller: App\Controller\ArticleController::showcommunications
+rdv:
+    path: /rdv
+    controller: App\Controller\CategoryController::showRdv
 
-mailer: 
-    path: /mailer
-    controller: App\Controller\MailerController::sendEmail
+rgpd:
+    path: /rgpd
+    controller: App\Controller\PublicController::showRgpd
 
-contact:
-    path: /contact
-    controller: App\Controller\ContactController::contactForm
+show_category:
+    path: /category/show
+    controller: App\Controller\CategoryController::showCategory
+
+show_article:
+    path: /articles/show
+    controller: App\Controller\ArticleController::showArticles
+
+show_product:
+    path: /product/show
+    controller: App\Controller\ProductController::showProducts
+
+stages:
+    path: /stages
+    controller: App\Controller\CategoryController::showStages
+
+update_category:
+    path: /admin/category/update/{id}
+    controller: App\Controller\CategoryController::updateCategory
+
+update_product:
+    path: /admin/product/update/{id}
+    controller: App\Controller\ProductController::updateProduct
+
+update_article:
+    path: /admin/article/update/{id}
+    controller: App\Controller\ArticleController::updateArticle
+
+user_home:
+    path: /user/home
+    controller: App\Controller\UserSecurityController::showHome
+
+valonauteinc:
+    path: /valonauteinc
+    controller: App\Controller\PublicController::showValonauteinc

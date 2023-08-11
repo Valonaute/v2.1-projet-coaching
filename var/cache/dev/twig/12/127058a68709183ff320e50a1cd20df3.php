@@ -88,54 +88,61 @@ class __TwigTemplate_576e8a9e7a8894280b130dbf2bcf9bb6 extends Template
 
         // line 8
         echo "
-<p> Vous êtes bien connecté en tant qu'administrateur ";
+<p class=\"my-4\"> Vous êtes bien connecté en tant qu'<span class=\"text-color-perso\">administrateur</span> avec le mail : ";
         // line 9
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", [], "any", false, false, false, 9), "userIdentifier", [], "any", false, false, false, 9), "html", null, true);
         echo "</p>
 
-<p>Que souhaitez vous faire ? </p>
+<h3>Que souhaitez vous faire ? </h3>
 
 <section>
-    <p> Modifier le contenu du site </p>
+    <h4 class=\"my-4 text-color-perso\"> Modifier le contenu du site </h4>
 
-    <div><a class='btn btn-success' href=\"";
-        // line 16
+    <div class=\"my-4\">
+        <a class='btn btn-outline-success' href=\"";
+        // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_category");
         echo "\"> Ajouter une catégorie</a>
-    <a class='btn btn-success' href=\"";
-        // line 17
+        <a class='btn btn-success' href=\"";
+        // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("show_category");
-        echo "\"> Voir les catégories</a></div>
-</br>
-    <div>
-    <a class='btn btn-primary' href=\"";
-        // line 20
+        echo "\"> Voir les catégories</a>
+    </div>
+    <div class=\"my-4\">
+        <a class='btn btn-outline-primary' href=\"";
+        // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_product");
         echo "\"> Ajouter un produit</a>
-    <a class='btn btn-primary' href=\"";
-        // line 21
+        <a class='btn btn-primary' href=\"";
+        // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("show_product");
         echo "\"> Voir tous les produits</a>
     </div>
-</br>
-    <div>
-    <a class='btn btn-secondary' href=\"";
-        // line 25
+
+    <div class=\"my-4\">
+        <a class='btn btn-outline-secondary' href=\"";
+        // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_article");
         echo "\"> Ajouter un article du Blog</a>
-    <a class='btn btn-secondary' href=\"";
-        // line 26
+        <a class='btn btn-secondary' href=\"";
+        // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("show_article");
         echo "\"> Voir les articles du blog</a>
     </div>
 </section>
-</br>
+
 <section>
-    <p> Accéder aux statistiques et commentaires  </p>
-    <a href=\"\"> Voir les dernières commandes </a>
-    <a href=\"\"> Voir les avis</a>
-    <a href=\"\"> Statistiques </a>
+    <h4 class=\"my-4 text-color-perso\"> Consulter des données </h4>
+    <h4><a class=\"my-2 btn btn-outline-info\" href=\"\"> Commandes Clients</a></h4>
+    <h4><a class=\"my-2 btn btn-outline-dark\" href=\"\"> Liste des utilisateurs </a></h4>
+    <h4><a class=\"my-2 btn btn-outline-danger\" href=\"\"> Avis clients</a></h4>
+    <h4><a class=\"my-2 btn btn-outline-perso\" href=\"\"> Statistiques </a></h4>
 </section>
+
+<a class=\"my-5 btn btn-perso\" href=\"";
+        // line 39
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\"> Retour Accueil </a>
 
 ";
         
@@ -158,7 +165,7 @@ class __TwigTemplate_576e8a9e7a8894280b130dbf2bcf9bb6 extends Template
 
     public function getDebugInfo()
     {
-        return array (  128 => 26,  124 => 25,  117 => 21,  113 => 20,  107 => 17,  103 => 16,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  144 => 39,  129 => 27,  125 => 26,  118 => 22,  114 => 21,  108 => 18,  104 => 17,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -171,34 +178,38 @@ Tableau de bord
 
 {% block main %}
 
-<p> Vous êtes bien connecté en tant qu'administrateur {{ app.user.userIdentifier }}</p>
+<p class=\"my-4\"> Vous êtes bien connecté en tant qu'<span class=\"text-color-perso\">administrateur</span> avec le mail : {{ app.user.userIdentifier }}</p>
 
-<p>Que souhaitez vous faire ? </p>
+<h3>Que souhaitez vous faire ? </h3>
 
 <section>
-    <p> Modifier le contenu du site </p>
+    <h4 class=\"my-4 text-color-perso\"> Modifier le contenu du site </h4>
 
-    <div><a class='btn btn-success' href=\"{{ path ('create_category')}}\"> Ajouter une catégorie</a>
-    <a class='btn btn-success' href=\"{{ path ('show_category')}}\"> Voir les catégories</a></div>
-</br>
-    <div>
-    <a class='btn btn-primary' href=\"{{ path ('create_product')}}\"> Ajouter un produit</a>
-    <a class='btn btn-primary' href=\"{{ path ('show_product')}}\"> Voir tous les produits</a>
+    <div class=\"my-4\">
+        <a class='btn btn-outline-success' href=\"{{ path ('create_category')}}\"> Ajouter une catégorie</a>
+        <a class='btn btn-success' href=\"{{ path ('show_category')}}\"> Voir les catégories</a>
     </div>
-</br>
-    <div>
-    <a class='btn btn-secondary' href=\"{{ path ('create_article')}}\"> Ajouter un article du Blog</a>
-    <a class='btn btn-secondary' href=\"{{ path ('show_article')}}\"> Voir les articles du blog</a>
+    <div class=\"my-4\">
+        <a class='btn btn-outline-primary' href=\"{{ path ('create_product')}}\"> Ajouter un produit</a>
+        <a class='btn btn-primary' href=\"{{ path ('show_product')}}\"> Voir tous les produits</a>
+    </div>
+
+    <div class=\"my-4\">
+        <a class='btn btn-outline-secondary' href=\"{{ path ('create_article')}}\"> Ajouter un article du Blog</a>
+        <a class='btn btn-secondary' href=\"{{ path ('show_article')}}\"> Voir les articles du blog</a>
     </div>
 </section>
-</br>
+
 <section>
-    <p> Accéder aux statistiques et commentaires  </p>
-    <a href=\"\"> Voir les dernières commandes </a>
-    <a href=\"\"> Voir les avis</a>
-    <a href=\"\"> Statistiques </a>
+    <h4 class=\"my-4 text-color-perso\"> Consulter des données </h4>
+    <h4><a class=\"my-2 btn btn-outline-info\" href=\"\"> Commandes Clients</a></h4>
+    <h4><a class=\"my-2 btn btn-outline-dark\" href=\"\"> Liste des utilisateurs </a></h4>
+    <h4><a class=\"my-2 btn btn-outline-danger\" href=\"\"> Avis clients</a></h4>
+    <h4><a class=\"my-2 btn btn-outline-perso\" href=\"\"> Statistiques </a></h4>
 </section>
 
-{% endblock main %}", "admin/dashboard.html.twig", "C:\\wamp\\www\\symfony\\projet-coaching-V1.4\\templates\\admin\\dashboard.html.twig");
+<a class=\"my-5 btn btn-perso\" href=\"{{ path ('home')}}\"> Retour Accueil </a>
+
+{% endblock main %}", "admin/dashboard.html.twig", "C:\\wamp64\\www\\symfony\\2.2.0 projet-coaching\\templates\\admin\\dashboard.html.twig");
     }
 }

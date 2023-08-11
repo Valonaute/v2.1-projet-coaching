@@ -34,4 +34,9 @@ class UserSecurityController extends AbstractController
     {
         return $this->render('user/home.html.twig', []);
     }
+
+    public function showAccount() 
+    {
+        return $this->render('security/account.html.twig');
+    }
 }

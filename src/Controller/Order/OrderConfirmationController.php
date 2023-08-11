@@ -35,7 +35,7 @@ class OrderConfirmationController extends AbstractController {
         $form->handleRequest($request);
 
         if(!$form->isSubmitted()){
-            $this->addFlash('warning', 'vous devez remplir le formulaire de confirmation');
+            $this->addFlash('warning', 'Vous devez remplir le formulaire de confirmation');
             return $this->redirectToRoute('cart_show');
         }
 
@@ -43,7 +43,8 @@ class OrderConfirmationController extends AbstractController {
         $user = $this->getuser();
         if(!$this->getUser())
         {
-            throw new AccessDeniedException("vous devez être connecter pour confirmer une commande");
+            $this->addFlash('warning', 'Vous devez être connecté pour confirmer une commande');
+            return $this->redirectToRoute('app_login');
         }
 
         // Récupération des éléments du panier 

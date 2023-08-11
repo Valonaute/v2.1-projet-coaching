@@ -28,7 +28,7 @@ class OrderPaymentSuccessController extends AbstractController {
 
         $request->getSession()->remove('cart');
 
-        $this->addFlash('success', 'La commande a été payé et confirmée !');
+        $this->addFlash('success', 'La commande a été payée et confirmée !');
         return  $this->redirectToRoute('order_customer');
 
     }

@@ -78,6 +78,7 @@ class ComposerStaticInit098dea4258584ccfde4052d0f55f73e7
             'Symfony\\Bundle\\FrameworkBundle\\' => 31,
             'Symfony\\Bridge\\Twig\\' => 20,
             'Symfony\\Bridge\\Doctrine\\' => 24,
+            'Stripe\\' => 7,
         ),
         'P' => 
         array (
@@ -328,6 +329,10 @@ class ComposerStaticInit098dea4258584ccfde4052d0f55f73e7
         'Symfony\\Bridge\\Doctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/doctrine-bridge',
+        ),
+        'Stripe\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
         ),
         'Psr\\Log\\' => 
         array (

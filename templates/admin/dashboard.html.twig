@@ -6,32 +6,36 @@ Tableau de bord
 
 {% block main %}
 
-<p> Vous êtes bien connecté en tant qu'administrateur {{ app.user.userIdentifier }}</p>
+<p class="my-4"> Vous êtes bien connecté en tant qu'<span class="text-color-perso">administrateur</span> avec le mail : {{ app.user.userIdentifier }}</p>
 
-<p>Que souhaitez vous faire ? </p>
+<h3>Que souhaitez vous faire ? </h3>
 
 <section>
-    <p> Modifier le contenu du site </p>
+    <h4 class="my-4 text-color-perso"> Modifier le contenu du site </h4>
 
-    <div><a class='btn btn-success' href="{{ path ('create_category')}}"> Ajouter une catégorie</a>
-    <a class='btn btn-success' href="{{ path ('show_category')}}"> Voir les catégories</a></div>
-</br>
-    <div>
-    <a class='btn btn-primary' href="{{ path ('create_product')}}"> Ajouter un produit</a>
-    <a class='btn btn-primary' href="{{ path ('show_product')}}"> Voir tous les produits</a>
+    <div class="my-4">
+        <a class='btn btn-outline-success' href="{{ path ('create_category')}}"> Ajouter une catégorie</a>
+        <a class='btn btn-success' href="{{ path ('show_category')}}"> Voir les catégories</a>
     </div>
-</br>
-    <div>
-    <a class='btn btn-secondary' href="{{ path ('create_article')}}"> Ajouter un article du Blog</a>
-    <a class='btn btn-secondary' href="{{ path ('show_article')}}"> Voir les articles du blog</a>
+    <div class="my-4">
+        <a class='btn btn-outline-primary' href="{{ path ('create_product')}}"> Ajouter un produit</a>
+        <a class='btn btn-primary' href="{{ path ('show_product')}}"> Voir tous les produits</a>
+    </div>
+
+    <div class="my-4">
+        <a class='btn btn-outline-secondary' href="{{ path ('create_article')}}"> Ajouter un article du Blog</a>
+        <a class='btn btn-secondary' href="{{ path ('show_article')}}"> Voir les articles du blog</a>
     </div>
 </section>
-</br>
+
 <section>
-    <p> Accéder aux statistiques et commentaires  </p>
-    <a href=""> Voir les dernières commandes </a>
-    <a href=""> Voir les avis</a>
-    <a href=""> Statistiques </a>
+    <h4 class="my-4 text-color-perso"> Consulter des données </h4>
+    <h4><a class="my-2 btn btn-outline-info" href=""> Commandes Clients</a></h4>
+    <h4><a class="my-2 btn btn-outline-dark" href=""> Liste des utilisateurs </a></h4>
+    <h4><a class="my-2 btn btn-outline-danger" href=""> Avis clients</a></h4>
+    <h4><a class="my-2 btn btn-outline-perso" href=""> Statistiques </a></h4>
 </section>
+
+<a class="my-5 btn btn-perso" href="{{ path ('home')}}"> Retour Accueil </a>
 
 {% endblock main %}

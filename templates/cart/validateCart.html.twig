@@ -31,7 +31,13 @@
 
 <h3 class="my-5"> Total : {{ total|number_format(2, ',', ' ') }} € </h3>
 
-<hr>
+<a class="btn btn-perso my-5" href="{{ path ('payment_checkout')}}"> Payer avec Stripe</a>
+
+<form action="/checkout" method="post">
+    <button class="btn btn-primary" type="submit">PAYER vraiment</button>
+</form>
+
+<hr class="mx-5">
 
 <h2> Confirmez votre commande en remplissant ce formulaire</h2>
 {{ form_start(confirmationform, {'action': path('order_validation')}) }}

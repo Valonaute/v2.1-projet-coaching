@@ -26,7 +26,7 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
-            'body' => [$this, 'block_body'],
+            'content' => [$this, 'block_content'],
         ];
     }
 
@@ -75,14 +75,14 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
     }
 
     // line 5
-    public function block_body($context, array $blocks = [])
+    public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
         echo "<div class=\"container\">
@@ -178,7 +178,7 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
 
 {% block title %}Connexion{% endblock %}
 
-{% block body %}
+{% block content %}
 <div class=\"container\">
     <form method=\"post\" class=\"form col-4 mx-auto\">
         {% if error %}
@@ -225,6 +225,6 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
 </div>
 
 {% endblock %}
-", "security/login.html.twig", "C:\\wamp64\\www\\symfony\\2.1 projet-coaching\\templates\\security\\login.html.twig");
+", "security/login.html.twig", "C:\\wamp64\\www\\symfony\\2.2.0 projet-coaching\\templates\\security\\login.html.twig");
     }
 }

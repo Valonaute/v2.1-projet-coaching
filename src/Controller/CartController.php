@@ -6,8 +6,10 @@ use App\Cart\CartService;
 use App\Form\CartConfirmationType;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\User;
 
 class CartController extends AbstractController
 {
@@ -83,13 +85,31 @@ class CartController extends AbstractController
         return $this->redirectToRoute("cart_show");
     }
 
-    public function cartValidate()
+    public function cartValidate(Request $request)
     {
         // Afficher la page de validation du panier
+
+        // Récupération de l'utilisateur 
+        $client_session = User::class;
 
         // Créer un formulaire de confirmation d'ajout d'éléments pour le compte  
         $form = $this->createform(CartConfirmationType::class);
 
+        $form->handleRequest($request);
+
+        if($form->isSubmitted())
+        {
+            $client_submit = $form->getData()->getName();
+
+            $this->$client_session->setName($client_submit);
+
+            // Que fais cette ligne ? Est elle necessaire ? 
+            //$this->clientRepository->save($client_session, $flush = true);
+
+            $this->addFlash('success','Les informations ont bien été ajoutées !');
+
+            return $this->redirectToRoute('payment_checkout');
+        }
         // représente l'affichage visuel  du panier
         $detailedCart = $this->cartservice->getDetailedCartItems();
         $total = $this->cartservice->getTotal();

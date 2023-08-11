@@ -16,8 +16,6 @@ class OrderPaymentController extends AbstractController {
         if(!$Order) {
             return $this->redirectToRoute('cart_show');
         }
-
-        
     
         // ajouter sa clé api
         \Stripe\Stripe::setApiKey("sk_test_51NduCNDmDFiwg92fSTetdvGTpdtp6PCcUSCMuYo9tcEH6RObpdnbCQsPhurSbiCZ60X982la50sAphaHncY6CHvj00P59SwKJ9");
@@ -30,13 +28,9 @@ class OrderPaymentController extends AbstractController {
             ],
         ]);
 
-    
-
         return $this->render('Order/payment.html.twig', [
             'stripe_key' => "pk_test_51NH4qlD4SBY6CQPm5XLtEzt71TP0iinjjhM1lxU93KyV8i2qKa0fuD8AGuI0Jp622IEW5wkkl1smeABfLpNzWJmw00VMpIHSGV",
             'amount' => $amount / 100
         ]);
     }
-
-
 }

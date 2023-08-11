@@ -41,7 +41,7 @@ class CartConfirmationType extends AbstractType
                 ]
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Envoyer', 
+                'label' => 'Payer', 
                 'attr' => [
                     'class' => 'btn btn-perso'
                 ]

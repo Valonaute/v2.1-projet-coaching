@@ -142,22 +142,31 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 32, $this->source); })()), 2, ",", " "), "html", null, true);
         echo " € </h3>
 
-<hr>
+<a class=\"btn btn-perso my-5\" href=\"";
+        // line 34
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("payment_checkout");
+        echo "\"> Payer avec Stripe</a>
+
+<form action=\"/checkout\" method=\"post\">
+    <button class=\"btn btn-primary\" type=\"submit\">PAYER vraiment</button>
+</form>
+
+<hr class=\"mx-5\">
 
 <h2> Confirmez votre commande en remplissant ce formulaire</h2>
 ";
-        // line 37
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 37, $this->source); })()), 'form_start', ["action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_validation")]);
+        // line 43
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 43, $this->source); })()), 'form_start', ["action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_validation")]);
         echo "
 
 ";
-        // line 39
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 39, $this->source); })()), 'widget');
+        // line 45
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 45, $this->source); })()), 'widget');
         echo "
  
 ";
-        // line 41
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 41, $this->source); })()), 'form_end');
+        // line 47
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 47, $this->source); })()), 'form_end');
         echo "
 
 ";
@@ -181,7 +190,7 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
 
     public function getDebugInfo()
     {
-        return array (  160 => 41,  155 => 39,  150 => 37,  142 => 32,  136 => 28,  126 => 24,  117 => 22,  113 => 21,  109 => 20,  106 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  169 => 47,  164 => 45,  159 => 43,  147 => 34,  142 => 32,  136 => 28,  126 => 24,  117 => 22,  113 => 21,  109 => 20,  106 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -219,7 +228,13 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
 
 <h3 class=\"my-5\"> Total : {{ total|number_format(2, ',', ' ') }} € </h3>
 
-<hr>
+<a class=\"btn btn-perso my-5\" href=\"{{ path ('payment_checkout')}}\"> Payer avec Stripe</a>
+
+<form action=\"/checkout\" method=\"post\">
+    <button class=\"btn btn-primary\" type=\"submit\">PAYER vraiment</button>
+</form>
+
+<hr class=\"mx-5\">
 
 <h2> Confirmez votre commande en remplissant ce formulaire</h2>
 {{ form_start(confirmationform, {'action': path('order_validation')}) }}

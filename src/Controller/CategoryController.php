@@ -28,8 +28,8 @@ class CategoryController extends AbstractController
 
         if($form->isSubmitted())
         {
-         $category_submit =  $form->getData()->getName();
-            
+            $category_submit =  $form->getData()->getName();
+                
             $category->setName($category_submit);
 
             $this->categoryRepository->save($category, $flush = true);

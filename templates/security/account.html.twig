@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Votre Compte{% endblock title %} 
+
+{% block content %}
+
+<h2 class="my-5"> Bienvenue sur votre espace membre {{ app.user.firstname }} !</h2>
+
+<h3 class="my-4"> Vous êtes inscrit depuis le {{ app.user.registrationdate|date('d/m/Y')}}</h3>
+<h3 class="text-perso"> Voici les informations à propos de votre compte : </h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Catégorie</th>
+            <th>Information</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>Prénom </td>
+                <td>{{ app.user.firstname }} </td>
+                <td>
+                    <a class="btn btn-perso" href="">Modifier</a>
+                    <a class="btn btn-outline-perso" href="">Supprimer</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Nom </td>
+                <td>{{ app.user.lastname }} </td>
+                <td>
+                    <a class="btn btn-perso" href="">Modifier</a>
+                    <a class="btn btn-outline-perso" href="">Supprimer</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Email </td>
+                <td>{{ app.user.email }} </td>
+                <td>
+                    <a class="btn btn-perso" href="">Modifier</a>
+                    <a class="btn btn-outline-perso" href="">Supprimer</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Role  </td>
+                <td>{% if app.user.roles is empty %} Utilisateur {% else %} Administrateur {% endif %}</td>
+                <td>
+                    <a class="btn btn-perso" href="">Modifier</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Adresse </td>
+                <td>{% if app.user.address is empty %} N/A {% else %} {{ app.user.address }} {% endif %}</td>
+                <td>
+                    <a class="btn btn-perso" href="">Modifier</a>
+                    <a class="btn btn-outline-perso" href="">Supprimer</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Code postal  </td>
+                <td>{% if app.user.zipcode is empty %} N/A {% else %} {{ app.user.zipcode }} {% endif %}</td>
+                <td>
+                    <a class="btn btn-perso" href="">Modifier</a>
+                    <a class="btn btn-outline-perso" href="">Supprimer</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Ville </td>
+                <td>{% if app.user.city is empty %} N/A {% else %} {{ app.user.city }} {% endif %} </td>
+                <td>
+                    <a class="btn btn-perso" href="">Modifier</a>
+                    <a class="btn btn-outline-perso" href="">Supprimer</a>
+                </td>
+            </tr>
+    </tbody>
+</table>  
+
+<a class="btn btn-outline-perso my-5" href="">Supprimer votre compte</a>
+{% endblock content %}
+
+

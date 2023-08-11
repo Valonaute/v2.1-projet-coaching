@@ -89,7 +89,12 @@ class __TwigTemplate_9016691ddd0d7af4aacbb9bc48f2b88d extends Template
         // line 8
         echo "
 
-<h3> Vous êtes bien sur la page du forum </h3>
+<h3 class=\"my-5 text-perso bold\"> Vous êtes bien sur la page du Forum </h3>
+
+<img class=\"my-5 border-bg\" src=\"";
+        // line 12
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/wip.jpg"), "html", null, true);
+        echo "\" alt=\"en cours de création\">
 
 ";
         
@@ -112,7 +117,7 @@ class __TwigTemplate_9016691ddd0d7af4aacbb9bc48f2b88d extends Template
 
     public function getDebugInfo()
     {
-        return array (  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  96 => 12,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -126,8 +131,10 @@ Forum
 {% block main %}
 
 
-<h3> Vous êtes bien sur la page du forum </h3>
+<h3 class=\"my-5 text-perso bold\"> Vous êtes bien sur la page du Forum </h3>
 
-{% endblock main %}", "public/forum.html.twig", "C:\\wamp\\www\\symfony\\projet-coaching-V1.4\\templates\\public\\forum.html.twig");
+<img class=\"my-5 border-bg\" src=\"{{ asset ('assets/img/wip.jpg')}}\" alt=\"en cours de création\">
+
+{% endblock main %}", "public/forum.html.twig", "C:\\wamp64\\www\\symfony\\2.2.0 projet-coaching\\templates\\public\\forum.html.twig");
     }
 }

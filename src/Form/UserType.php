@@ -22,11 +22,13 @@ class UserType extends AbstractType
             ->add('lastname', TextType::class, ['label' => 'Votre nom', 'attr' =>['placeholder' => 'Remplissez votre nom ici']])
             ->add('firstname', TextType::class, ['label' => 'Votre prénom', 'attr' =>['placeholder' => 'Remplissez votre prénom ici']])
             ->add('password', PasswordType::class)
-            ->add('registrationdate', DateTimeType::class,  [
-                'data' => new \DateTime(), // définit l'heure actuelle 
-                'attr' => ['class' => 'hidden' // le champs est caché 
-            ]])
-            ->add('Valider', SubmitType::class)
+            
+            ->add('submit', SubmitType::class, [
+                'label' => 'S\'inscrire', 
+                'attr' => [
+                    'class' => 'btn btn-perso'
+                ]
+            ])
         ;
     }
 
