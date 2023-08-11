@@ -88,14 +88,42 @@ class __TwigTemplate_9becadca917a34116e4bf81540ea513f extends Template
 
         // line 8
         echo "
-<h2> Coaching de vie - Programmation-Neuro-Linguistique</h2>
+<h1> Coaching de vie - Développement Personnel</h1>
         <section id=\"description\">
-            <h3> Valentin Gautier, Coach certifié</h3>
-            <p> Conseiller de particulier et auteur de ce site </p>
+            <h3> Bienvenue sur notre site lié au coaching de vie et au développement personnel</h3>
+            <p> Découvrez des outils pour prendre votre vie en main et devenir une meilleure personne afin d'impacter positivement votre monde ! </p>
+            <img src=\"";
+        // line 13
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/sunset.jpg"), "html", null, true);
+        echo "\" alt=\"sunset\" title=\"Coucher de soleil\">
         </section>
         <section>
-            <h3> Découvrez la vidéo de Valentin Gautier avec plus de 580 vues sur Youtube </h3>
-            <video src=\"img/valentin.mp4\" autoplay muted></video>
+            <h3> Vous trouverez plusieurs sections afin d'optimiser votre vie selon vos envies :  </h3>
+            <article id=\"list-home\">
+                <ul>
+                    <li> Une partie <a href=\"";
+        // line 19
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("formations");
+        echo "\">Formations</a> avec des outils en vente pour booster au maximum vos résultats </li>
+                    <li> Une section <a href=\"";
+        // line 20
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog");
+        echo "\">Actualités</a> contenant des articles récents sous forme de blog sur différents domaines du coaching </li>
+                    <li> Un espace <a href=\"";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("forum");
+        echo "\">Forum</a> pour vous exprimer et échanger sur les thèmes qui vous préoccupent  </li>
+                </ul>
+            </article>
+            <h4> Vous pouvez également créer un espace membre grâce à l'outil <a href=\"";
+        // line 24
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
+        echo "\">Inscription</a> </h4>
+            <h4> Ensuite <a href=\"";
+        // line 25
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
+        echo "\">Connexion</a> pour acheter des produits et devenir un membre actif de notre forum. </h4>
+            
         </section>
         <section id=\"apropos\">
             <h2> A propos </h2>
@@ -124,7 +152,7 @@ class __TwigTemplate_9becadca917a34116e4bf81540ea513f extends Template
 
     public function getDebugInfo()
     {
-        return array (  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  124 => 25,  120 => 24,  114 => 21,  110 => 20,  106 => 19,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -137,14 +165,24 @@ Accueil
 
 {% block main %}
 
-<h2> Coaching de vie - Programmation-Neuro-Linguistique</h2>
+<h1> Coaching de vie - Développement Personnel</h1>
         <section id=\"description\">
-            <h3> Valentin Gautier, Coach certifié</h3>
-            <p> Conseiller de particulier et auteur de ce site </p>
+            <h3> Bienvenue sur notre site lié au coaching de vie et au développement personnel</h3>
+            <p> Découvrez des outils pour prendre votre vie en main et devenir une meilleure personne afin d'impacter positivement votre monde ! </p>
+            <img src=\"{{ asset ('assets/img/sunset.jpg') }}\" alt=\"sunset\" title=\"Coucher de soleil\">
         </section>
         <section>
-            <h3> Découvrez la vidéo de Valentin Gautier avec plus de 580 vues sur Youtube </h3>
-            <video src=\"img/valentin.mp4\" autoplay muted></video>
+            <h3> Vous trouverez plusieurs sections afin d'optimiser votre vie selon vos envies :  </h3>
+            <article id=\"list-home\">
+                <ul>
+                    <li> Une partie <a href=\"{{ path ('formations') }}\">Formations</a> avec des outils en vente pour booster au maximum vos résultats </li>
+                    <li> Une section <a href=\"{{ path ('blog') }}\">Actualités</a> contenant des articles récents sous forme de blog sur différents domaines du coaching </li>
+                    <li> Un espace <a href=\"{{ path ('forum') }}\">Forum</a> pour vous exprimer et échanger sur les thèmes qui vous préoccupent  </li>
+                </ul>
+            </article>
+            <h4> Vous pouvez également créer un espace membre grâce à l'outil <a href=\"{{ path ('inscription') }}\">Inscription</a> </h4>
+            <h4> Ensuite <a href=\"{{ path ('connexion') }}\">Connexion</a> pour acheter des produits et devenir un membre actif de notre forum. </h4>
+            
         </section>
         <section id=\"apropos\">
             <h2> A propos </h2>
@@ -152,6 +190,6 @@ Accueil
         </section>
 
 
-{% endblock main %}", "public/home.html.twig", "C:\\wamp\\www\\symfony\\projet-coaching-V1.4\\templates\\public\\home.html.twig");
+{% endblock main %}", "public/home.html.twig", "C:\\wamp64\\www\\symfony\\2.1 projet-coaching\\templates\\public\\home.html.twig");
     }
 }

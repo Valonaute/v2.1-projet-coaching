@@ -32,6 +32,10 @@ ebook:
     path: /ebook
     controller: App\Controller\CategoryController::showEbook
 
+motivation:
+    path: /motivation
+    controller: App\Controller\CategoryController::showMotivation
+
 forum:
     path: /forum
     controller: App\Controller\PublicController::showForum
@@ -39,6 +43,10 @@ forum:
 connexion:
     path: /connexion
     controller: App\Controller\PublicController::showConnexion
+
+inscription:
+    path: /inscription
+    controller: App\Controller\RegisterController::index
 
 mapsite:
     path: /mapsite

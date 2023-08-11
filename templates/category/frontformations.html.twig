@@ -9,23 +9,24 @@
   <a class="inactive" href="{{ path ('stages')}}"> Stages et séminaires</a>
   <a class="inactive" href="{{ path ('rdv')}}"> Séances Individuelles </a>
   <a class="inactive" href="{{ path ('ebook')}}"> E-book </a>
+  <a class="inactive" href="{{ path ('motivation')}}"> Motivation </a>
+  
 </section>
 
 <div class="container-fluid">
     <div class="row">
 
     {% for product in products %}
-    <div class="card col-4" style="width: 18rem;">
-  <img src="{{ asset('uploads/')}}{{ product.image }}" class="card-img-top" alt="{{ product.title}}">
-  <div class="card-body">
-    <h5 class="card-title">{{ product.title}}</h5>
-       <h5 class="card-title">{{ product.price}} €</h5>
-    <p class="card-text">{{ product.shortdescription}}</p>
-    <p> Garantie 100% Satisfait ou remboursé ! </p>
-    <a href="{{ path('cart_add', {id: product.id })}}" class="btn btn-primary">Commander</a>
-      <a href="{{ path('front_product', {id: product.id})}}" class="btn btn-danger">Details</a>
-  </div>
-</div>
+    <div class="card col-4" style="max-width: 25rem;">
+      <a href="{{ path('front_product', {id: product.id})}}"><img src="{{ asset('uploads/')}}{{ product.image }}" class="card-img-top" alt="{{ product.title}}" title="{{ product.title}}"></a>
+      <div class="card-body">
+        <h5 class="card-title">{{ product.title}}</h5>
+        <h5 class="card-title">{{ product.price}} €</h5>
+        <p class="card-text">{{ product.shortdescription}}</p>
+        <a href="{{ path('cart_add', {id: product.id })}}" class="btn btn-perso">Ajouter au panier</a>
+        <a href="{{ path('front_product', {id: product.id})}}" class="btn btn-perso-dark">Details</a>
+      </div>
+    </div>
     {% endfor %}
 
 

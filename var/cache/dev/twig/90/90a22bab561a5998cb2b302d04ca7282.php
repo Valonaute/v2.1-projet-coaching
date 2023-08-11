@@ -115,7 +115,7 @@ class __TwigTemplate_87925b1f0ea647c7df7057e254354f75 extends Template
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
             // line 19
             echo "        
-        <div class=\"card col-4\" style=\"width: 18rem;\">
+        <div class=\"card col-4\" style=\"max-width: 25rem;\">
             <img src=\"";
             // line 21
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/"), "html", null, true);
@@ -123,21 +123,21 @@ class __TwigTemplate_87925b1f0ea647c7df7057e254354f75 extends Template
             echo "\" class=\"card-img-top\" alt=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 21), "html", null, true);
             echo "\">
-        <div class=\"card-body\">
-            <h5 class=\"card-title\">";
+            <div class=\"card-body\">
+                <h5 class=\"card-title\">";
             // line 23
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 23), "html", null, true);
             echo "</h5>
-            <p class=\"card-text\">";
+                <p class=\"card-text\">";
             // line 24
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "shortdescription", [], "any", false, false, false, 24), "html", null, true);
             echo "</p>
-            <a href=\"";
+                <a href=\"";
             // line 25
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_onearticle", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\" class=\"btn btn-warning\">Lire l'article</a>
+            echo "\" class=\"btn btn-perso\">Lire l'article</a>
+            </div>
         </div>
-</div>
     ";
         }
         $_parent = $context['_parent'];
@@ -193,20 +193,20 @@ class __TwigTemplate_87925b1f0ea647c7df7057e254354f75 extends Template
 
         {% for article in articles %}
         
-        <div class=\"card col-4\" style=\"width: 18rem;\">
+        <div class=\"card col-4\" style=\"max-width: 25rem;\">
             <img src=\"{{ asset('uploads/')}}{{ article.image }}\" class=\"card-img-top\" alt=\"{{ article.title}}\">
-        <div class=\"card-body\">
-            <h5 class=\"card-title\">{{ article.title}}</h5>
-            <p class=\"card-text\">{{ article.shortdescription}}</p>
-            <a href=\"{{ path('front_onearticle', {id: article.id})}}\" class=\"btn btn-warning\">Lire l'article</a>
+            <div class=\"card-body\">
+                <h5 class=\"card-title\">{{ article.title}}</h5>
+                <p class=\"card-text\">{{ article.shortdescription}}</p>
+                <a href=\"{{ path('front_onearticle', {id: article.id})}}\" class=\"btn btn-perso\">Lire l'article</a>
+            </div>
         </div>
-</div>
     {% endfor %}
 
 </div>
 </div>
 
 {% endblock %}
-", "article/showfront.html.twig", "C:\\wamp\\www\\symfony\\projet-coaching-V1.4\\templates\\article\\showfront.html.twig");
+", "article/showfront.html.twig", "C:\\wamp64\\www\\symfony\\2.1 projet-coaching\\templates\\article\\showfront.html.twig");
     }
 }

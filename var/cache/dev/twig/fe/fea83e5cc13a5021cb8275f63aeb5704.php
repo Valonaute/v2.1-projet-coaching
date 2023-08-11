@@ -136,13 +136,13 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
         ";
         // line 41
         echo "
-        <button class=\"btn btn-warning\" type=\"submit\">
+        <button class=\"btn btn-perso\" type=\"submit\">
             Connexion
         </button>
     </form>
 
     <h4 class=\"my-5\"> Vous n'êtes pas inscrit ? </h4>
-    <a class=\"btn btn-warning\" href=\"";
+    <a class=\"btn btn-perso\" href=\"";
         // line 48
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
         echo "\"> C'est parti !</a>
@@ -215,16 +215,16 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
             </div>
         #}
 
-        <button class=\"btn btn-warning\" type=\"submit\">
+        <button class=\"btn btn-perso\" type=\"submit\">
             Connexion
         </button>
     </form>
 
     <h4 class=\"my-5\"> Vous n'êtes pas inscrit ? </h4>
-    <a class=\"btn btn-warning\" href=\"{{ path ('inscription')}}\"> C'est parti !</a>
+    <a class=\"btn btn-perso\" href=\"{{ path ('inscription')}}\"> C'est parti !</a>
 </div>
 
 {% endblock %}
-", "security/login.html.twig", "C:\\wamp\\www\\symfony\\projet-coaching-V1.4\\templates\\security\\login.html.twig");
+", "security/login.html.twig", "C:\\wamp64\\www\\symfony\\2.1 projet-coaching\\templates\\security\\login.html.twig");
     }
 }

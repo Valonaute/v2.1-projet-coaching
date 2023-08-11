@@ -107,7 +107,7 @@ class __TwigTemplate_92dedaadfeef72f87a889d1cac083cc1 extends Template
 
 <div class=\"container-fluid\">
     <div class=\"row\">
-        <div class=\"col-6\">
+        <div class=\"col-6\" style=\"max-width:30rem;\">
             <img src=\"";
         // line 18
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/"), "html", null, true);
@@ -127,6 +127,10 @@ class __TwigTemplate_92dedaadfeef72f87a889d1cac083cc1 extends Template
         // line 23
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["article"]) || array_key_exists("article", $context) ? $context["article"] : (function () { throw new RuntimeError('Variable "article" does not exist.', 23, $this->source); })()), 0, [], "any", false, false, false, 23), "Iduser", [], "any", false, false, false, 23), "firstname", [], "any", false, false, false, 23), "html", null, true);
         echo "</p>
+            <a class=\"btn btn-perso\" href=\"";
+        // line 24
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog");
+        echo "\">Retour</a>
         </div>
     </div>
 </div>
@@ -152,7 +156,7 @@ class __TwigTemplate_92dedaadfeef72f87a889d1cac083cc1 extends Template
 
     public function getDebugInfo()
     {
-        return array (  128 => 23,  124 => 22,  120 => 21,  113 => 18,  104 => 12,  100 => 11,  96 => 10,  92 => 9,  88 => 7,  78 => 6,  59 => 4,  36 => 2,);
+        return array (  132 => 24,  128 => 23,  124 => 22,  120 => 21,  113 => 18,  104 => 12,  100 => 11,  96 => 10,  92 => 9,  88 => 7,  78 => 6,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -173,18 +177,19 @@ class __TwigTemplate_92dedaadfeef72f87a889d1cac083cc1 extends Template
 
 <div class=\"container-fluid\">
     <div class=\"row\">
-        <div class=\"col-6\">
+        <div class=\"col-6\" style=\"max-width:30rem;\">
             <img src=\"{{ asset('uploads/')}}{{ article.0.image }}\" class=\"img-fluid\">
         </div>
         <div class=\"col-6\">
             <h1>{{ article.0.title }}</h1>
             <p>{{ article.0.description }} <p>
             <p> Auteur : {{ article.0.Iduser.firstname }}</p>
+            <a class=\"btn btn-perso\" href=\"{{ path ('blog')}}\">Retour</a>
         </div>
     </div>
 </div>
 
 {% endblock %}
-", "article/showOneFront.html.twig", "C:\\wamp64\\www\\symfony\\projet-coaching-V1.4\\templates\\article\\showOneFront.html.twig");
+", "article/showOneFront.html.twig", "C:\\wamp64\\www\\symfony\\2.1 projet-coaching\\templates\\article\\showOneFront.html.twig");
     }
 }

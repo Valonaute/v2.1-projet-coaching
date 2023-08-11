@@ -103,55 +103,63 @@ class __TwigTemplate_c8c89ed4a57b3159ba7abe4578eabbff extends Template
         // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ebook");
         echo "\"> E-book </a>
+  <a class=\"inactive\" href=\"";
+        // line 12
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("motivation");
+        echo "\"> Motivation </a>
 </section>
 
 <div class=\"container-fluid\">
     <div class=\"row\">
 
     ";
-        // line 17
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 17, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 18, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 18
-            echo "    <div class=\"card col-4\" style=\"width: 18rem;\">
-  <img src=\"";
             // line 19
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/"), "html", null, true);
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "image", [], "any", false, false, false, 19), "html", null, true);
-            echo "\" class=\"card-img-top\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 19), "html", null, true);
-            echo "\">
-  <div class=\"card-body\">
-    <h5 class=\"card-title\">";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 21), "html", null, true);
-            echo "</h5>
-       <h5 class=\"card-title\">";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 22), "html", null, true);
-            echo " €</h5>
-    <p class=\"card-text\">";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "shortdescription", [], "any", false, false, false, 23), "html", null, true);
-            echo "</p>
-    <p> Garantie 100% Satisfait ou remboursé ! </p>
-    <a href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\" class=\"btn btn-primary\">Commander</a>
+            echo "    <div class=\"card col-4\" style=\"max-width: 25rem;\">
       <a href=\"";
+            // line 20
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_product", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 20)]), "html", null, true);
+            echo "\"><img src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "image", [], "any", false, false, false, 20), "html", null, true);
+            echo "\" class=\"card-img-top\" alt=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 20), "html", null, true);
+            echo "\" title=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 20), "html", null, true);
+            echo "\"></a>
+      <div class=\"card-body\">
+        <h5 class=\"card-title\">";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 22), "html", null, true);
+            echo "</h5>
+        <h5 class=\"card-title\">";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 23), "html", null, true);
+            echo " €</h5>
+        <p class=\"card-text\">";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "shortdescription", [], "any", false, false, false, 24), "html", null, true);
+            echo "</p>
+        <p> Garantie 100% Satisfait ou remboursé ! </p>
+        <a href=\"";
             // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_product", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 26)]), "html", null, true);
-            echo "\" class=\"btn btn-danger\">Details</a>
-  </div>
-</div>
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+            echo "\" class=\"btn btn-perso\">Ajouter au panier</a>
+        <a href=\"";
+            // line 27
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_product", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            echo "\" class=\"btn btn-perso-dark\">Details</a>
+      </div>
+    </div>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 31
         echo "
 
     </div>
@@ -178,7 +186,7 @@ class __TwigTemplate_c8c89ed4a57b3159ba7abe4578eabbff extends Template
 
     public function getDebugInfo()
     {
-        return array (  155 => 30,  145 => 26,  141 => 25,  136 => 23,  132 => 22,  128 => 21,  120 => 19,  117 => 18,  113 => 17,  104 => 11,  100 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  163 => 31,  153 => 27,  149 => 26,  144 => 24,  140 => 23,  136 => 22,  124 => 20,  121 => 19,  117 => 18,  108 => 12,  104 => 11,  100 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -194,29 +202,30 @@ class __TwigTemplate_c8c89ed4a57b3159ba7abe4578eabbff extends Template
   <a class=\"on\" href=\"{{ path ('stages')}}\"> Stages et séminaires</a>
   <a class=\"inactive\" href=\"{{ path ('rdv')}}\"> Séances Individuelles </a>
   <a class=\"inactive\" href=\"{{ path ('ebook')}}\"> E-book </a>
+  <a class=\"inactive\" href=\"{{ path ('motivation')}}\"> Motivation </a>
 </section>
 
 <div class=\"container-fluid\">
     <div class=\"row\">
 
     {% for product in products %}
-    <div class=\"card col-4\" style=\"width: 18rem;\">
-  <img src=\"{{ asset('uploads/')}}{{ product.image }}\" class=\"card-img-top\" alt=\"{{ product.title}}\">
-  <div class=\"card-body\">
-    <h5 class=\"card-title\">{{ product.title}}</h5>
-       <h5 class=\"card-title\">{{ product.price}} €</h5>
-    <p class=\"card-text\">{{ product.shortdescription}}</p>
-    <p> Garantie 100% Satisfait ou remboursé ! </p>
-    <a href=\"{{ path('cart_add', {id: product.id })}}\" class=\"btn btn-primary\">Commander</a>
-      <a href=\"{{ path('front_product', {id: product.id})}}\" class=\"btn btn-danger\">Details</a>
-  </div>
-</div>
+    <div class=\"card col-4\" style=\"max-width: 25rem;\">
+      <a href=\"{{ path('front_product', {id: product.id})}}\"><img src=\"{{ asset('uploads/')}}{{ product.image }}\" class=\"card-img-top\" alt=\"{{ product.title}}\" title=\"{{ product.title}}\"></a>
+      <div class=\"card-body\">
+        <h5 class=\"card-title\">{{ product.title}}</h5>
+        <h5 class=\"card-title\">{{ product.price}} €</h5>
+        <p class=\"card-text\">{{ product.shortdescription}}</p>
+        <p> Garantie 100% Satisfait ou remboursé ! </p>
+        <a href=\"{{ path('cart_add', {id: product.id })}}\" class=\"btn btn-perso\">Ajouter au panier</a>
+        <a href=\"{{ path('front_product', {id: product.id})}}\" class=\"btn btn-perso-dark\">Details</a>
+      </div>
+    </div>
     {% endfor %}
 
 
     </div>
 </div>
 
-{% endblock %}", "category/frontstages.html.twig", "C:\\wamp\\www\\symfony\\projet-coaching-V1.4\\templates\\category\\frontstages.html.twig");
+{% endblock %}", "category/frontstages.html.twig", "C:\\wamp64\\www\\symfony\\2.1 projet-coaching\\templates\\category\\frontstages.html.twig");
     }
 }

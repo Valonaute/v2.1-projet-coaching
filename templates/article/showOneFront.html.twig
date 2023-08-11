@@ -14,13 +14,14 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-6">
+        <div class="col-6" style="max-width:30rem;">
             <img src="{{ asset('uploads/')}}{{ article.0.image }}" class="img-fluid">
         </div>
         <div class="col-6">
             <h1>{{ article.0.title }}</h1>
             <p>{{ article.0.description }} <p>
             <p> Auteur : {{ article.0.Iduser.firstname }}</p>
+            <a class="btn btn-perso" href="{{ path ('blog')}}">Retour</a>
         </div>
     </div>
 </div>

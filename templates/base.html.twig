@@ -19,9 +19,9 @@
     </head>
     <body>
         <header>
-            <a href="{{ path ('home')}}"><img src="{{ asset ('assets/img/logo.png') }}" alt="logo" title="logo" height="80px"></a>
+            <a href="{{ path ('home')}}"><img src="{{ asset ('assets/img/logo-line.png') }}" alt="logo" title="logo" height="80px"></a>
             <nav>
-                <a href="{{ path ('formations')}}">Formations</a>
+                <a href="{{ path ('formations')}}">Boutique</a>
                 <a href="{{ path ('blog')}}">Actualités</a>
                 <a href="{{ path ('forum')}}"> Forum </a>
                 {% if app.user %}
@@ -33,7 +33,7 @@
                 {% endif %}
                 
                 {% if is_granted('ROLE_ADMIN') %}
-                <a class="btn btn-warning" href="{{ path ('dashboard')}}">Dashboard</a>
+                <a class="btn btn-perso" href="{{ path ('dashboard')}}">Tableau de Bord</a>
                 {% endif %}
             </nav> 
         </header>
@@ -44,11 +44,18 @@
         
         {% endblock body %}
         
-        
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
         {% block main %}
         
         {% block content %}
-        
+            
         {% endblock content %}
 
         {% endblock main %}
@@ -57,8 +64,9 @@
         <footer>
             <section id="nav-column">
                 <section class="nav-column"> 
-                    <h2>Valentin </h2>
-                    <h2>Gautier </h2>
+                    <h2><a href="https://coachingdevperso.fr">Coaching</a> </h2>
+                    <h2><a href="https://coachingdevperso.fr">Dev-Perso.fr</a> </h2>
+                    <a href="https://coachingdevperso.fr"><img src="{{ asset ('assets/img/logo.png')}}" alt="logo"></a>
                 </section>
                 <section class="nav-column"> 
                     <nav>
@@ -66,14 +74,14 @@
                         <a href="{{ path ('home') }}">Accueil</a>
                         <a href="{{ path ('mapsite') }}">Plan du site</a>
                         <a href="{{ path ('contact') }}">Contact</a>
-                        <a href="{{ path ('valonauteinc') }}">Valonaute Inc.</a>
+                        <a href="{{ path ('valonauteinc') }}">EasyWebFactory Inc.</a>
                         <button><a href="{{ path ('careers') }}">On Recrute </a></button>
                     </nav>
                 </section>
                 <section class="nav-column">
                     <nav>
                         <h3>Suivez-nous</h3>
-                        <a href="https://instagram.com/val0naute">Instagram</a>
+                        <a href="https://instagram.com/coaching.devperso">Instagram</a>
                         <a href="https://Facebook.com/valonaute">Facebook</a>
                         <a href="https://www.youtube.com/channel/UC5KXcAr204aLa6F2-4hapGw">Youtube</a>
                         <a href="https://github.com/valonaute"> Github </a>
@@ -84,7 +92,7 @@
             <section id="espace">
             </section>
             <section id="footer">
-                <h4> &copy; 2023 VALONAUTE INC. </h4>
+                <h4> &copy; 2023 EASYWEBFACTORY INC. </h4>
                 <p> Made with 🤍</p>
                 <nav>
                     <a href="{{ path ('cgu') }}">Légales</a>

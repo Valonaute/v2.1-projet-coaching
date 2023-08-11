@@ -6,14 +6,24 @@ Accueil
 
 {% block main %}
 
-<h2> Coaching de vie - Programmation-Neuro-Linguistique</h2>
+<h1> Coaching de vie - Développement Personnel</h1>
         <section id="description">
-            <h3> Valentin Gautier, Coach certifié</h3>
-            <p> Conseiller de particulier et auteur de ce site </p>
+            <h3> Bienvenue sur notre site lié au coaching de vie et au développement personnel</h3>
+            <p> Découvrez des outils pour prendre votre vie en main et devenir une meilleure personne afin d'impacter positivement votre monde ! </p>
+            <img src="{{ asset ('assets/img/sunset.jpg') }}" alt="sunset" title="Coucher de soleil">
         </section>
         <section>
-            <h3> Découvrez la vidéo de Valentin Gautier avec plus de 580 vues sur Youtube </h3>
-            <video src="img/valentin.mp4" autoplay muted></video>
+            <h3> Vous trouverez plusieurs sections afin d'optimiser votre vie selon vos envies :  </h3>
+            <article id="list-home">
+                <ul>
+                    <li> Une partie <a href="{{ path ('formations') }}">Formations</a> avec des outils en vente pour booster au maximum vos résultats </li>
+                    <li> Une section <a href="{{ path ('blog') }}">Actualités</a> contenant des articles récents sous forme de blog sur différents domaines du coaching </li>
+                    <li> Un espace <a href="{{ path ('forum') }}">Forum</a> pour vous exprimer et échanger sur les thèmes qui vous préoccupent  </li>
+                </ul>
+            </article>
+            <h4> Vous pouvez également créer un espace membre grâce à l'outil <a href="{{ path ('inscription') }}">Inscription</a> </h4>
+            <h4> Ensuite <a href="{{ path ('connexion') }}">Connexion</a> pour acheter des produits et devenir un membre actif de notre forum. </h4>
+            
         </section>
         <section id="apropos">
             <h2> A propos </h2>

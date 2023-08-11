@@ -142,4 +142,14 @@ class CategoryController extends AbstractController
          ]);
     }
 
+    public function showMotivation(ProductRepository $productRepository)
+    {
+        $products = $productRepository->findBy(['idcategory' => 9]);
+
+
+        return  $this->render('category/frontmotivation.html.twig', [
+             'products' => $products
+         ]);
+    }
+
 }

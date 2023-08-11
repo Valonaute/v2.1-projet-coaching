@@ -40,7 +40,7 @@ class __TwigTemplate_61907da89e11a1df08a6efc0490573f5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "mailer/mail.html.twig"));
 
         // line 1
-        echo "<h3>mail reçu</h3>
+        echo "<h3>Vous avez reçu une demande de contact : </h3>
 
 <p>
 Le nom : <span style=\"color:red\">";
@@ -81,12 +81,12 @@ Le message : ";
 
     public function getSourceContext()
     {
-        return new Source("<h3>mail reçu</h3>
+        return new Source("<h3>Vous avez reçu une demande de contact : </h3>
 
 <p>
 Le nom : <span style=\"color:red\">{{ contact.name }}</span><br>
 L'email : {{ contact.email }}<br>
 Le message : {{ contact.message }}
-</p>", "mailer/mail.html.twig", "C:\\wamp64\\www\\symfony\\projet-coaching-V1.4\\templates\\mailer\\mail.html.twig");
+</p>", "mailer/mail.html.twig", "C:\\wamp64\\www\\symfony\\2.1 projet-coaching\\templates\\mailer\\mail.html.twig");
     }
 }
