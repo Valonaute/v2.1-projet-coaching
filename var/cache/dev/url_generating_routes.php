@@ -56,6 +56,7 @@ return [
     'cart_show' => [[], ['_controller' => 'App\\Controller\\CartController::cartshow'], [], [['text', '/cart']], [], [], []],
     'cart_validate' => [[], ['_controller' => 'App\\Controller\\CartController::cartValidate'], [], [['text', '/cart/validate']], [], [], []],
     'cart_delete' => [['id'], ['_controller' => 'App\\Controller\\CartController::delete'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/cart/delete']], [], [], []],
+    'cart_delete_one' => [['id'], ['_controller' => 'App\\Controller\\CartController::deleteOne'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/cart/deleteone']], [], [], []],
     'order_validation' => [[], ['_controller' => 'App\\Controller\\Order\\OrderConfirmationController::confirm'], [], [['text', '/order/validation']], [], [], []],
     'order_customer' => [[], ['_controller' => 'App\\Controller\\Order\\OrderListController::index'], [], [['text', '/order/list']], [], [], []],
     'order_payment_form' => [['id'], ['_controller' => 'App\\Controller\\Order\\OrderPaymentController::showCard'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/order/pay']], [], [], []],

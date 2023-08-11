@@ -85,14 +85,14 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        echo "<h1>votre panier </h1>
+        echo "<h1>Votre Panier </h1>
 <table class=\"table\">
     <thead>
         <tr>
             <th>Produit</th>
             <th>Prix</th>
             <th>Quantité</th>
-            <th>Total</th>
+            <th>Actions</th>
             <th></th>
         </tr>
     </thead>
@@ -112,10 +112,14 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
             // line 21
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 21), "price", [], "any", false, false, false, 21), "html", null, true);
             echo " €</td>
-                <td>";
+                <td> <a class=\"btn btn-perso\" href=\"";
             // line 22
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 22), "id", [], "any", false, false, false, 22)]), "html", null, true);
+            echo "\">+</a> <span class=\"mx-4\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "qty", [], "any", false, false, false, 22), "html", null, true);
-            echo "</td>
+            echo "</span> <a class=\"btn btn-perso-dark\" href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete_one", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 22), "id", [], "any", false, false, false, 22)]), "html", null, true);
+            echo "\">-</a> </td>
                 <td>
                     <a href=\"";
             // line 24
@@ -130,33 +134,30 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 28
         echo "    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan=\"3\">Total: </td>
-            <td colspan=\"2\">";
-        // line 32
-        echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 32, $this->source); })()), "html", null, true);
-        echo " € </td>
-        </tr>
-    </tfoot>
+    
 </table>  
+
+<h3 class=\"my-5\"> Total : ";
+        // line 32
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 32, $this->source); })()), 2, ",", " "), "html", null, true);
+        echo " € </h3>
 
 <hr>
 
 <h2> Confirmez votre commande en remplissant ce formulaire</h2>
 ";
-        // line 40
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 40, $this->source); })()), 'form_start', ["action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_validation")]);
+        // line 37
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 37, $this->source); })()), 'form_start', ["action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_validation")]);
         echo "
 
 ";
-        // line 42
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 42, $this->source); })()), 'widget');
+        // line 39
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 39, $this->source); })()), 'widget');
         echo "
  
 ";
-        // line 44
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 44, $this->source); })()), 'form_end');
+        // line 41
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 41, $this->source); })()), 'form_end');
         echo "
 
 ";
@@ -180,7 +181,7 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
 
     public function getDebugInfo()
     {
-        return array (  159 => 44,  154 => 42,  149 => 40,  138 => 32,  132 => 28,  122 => 24,  117 => 22,  113 => 21,  109 => 20,  106 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  160 => 41,  155 => 39,  150 => 37,  142 => 32,  136 => 28,  126 => 24,  117 => 22,  113 => 21,  109 => 20,  106 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -190,14 +191,14 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
 {% block title %}Panier{% endblock %}
 
 {% block content %}
-<h1>votre panier </h1>
+<h1>Votre Panier </h1>
 <table class=\"table\">
     <thead>
         <tr>
             <th>Produit</th>
             <th>Prix</th>
             <th>Quantité</th>
-            <th>Total</th>
+            <th>Actions</th>
             <th></th>
         </tr>
     </thead>
@@ -206,20 +207,17 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
             <tr>
                 <td>{{ item.product.title }}</td>
                 <td>{{ item.product.price }} €</td>
-                <td>{{ item.qty }}</td>
+                <td> <a class=\"btn btn-perso\" href=\"{{ path ('cart_add', {id: item.product.id})}}\">+</a> <span class=\"mx-4\">{{ item.qty }}</span> <a class=\"btn btn-perso-dark\" href=\"{{ path ('cart_delete_one', {id: item.product.id})}}\">-</a> </td>
                 <td>
                     <a href=\"{{ path('cart_delete', {id: item.product.id })}}\"><i class=\"fas fa-trash\">Supprimer</i></a>
                 </td>
             </tr>
         {% endfor %}
     </tbody>
-    <tfoot>
-        <tr>
-            <td colspan=\"3\">Total: </td>
-            <td colspan=\"2\">{{ total }} € </td>
-        </tr>
-    </tfoot>
+    
 </table>  
+
+<h3 class=\"my-5\"> Total : {{ total|number_format(2, ',', ' ') }} € </h3>
 
 <hr>
 
@@ -233,6 +231,6 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
 {% endblock %}
 
 
-", "cart/validateCart.html.twig", "C:\\wamp64\\www\\symfony\\projet-coaching-V1.4\\templates\\cart\\validateCart.html.twig");
+", "cart/validateCart.html.twig", "C:\\wamp64\\www\\symfony\\2.2.0 projet-coaching\\templates\\cart\\validateCart.html.twig");
     }
 }

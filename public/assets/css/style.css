@@ -136,6 +136,9 @@ input , textarea {
     justify-content: center;
     
 }
+.oops {
+    border: var(--background) 2px solid;
+}
 .menu {
     margin: 3vh;
     margin-left: auto;

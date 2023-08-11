@@ -90,13 +90,16 @@ return [
                     .'|tegory/(\\d+)(*:397)'
                     .'|rt/(?'
                         .'|add/(\\d+)(*:420)'
-                        .'|delete/(\\d+)(*:440)'
+                        .'|delete(?'
+                            .'|/(\\d+)(*:443)'
+                            .'|one/(\\d+)(*:460)'
+                        .')'
                     .')'
                 .')'
-                .'|/product/(\\d+)(*:464)'
+                .'|/product/(\\d+)(*:485)'
                 .'|/order/(?'
-                    .'|pay/([^/]++)(*:494)'
-                    .'|terminate/(\\d+)(*:517)'
+                    .'|pay/([^/]++)(*:515)'
+                    .'|terminate/(\\d+)(*:538)'
                 .')'
             .')/?$}sDu',
     ],
@@ -117,10 +120,11 @@ return [
         370 => [[['_route' => 'front_onearticle', '_controller' => 'App\\Controller\\ArticleController::showOneArticleFront'], ['id'], null, null, false, true, null]],
         397 => [[['_route' => 'front_category', '_controller' => 'App\\Controller\\CategoryController::showCategoryfront'], ['id'], null, null, false, true, null]],
         420 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null]],
-        440 => [[['_route' => 'cart_delete', '_controller' => 'App\\Controller\\CartController::delete'], ['id'], null, null, false, true, null]],
-        464 => [[['_route' => 'front_product', '_controller' => 'App\\Controller\\ProductController::showOneProductFront'], ['id'], null, null, false, true, null]],
-        494 => [[['_route' => 'order_payment_form', '_controller' => 'App\\Controller\\Order\\OrderPaymentController::showCard'], ['id'], null, null, false, true, null]],
-        517 => [
+        443 => [[['_route' => 'cart_delete', '_controller' => 'App\\Controller\\CartController::delete'], ['id'], null, null, false, true, null]],
+        460 => [[['_route' => 'cart_delete_one', '_controller' => 'App\\Controller\\CartController::deleteOne'], ['id'], null, null, false, true, null]],
+        485 => [[['_route' => 'front_product', '_controller' => 'App\\Controller\\ProductController::showOneProductFront'], ['id'], null, null, false, true, null]],
+        515 => [[['_route' => 'order_payment_form', '_controller' => 'App\\Controller\\Order\\OrderPaymentController::showCard'], ['id'], null, null, false, true, null]],
+        538 => [
             [['_route' => 'order_terminate', '_controller' => 'App\\Controller\\Order\\OrderPaymentSuccessController::success'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

@@ -25,6 +25,7 @@ class CartController extends AbstractController
     {
         // Récupération de la fonction dans les services Cart 
         $this->cartservice->add($id);
+
         // redirection vers la fiche produit avec ajout message flash 
         $this->addFlash('success',"Le produit a bien été ajouté au panier");
         return $this->redirectToRoute('cart_show');
@@ -50,13 +51,34 @@ class CartController extends AbstractController
 
     public function delete($id)
     {
+        // Récupération du produit avec l'ID 
         $product = $this->productRepository->find($id);
 
+        // Gestion erreur si le produit n'existe pas dans le panier
         if(!$product) {
             throw $this->createNotFoundException("Le produit $id n'est pas dans le panier et ne peut donc être supprimé");
         }
 
+        // Suppression 
         $this->cartservice->remove($id);
+
+        $this->addFlash("success", "Le produit a bien été supprimé du panier");
+        return $this->redirectToRoute("cart_show");
+    }
+
+    public function deleteOne($id)
+    {
+        // Récupération du produit avec l'ID 
+        $product = $this->productRepository->find($id);
+
+        // Gestion erreur si le produit n'existe pas dans le panier
+        if(!$product) {
+            throw $this->createNotFoundException("Le produit $id n'est pas dans le panier et ne peut donc être supprimé");
+        }
+
+        // Suppression 
+        $this->cartservice->removeOne($id);
+
         $this->addFlash("success", "Le produit a bien été supprimé du panier");
         return $this->redirectToRoute("cart_show");
     }

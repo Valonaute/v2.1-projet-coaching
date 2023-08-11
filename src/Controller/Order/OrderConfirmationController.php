@@ -16,18 +16,20 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class OrderConfirmationController extends AbstractController {
 
     protected $cartservice;
-    protected $em;
+    protected $entityManager;
     protected $session;
 
-    public function __construct(CartService $cartService, EntityManagerInterface $em, RequestStack $session)
+    public function __construct(CartService $cartService, EntityManagerInterface $entityManager, RequestStack $session)
     {
         $this->cartservice = $cartService;
-        $this->em = $em;
+        $this->entityManager = $entityManager;
         $this->session = $session;
     }
 
     public function confirm(Request $request)
     {
+        // Création et gestion du formulaire 
+
         $form = $this->createForm(CartConfirmationType::class);
 
         $form->handleRequest($request);
@@ -37,23 +39,28 @@ class OrderConfirmationController extends AbstractController {
             return $this->redirectToRoute('cart_show');
         }
 
+        // Récupération des infos utilisateurs 
         $user = $this->getuser();
         if(!$this->getUser())
         {
             throw new AccessDeniedException("vous devez être connecter pour confirmer une commande");
         }
 
+        // Récupération des éléments du panier 
         $cartitems = $this->cartservice->getDetailedCartItems();
 
         if(count($cartitems) === 0){
             return $this->redirectToRoute('cart_show');
         }
 
+        // Création commande 
+        // Récupération des informations du formulaire 
         $Order = $form->getData();
-        $Order->setUser($user)
-                ->setDateorder(new DateTime())
-                ->setStatus(Order::STATUS_PENDING);
-        $this->em->persist($Order);
+        // Mise à jour des infos client 
+        $Order->setUser($user);
+        $Order->setDateorder(new DateTime());
+        $Order->setStatus(Order::STATUS_PENDING);
+        $this->entityManager->persist($Order);
 
         $total = $this->cartservice->getTotal();
         $Order->setTotal($total);
@@ -67,10 +74,10 @@ class OrderConfirmationController extends AbstractController {
                         ->setQuantity($cartitem['qty'])
                         ->setProductprice($cartitem['product']->getPrice());
 
-                        $this->em->persist($OrderItem);
+                        $this->entityManager->persist($OrderItem);
         }
 
-        $this->em->flush();
+        $this->entityManager->flush();
 
         return $this->redirectToRoute('order_payment_form',[
             'id' => $Order->getId()

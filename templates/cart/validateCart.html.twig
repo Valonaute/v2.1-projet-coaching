@@ -3,14 +3,14 @@
 {% block title %}Panier{% endblock %}
 
 {% block content %}
-<h1>votre panier </h1>
+<h1>Votre Panier </h1>
 <table class="table">
     <thead>
         <tr>
             <th>Produit</th>
             <th>Prix</th>
             <th>Quantité</th>
-            <th>Total</th>
+            <th>Actions</th>
             <th></th>
         </tr>
     </thead>
@@ -19,20 +19,17 @@
             <tr>
                 <td>{{ item.product.title }}</td>
                 <td>{{ item.product.price }} €</td>
-                <td>{{ item.qty }}</td>
+                <td> <a class="btn btn-perso" href="{{ path ('cart_add', {id: item.product.id})}}">+</a> <span class="mx-4">{{ item.qty }}</span> <a class="btn btn-perso-dark" href="{{ path ('cart_delete_one', {id: item.product.id})}}">-</a> </td>
                 <td>
                     <a href="{{ path('cart_delete', {id: item.product.id })}}"><i class="fas fa-trash">Supprimer</i></a>
                 </td>
             </tr>
         {% endfor %}
     </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="3">Total: </td>
-            <td colspan="2">{{ total }} € </td>
-        </tr>
-    </tfoot>
+    
 </table>  
+
+<h3 class="my-5"> Total : {{ total|number_format(2, ',', ' ') }} € </h3>
 
 <hr>
 

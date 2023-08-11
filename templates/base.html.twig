@@ -27,7 +27,12 @@
                 {% if app.user %}
                 <a href="{{ path ('app_logout')}}">Déconnexion</a>
                 <a href="{{ path ('account')}}" id='account-link'><img src="{{ asset ('assets/img/account.png') }}" alt="account logo" id='account-logo'></a>
-                <a href="{{ path ('cart_show')}}" id='cart-link'><img src="{{ asset ('assets/img/panier.png') }}" alt="account logo" id='cart-logo'></a>
+                <a href="{{ path ('cart_show')}}" id='cart-link'>
+                    <img src="{{ asset ('assets/img/panier.png') }}" alt="account logo" id='cart-logo'>
+                    <span class="badge bg-dark ms-1 rounded-pill">
+                        {{ app.session.get('cart') ? app.session.get('cart') | length : '0'}}
+                    </span>
+                </a>
                 {% else %}
                 <a href="{{ path ('app_login')}}">Connexion</a>
                 {% endif %}

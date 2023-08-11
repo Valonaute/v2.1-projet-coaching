@@ -3,39 +3,44 @@
 {% block title %}Panier{% endblock %}
 
 {% block content %}
-<h1>votre panier </h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Produit</th>
-            <th>Prix</th>
-            <th>Quantité</th>
-            <th>Total</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in items %}
+<h1>Votre Panier </h1>
+
+{% if items is empty %}
+
+<img class="oops" src="{{ asset ('assets/img/oops.jpg')}}" alt="oops" title="oops !">
+<p class="my-4 fst-bold"> Votre panier est vide ! </p>
+<h3 ><a class="my-5 btn btn-perso" href="{{ path ('formations')}}">Visiter la boutique </a></h3>
+
+{% else %}
+    <table class="table">
+        <thead>
             <tr>
-                <td>{{ item.product.title }}</td>
-                <td>{{ item.product.price }} €</td>
-                <td>{{ item.qty }}</td>
-                <td>
-                    <a href="{{ path('cart_delete', {id: item.product.id })}}"><i class="fas fa-trash">Supprimer</i></a>
-                </td>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Actions</th>
+                <th></th>
             </tr>
-        {% endfor %}
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="3">Total: </td>
-            <td colspan="2">{{ total }} € </td>
-        </tr>
-    </tfoot>
-</table>  
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.product.title }}</td>
+                    <td>{{ item.product.price }} €</td>
+                    <td> <a class="btn btn-perso" href="{{ path ('cart_add', {id: item.product.id})}}">+</a> <span class="mx-4">{{ item.qty }}</span> <a class="btn btn-perso-dark" href="{{ path ('cart_delete_one', {id: item.product.id})}}">-</a> </td>
+                    <td>
+                        <a href="{{ path('cart_delete', {id: item.product.id })}}"><i class="fas fa-trash">Supprimer</i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        
+    </table>  
 
-<a class='btn btn-primary' href="{{ path('cart_validate')}}">Valider mon panier </a>
 
+<h3 class="my-5"> Total : {{ total|number_format(2, ',', ' ') }} € </h3>
+<a class='btn btn-perso my-5' href="{{ path('cart_validate')}}">Valider mon panier </a>
+{% endif %}
 {% endblock %}
 
 

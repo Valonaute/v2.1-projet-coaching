@@ -17,14 +17,13 @@ public function __construct(RequestStack $session, ProductRepository $productRep
 }
 
     public function add($id)
-    {   // [1 => 1] le premier 1 c'est l'id du produit
-        // le second 1 est la quantité
-        // 1) je récupère le panier dans la session
+    {   
+        // je récupère le panier dans la session
        $cart =  $this->session->getSession()->get('cart', []);
 
     
 
-        //2) on verifie les clés du tableau
+        // on verifie les clés du tableau pour incrémenter 
         if(array_key_exists($id, $cart)) {
             $cart[$id]++;
         }else{
@@ -42,9 +41,11 @@ public function __construct(RequestStack $session, ProductRepository $productRep
         // retourner le total du panier
         $total = 0;
 
+        // Boucle sur les produits 
         foreach($this->session->getSession()->get('cart',[]) as $id => $qty) {
             $product = $this->productrepository->find($id);
 
+        // Récupération du prix et ajout au total 
             $total += $product->getPrice() * $qty;
         }
 
@@ -73,9 +74,30 @@ public function __construct(RequestStack $session, ProductRepository $productRep
 
     public function remove($id)
     {
+        // Récupération du panier 
         $cart = $this->session->getSession()->get('cart',[]);
+        
+        // Suppression via unset du produit ayant un ID 
         unset($cart[$id]);
 
+        // Mise à jour du panier 
+        $this->session->getSession()->set('cart', $cart);
+
+    }
+
+    public function removeOne($id)
+    {
+        // Récupération du panier 
+        $cart = $this->session->getSession()->get('cart',[]);
+        
+        // Diminution de la quantité jusqu'à 0 
+        if($cart[$id] >0) {
+            $cart[$id]--;
+        }else{
+            $cart[$id] = 0;
+        }
+
+        // Mise à jour du panier 
         $this->session->getSession()->set('cart', $cart);
 
     }

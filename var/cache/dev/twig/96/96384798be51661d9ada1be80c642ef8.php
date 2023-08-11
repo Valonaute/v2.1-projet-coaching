@@ -106,55 +106,64 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
                 <a href=\"";
             // line 30
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_show");
-            echo "\" id='cart-link'><img src=\"";
+            echo "\" id='cart-link'>
+                    <img src=\"";
+            // line 31
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/panier.png"), "html", null, true);
-            echo "\" alt=\"account logo\" id='cart-logo'></a>
+            echo "\" alt=\"account logo\" id='cart-logo'>
+                    <span class=\"badge bg-dark ms-1 rounded-pill\">
+                        ";
+            // line 33
+            ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 33, $this->source); })()), "session", [], "any", false, false, false, 33), "get", [0 => "cart"], "method", false, false, false, 33)) ? (print (twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 33, $this->source); })()), "session", [], "any", false, false, false, 33), "get", [0 => "cart"], "method", false, false, false, 33)), "html", null, true))) : (print ("0")));
+            echo "
+                    </span>
+                </a>
                 ";
         } else {
-            // line 32
+            // line 37
             echo "                <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Connexion</a>
                 ";
         }
-        // line 34
+        // line 39
         echo "                
                 ";
-        // line 35
+        // line 40
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 36
+            // line 41
             echo "                <a class=\"btn btn-perso\" href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard");
             echo "\">Tableau de Bord</a>
                 ";
         }
-        // line 38
+        // line 43
         echo "            </nav> 
         </header>
             
         <main>
 
         ";
-        // line 43
+        // line 48
         $this->displayBlock('body', $context, $blocks);
-        // line 46
+        // line 51
         echo "        
         ";
-        // line 47
+        // line 52
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 47, $this->source); })()), "flashes", [], "any", false, false, false, 47));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 52, $this->source); })()), "flashes", [], "any", false, false, false, 52));
         foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
-            // line 48
+            // line 53
             echo "            ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 49
+                // line 54
                 echo "                <div class=\"alert alert-";
                 echo twig_escape_filter($this->env, $context["label"], "html", null, true);
                 echo "\">
                     ";
-                // line 50
+                // line 55
                 echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                 echo "
                 </div>
@@ -163,18 +172,18 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 53
+            // line 58
             echo "        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['label'], $context['messages'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 54
+        // line 59
         echo "
         ";
-        // line 55
+        // line 60
         $this->displayBlock('main', $context, $blocks);
-        // line 62
+        // line 67
         echo "        </main>
 
         <footer>
@@ -183,7 +192,7 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
                     <h2><a href=\"https://coachingdevperso.fr\">Coaching</a> </h2>
                     <h2><a href=\"https://coachingdevperso.fr\">Dev-Perso.fr</a> </h2>
                     <a href=\"https://coachingdevperso.fr\"><img src=\"";
-        // line 69
+        // line 74
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logo.png"), "html", null, true);
         echo "\" alt=\"logo\"></a>
                 </section>
@@ -191,23 +200,23 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
                     <nav>
                         <h3>Navigation</h3>
                         <a href=\"";
-        // line 74
+        // line 79
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Accueil</a>
                         <a href=\"";
-        // line 75
+        // line 80
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mapsite");
         echo "\">Plan du site</a>
                         <a href=\"";
-        // line 76
+        // line 81
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\">Contact</a>
                         <a href=\"";
-        // line 77
+        // line 82
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("valonauteinc");
         echo "\">EasyWebFactory Inc.</a>
                         <button><a href=\"";
-        // line 78
+        // line 83
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("careers");
         echo "\">On Recrute </a></button>
                     </nav>
@@ -230,12 +239,12 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
                 <p> Made with 🤍</p>
                 <nav>
                     <a href=\"";
-        // line 98
+        // line 103
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cgu");
         echo "\">Légales</a>
                     <p> | </p>
                     <a href=\"";
-        // line 100
+        // line 105
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rgpd");
         echo "\">Confidentialité</a>
                 </nav>
@@ -326,7 +335,7 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
 
     }
 
-    // line 43
+    // line 48
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -336,7 +345,7 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 44
+        // line 49
         echo "        
         ";
         
@@ -347,7 +356,7 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
 
     }
 
-    // line 55
+    // line 60
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -357,12 +366,12 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
-        // line 56
+        // line 61
         echo "        
         ";
-        // line 57
+        // line 62
         $this->displayBlock('content', $context, $blocks);
-        // line 60
+        // line 65
         echo "
         ";
         
@@ -373,7 +382,7 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
 
     }
 
-    // line 57
+    // line 62
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -383,7 +392,7 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 58
+        // line 63
         echo "            
         ";
         
@@ -406,7 +415,7 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
 
     public function getDebugInfo()
     {
-        return array (  387 => 58,  377 => 57,  366 => 60,  364 => 57,  361 => 56,  351 => 55,  340 => 44,  330 => 43,  317 => 17,  307 => 16,  295 => 13,  291 => 12,  286 => 9,  276 => 8,  257 => 5,  239 => 100,  234 => 98,  211 => 78,  207 => 77,  203 => 76,  199 => 75,  195 => 74,  187 => 69,  178 => 62,  176 => 55,  173 => 54,  167 => 53,  158 => 50,  153 => 49,  148 => 48,  144 => 47,  141 => 46,  139 => 43,  132 => 38,  126 => 36,  124 => 35,  121 => 34,  115 => 32,  108 => 30,  102 => 29,  97 => 28,  95 => 27,  91 => 26,  87 => 25,  83 => 24,  76 => 22,  71 => 19,  69 => 16,  66 => 15,  64 => 8,  59 => 6,  55 => 5,  49 => 1,);
+        return array (  396 => 63,  386 => 62,  375 => 65,  373 => 62,  370 => 61,  360 => 60,  349 => 49,  339 => 48,  326 => 17,  316 => 16,  304 => 13,  300 => 12,  295 => 9,  285 => 8,  266 => 5,  248 => 105,  243 => 103,  220 => 83,  216 => 82,  212 => 81,  208 => 80,  204 => 79,  196 => 74,  187 => 67,  185 => 60,  182 => 59,  176 => 58,  167 => 55,  162 => 54,  157 => 53,  153 => 52,  150 => 51,  148 => 48,  141 => 43,  135 => 41,  133 => 40,  130 => 39,  124 => 37,  117 => 33,  112 => 31,  108 => 30,  102 => 29,  97 => 28,  95 => 27,  91 => 26,  87 => 25,  83 => 24,  76 => 22,  71 => 19,  69 => 16,  66 => 15,  64 => 8,  59 => 6,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -440,7 +449,12 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
                 {% if app.user %}
                 <a href=\"{{ path ('app_logout')}}\">Déconnexion</a>
                 <a href=\"{{ path ('account')}}\" id='account-link'><img src=\"{{ asset ('assets/img/account.png') }}\" alt=\"account logo\" id='account-logo'></a>
-                <a href=\"{{ path ('cart_show')}}\" id='cart-link'><img src=\"{{ asset ('assets/img/panier.png') }}\" alt=\"account logo\" id='cart-logo'></a>
+                <a href=\"{{ path ('cart_show')}}\" id='cart-link'>
+                    <img src=\"{{ asset ('assets/img/panier.png') }}\" alt=\"account logo\" id='cart-logo'>
+                    <span class=\"badge bg-dark ms-1 rounded-pill\">
+                        {{ app.session.get('cart') ? app.session.get('cart') | length : '0'}}
+                    </span>
+                </a>
                 {% else %}
                 <a href=\"{{ path ('app_login')}}\">Connexion</a>
                 {% endif %}
@@ -517,6 +531,6 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
     </body>
 </html>
 
-", "base.html.twig", "C:\\wamp64\\www\\symfony\\2.1 projet-coaching\\templates\\base.html.twig");
+", "base.html.twig", "C:\\wamp64\\www\\symfony\\2.2.0 projet-coaching\\templates\\base.html.twig");
     }
 }

@@ -20,7 +20,7 @@ class OrderPaymentController extends AbstractController {
         
     
         // ajouter sa clé api
-        \Stripe\Stripe::setApiKey("sk_test_51NH4qlD4SBY6CQPmkFs1U92WEs58aBYSyu27iioVFAwMrvt6zPYp5PlPzVLSWqbIYHPXnvvQ6x6RI8aE81ElLS6A005YoVFgs2");
+        \Stripe\Stripe::setApiKey("sk_test_51NduCNDmDFiwg92fSTetdvGTpdtp6PCcUSCMuYo9tcEH6RObpdnbCQsPhurSbiCZ60X982la50sAphaHncY6CHvj00P59SwKJ9");
         $amount = $Order->getTotal() * 100;
         $intent = \Stripe\PaymentIntent::create([
             "amount" =>  $amount,

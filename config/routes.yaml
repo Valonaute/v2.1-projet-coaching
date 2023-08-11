@@ -166,6 +166,12 @@ cart_delete:
     requirements:
         id: '\d+'
 
+cart_delete_one:
+    path: /cart/deleteone/{id}
+    controller: App\Controller\CartController::deleteOne
+    requirements: 
+        id: '\d+'
+
 order_validation:
     path: /order/validation
     controller: App\Controller\Order\OrderConfirmationController::confirm
