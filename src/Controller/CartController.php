@@ -8,7 +8,6 @@ use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
 
 class CartController extends AbstractController
@@ -17,6 +16,7 @@ class CartController extends AbstractController
     protected $cartservice;
     protected $productRepository;
 
+    // Création des services du panier et du repo 
     public function __construct(CartService $cartservice, ProductRepository $productRepository)
     {
         $this->cartservice = $cartservice;
@@ -44,6 +44,7 @@ class CartController extends AbstractController
         $detailedCart = $this->cartservice->getDetailedCartItems();
         $total = $this->cartservice->getTotal();
 
+        // Affichage du template avec les parametres twig du panier
         return $this->render('cart/index.html.twig', [
             'items' => $detailedCart,
             'total' => $total,
@@ -64,6 +65,7 @@ class CartController extends AbstractController
         // Suppression 
         $this->cartservice->remove($id);
 
+        // Confirmation par message flash
         $this->addFlash("success", "Le produit a bien été supprimé du panier");
         return $this->redirectToRoute("cart_show");
     }
@@ -81,10 +83,12 @@ class CartController extends AbstractController
         // Suppression 
         $this->cartservice->removeOne($id);
 
+        // Confirmation par message flash
         $this->addFlash("success", "Le produit a bien été supprimé du panier");
         return $this->redirectToRoute("cart_show");
     }
 
+    // Methode à supprimer si paiement par stripe suffisant 
     public function cartValidate(Request $request)
     {
         // Afficher la page de validation du panier
@@ -92,20 +96,22 @@ class CartController extends AbstractController
         // Récupération de l'utilisateur 
         $client_session = User::class;
 
-        // Créer un formulaire de confirmation d'ajout d'éléments pour le compte  
+        // Créer un formulaire de confirmation d'ajout d'éléments pour le compte et la facturation
         $form = $this->createform(CartConfirmationType::class);
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted())
+        if($form->isSubmitted() && $form->isValid())
         {
             $client_submit = $form->getData()->getName();
 
             $this->$client_session->setName($client_submit);
 
-            // Que fais cette ligne ? Est elle necessaire ? 
-            //$this->clientRepository->save($client_session, $flush = true);
 
+            // Que fais cette ligne ? Est elle necessaire ? 
+            // $this->clientRepository->save($client_session, $flush = true);
+
+            
             $this->addFlash('success','Les informations ont bien été ajoutées !');
 
             return $this->redirectToRoute('payment_checkout');
@@ -114,6 +120,7 @@ class CartController extends AbstractController
         $detailedCart = $this->cartservice->getDetailedCartItems();
         $total = $this->cartservice->getTotal();
 
+        // Affichage du template avec les élément du panier et le formulaire 
         return $this->render('cart/validateCart.html.twig', [
             'items' => $detailedCart,
             'total' => $total,

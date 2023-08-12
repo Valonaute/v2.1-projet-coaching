@@ -131,14 +131,14 @@ class __TwigTemplate_072364bd1db5bde5a96a603dc04ebacf extends Template
                 // line 29
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 29), "price", [], "any", false, false, false, 29), "html", null, true);
                 echo " €</td>
-                    <td> <a class=\"btn btn-perso\" href=\"";
+                    <td> <a class=\"btn btn-perso-dark\" href=\"";
                 // line 30
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 30), "id", [], "any", false, false, false, 30)]), "html", null, true);
-                echo "\">+</a> <span class=\"mx-4\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "qty", [], "any", false, false, false, 30), "html", null, true);
-                echo "</span> <a class=\"btn btn-perso-dark\" href=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete_one", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 30), "id", [], "any", false, false, false, 30)]), "html", null, true);
-                echo "\">-</a> </td>
+                echo "\">-</a> <span class=\"mx-4\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "qty", [], "any", false, false, false, 30), "html", null, true);
+                echo "</span> <a class=\"btn btn-perso\" href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 30), "id", [], "any", false, false, false, 30)]), "html", null, true);
+                echo "\">+</a> </td>
                     <td>
                         <a href=\"";
                 // line 32
@@ -221,7 +221,7 @@ class __TwigTemplate_072364bd1db5bde5a96a603dc04ebacf extends Template
                 <tr>
                     <td>{{ item.product.title }}</td>
                     <td>{{ item.product.price }} €</td>
-                    <td> <a class=\"btn btn-perso\" href=\"{{ path ('cart_add', {id: item.product.id})}}\">+</a> <span class=\"mx-4\">{{ item.qty }}</span> <a class=\"btn btn-perso-dark\" href=\"{{ path ('cart_delete_one', {id: item.product.id})}}\">-</a> </td>
+                    <td> <a class=\"btn btn-perso-dark\" href=\"{{ path ('cart_delete_one', {id: item.product.id})}}\">-</a> <span class=\"mx-4\">{{ item.qty }}</span> <a class=\"btn btn-perso\" href=\"{{ path ('cart_add', {id: item.product.id})}}\">+</a> </td>
                     <td>
                         <a href=\"{{ path('cart_delete', {id: item.product.id })}}\"><i class=\"fas fa-trash\">Supprimer</i></a>
                     </td>
@@ -238,6 +238,6 @@ class __TwigTemplate_072364bd1db5bde5a96a603dc04ebacf extends Template
 {% endblock %}
 
 
-", "cart/index.html.twig", "C:\\wamp64\\www\\symfony\\2.2.0 projet-coaching\\templates\\cart\\index.html.twig");
+", "cart/index.html.twig", "C:\\wamp64\\www\\symfony\\2.3.0 projet-coaching\\templates\\cart\\index.html.twig");
     }
 }

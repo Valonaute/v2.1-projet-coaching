@@ -20,6 +20,10 @@ blog:
     path: /blog
     controller: App\Controller\ArticleController::showArticlesFront
 
+cancel_url:
+    path: /cancel
+    controller: App\Controller\TestStripeController::cancel
+
 careers:
     path: /careers
     controller: App\Controller\PublicController::showCareers
@@ -50,6 +54,10 @@ cart_delete_one:
     requirements: 
         id: '\d+'
 
+checkout:
+    path: /checkout
+    controller: App\Controller\TestStripeController::checkout
+    
 cgu:
     path: /cgu
     controller: App\Controller\PublicController::showCgu
@@ -193,6 +201,10 @@ show_product:
 stages:
     path: /stages
     controller: App\Controller\CategoryController::showStages
+
+success_url:
+    path: /success
+    controller: App\Controller\TestStripeController::success
 
 update_category:
     path: /admin/category/update/{id}

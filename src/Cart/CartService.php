@@ -21,19 +21,14 @@ public function __construct(RequestStack $session, ProductRepository $productRep
         // je récupère le panier dans la session
        $cart =  $this->session->getSession()->get('cart', []);
 
-    
-
         // on verifie les clés du tableau pour incrémenter 
         if(array_key_exists($id, $cart)) {
             $cart[$id]++;
         }else{
             $cart[$id] = 1;
         }
-
-   
         // on enregistre la session
         $this->session->getSession()->set('cart', $cart);
-
     }
 
     public function getTotal()
@@ -48,7 +43,7 @@ public function __construct(RequestStack $session, ProductRepository $productRep
         // Récupération du prix et ajout au total 
             $total += $product->getPrice() * $qty;
         }
-
+        // On renvoi la valeur du total 
         return $total;
     }
 

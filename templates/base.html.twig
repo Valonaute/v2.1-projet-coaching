@@ -22,7 +22,7 @@
             <a href="{{ path ('home')}}"><img src="{{ asset ('assets/img/logo-line.png') }}" alt="logo" title="logo" height="80px"></a>
             <nav>
                 <a href="{{ path ('formations')}}">Boutique</a>
-                <a href="{{ path ('blog')}}">Actualités</a>
+                <a href="{{ path ('blog')}}">Blog</a>
                 <a href="{{ path ('forum')}}"> Forum </a>
                 {% if app.user %}
                 <a href="{{ path ('app_logout')}}">Déconnexion</a>
@@ -45,9 +45,7 @@
             
         <main>
 
-        {% block body %}
         
-        {% endblock body %}
         
         {% for label, messages in app.flashes %}
             {% for message in messages %}
@@ -57,6 +55,10 @@
             {% endfor %}
         {% endfor %}
 
+        {% block body %}
+        
+        {% endblock body %}
+
         {% block main %}
         
         {% block content %}
@@ -64,6 +66,7 @@
         {% endblock content %}
 
         {% endblock main %}
+
         </main>
 
         <footer>
@@ -79,18 +82,18 @@
                         <a href="{{ path ('home') }}">Accueil</a>
                         <a href="{{ path ('mapsite') }}">Plan du site</a>
                         <a href="{{ path ('contact') }}">Contact</a>
-                        <a href="{{ path ('valonauteinc') }}">EasyWebFactory Inc.</a>
+                        <a href="{{ path ('valonauteinc') }}" target ="_blank">EasyWebFactory Inc.</a>
                         <button><a href="{{ path ('careers') }}">On Recrute </a></button>
                     </nav>
                 </section>
                 <section class="nav-column">
                     <nav>
                         <h3>Suivez-nous</h3>
-                        <a href="https://instagram.com/coaching.devperso">Instagram</a>
-                        <a href="https://Facebook.com/valonaute">Facebook</a>
-                        <a href="https://www.youtube.com/channel/UC5KXcAr204aLa6F2-4hapGw">Youtube</a>
-                        <a href="https://github.com/valonaute"> Github </a>
-                        <a href="https://linkedin.com/in/valonaute"> Linkedin </a>
+                        <a href="https://instagram.com/coaching.devperso" target ="_blank">Instagram</a>
+                        <a href="https://Facebook.com/valonaute" target ="_blank">Facebook</a>
+                        <a href="https://www.youtube.com/channel/UC5KXcAr204aLa6F2-4hapGw" target ="_blank">Youtube</a>
+                        <a href="https://github.com/valonaute" target ="_blank"> Github </a>
+                        <a href="https://linkedin.com/in/valonaute" target ="_blank"> Linkedin </a>
                     </nav>
                 </section>
             </section>

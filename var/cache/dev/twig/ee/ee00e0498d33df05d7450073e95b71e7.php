@@ -108,24 +108,24 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
             // line 20
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 20), "title", [], "any", false, false, false, 20), "html", null, true);
             echo "</td>
-                <td>";
+                    <td>";
             // line 21
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 21), "price", [], "any", false, false, false, 21), "html", null, true);
             echo " €</td>
-                <td> <a class=\"btn btn-perso\" href=\"";
+                    <td> <a class=\"btn btn-perso-dark\" href=\"";
             // line 22
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 22), "id", [], "any", false, false, false, 22)]), "html", null, true);
-            echo "\">+</a> <span class=\"mx-4\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "qty", [], "any", false, false, false, 22), "html", null, true);
-            echo "</span> <a class=\"btn btn-perso-dark\" href=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete_one", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 22), "id", [], "any", false, false, false, 22)]), "html", null, true);
-            echo "\">-</a> </td>
-                <td>
-                    <a href=\"";
+            echo "\">-</a> <span class=\"mx-4\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "qty", [], "any", false, false, false, 22), "html", null, true);
+            echo "</span> <a class=\"btn btn-perso\" href=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 22), "id", [], "any", false, false, false, 22)]), "html", null, true);
+            echo "\">+</a> </td>
+                    <td>
+                        <a href=\"";
             // line 24
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 24), "id", [], "any", false, false, false, 24)]), "html", null, true);
             echo "\"><i class=\"fas fa-trash\">Supprimer</i></a>
-                </td>
+                    </td>
             </tr>
         ";
         }
@@ -137,38 +137,19 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
     
 </table>  
 
-<h3 class=\"my-5\"> Total : ";
+<h3 class=\"mt-5\"> Total : ";
         // line 32
         echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 32, $this->source); })()), 2, ",", " "), "html", null, true);
         echo " € </h3>
 
 <a class=\"btn btn-perso my-5\" href=\"";
         // line 34
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("payment_checkout");
-        echo "\"> Payer avec Stripe</a>
-
-<form action=\"/checkout\" method=\"post\">
-    <button class=\"btn btn-primary\" type=\"submit\">PAYER vraiment</button>
-</form>
-
-<hr class=\"mx-5\">
-
-<h2> Confirmez votre commande en remplissant ce formulaire</h2>
-";
-        // line 43
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 43, $this->source); })()), 'form_start', ["action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("order_validation")]);
-        echo "
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("checkout");
+        echo "\"> Payer </a>
 
 ";
-        // line 45
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 45, $this->source); })()), 'widget');
+        // line 48
         echo "
- 
-";
-        // line 47
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["confirmationform"]) || array_key_exists("confirmationform", $context) ? $context["confirmationform"] : (function () { throw new RuntimeError('Variable "confirmationform" does not exist.', 47, $this->source); })()), 'form_end');
-        echo "
-
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -190,7 +171,7 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
 
     public function getDebugInfo()
     {
-        return array (  169 => 47,  164 => 45,  159 => 43,  147 => 34,  142 => 32,  136 => 28,  126 => 24,  117 => 22,  113 => 21,  109 => 20,  106 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  152 => 48,  147 => 34,  142 => 32,  136 => 28,  126 => 24,  117 => 22,  113 => 21,  109 => 20,  106 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -215,24 +196,22 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
         {% for item in items %}
             <tr>
                 <td>{{ item.product.title }}</td>
-                <td>{{ item.product.price }} €</td>
-                <td> <a class=\"btn btn-perso\" href=\"{{ path ('cart_add', {id: item.product.id})}}\">+</a> <span class=\"mx-4\">{{ item.qty }}</span> <a class=\"btn btn-perso-dark\" href=\"{{ path ('cart_delete_one', {id: item.product.id})}}\">-</a> </td>
-                <td>
-                    <a href=\"{{ path('cart_delete', {id: item.product.id })}}\"><i class=\"fas fa-trash\">Supprimer</i></a>
-                </td>
+                    <td>{{ item.product.price }} €</td>
+                    <td> <a class=\"btn btn-perso-dark\" href=\"{{ path ('cart_delete_one', {id: item.product.id})}}\">-</a> <span class=\"mx-4\">{{ item.qty }}</span> <a class=\"btn btn-perso\" href=\"{{ path ('cart_add', {id: item.product.id})}}\">+</a> </td>
+                    <td>
+                        <a href=\"{{ path('cart_delete', {id: item.product.id })}}\"><i class=\"fas fa-trash\">Supprimer</i></a>
+                    </td>
             </tr>
         {% endfor %}
     </tbody>
     
 </table>  
 
-<h3 class=\"my-5\"> Total : {{ total|number_format(2, ',', ' ') }} € </h3>
+<h3 class=\"mt-5\"> Total : {{ total|number_format(2, ',', ' ') }} € </h3>
 
-<a class=\"btn btn-perso my-5\" href=\"{{ path ('payment_checkout')}}\"> Payer avec Stripe</a>
+<a class=\"btn btn-perso my-5\" href=\"{{ path ('checkout')}}\"> Payer </a>
 
-<form action=\"/checkout\" method=\"post\">
-    <button class=\"btn btn-primary\" type=\"submit\">PAYER vraiment</button>
-</form>
+{#
 
 <hr class=\"mx-5\">
 
@@ -243,9 +222,11 @@ class __TwigTemplate_baaba9ec5b90d0cd9cc7dd07e64c8854 extends Template
  
 {{ form_end(confirmationform) }}
 
+#}
+
 {% endblock %}
 
 
-", "cart/validateCart.html.twig", "C:\\wamp64\\www\\symfony\\2.2.0 projet-coaching\\templates\\cart\\validateCart.html.twig");
+", "cart/validateCart.html.twig", "C:\\wamp64\\www\\symfony\\2.3.0 projet-coaching\\templates\\cart\\validateCart.html.twig");
     }
 }

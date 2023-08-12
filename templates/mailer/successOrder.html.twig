@@ -1,0 +1,33 @@
+<h3 style="text-align: center;">Merci pour votre commande sur CoachingDevPerso.fr ! </h3>
+
+<h4 style="text-align: center;"> {{ app.user.firstname }} {{ app.user.lastname }} votre commande sur notre site a bien été validée, merci de votre confiance !</h4>
+
+<p> Vous trouverez si joint un récapitulatif de vos achats : </p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Produit</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.title }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.price }} €</td>
+                <td> {{ item.quantity }} </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    
+</table>  
+
+<p> Accédez directement à notre site maintenant : </p>
+
+<a href="https://coachingdevperso.fr">coachingdevperso.fr</a>
+
+<p> L'équipe CoachingDevPerso.fr</p>
