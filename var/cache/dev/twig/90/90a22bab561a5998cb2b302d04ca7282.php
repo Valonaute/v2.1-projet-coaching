@@ -105,7 +105,7 @@ class __TwigTemplate_87925b1f0ea647c7df7057e254354f75 extends Template
         echo "\"> Communications </a>
 </section>
 
-<div class=\"container-fluid\">
+<div class=\"container-fluid my-5\">
     <div class=\"row\">
 
         ";
@@ -123,7 +123,7 @@ class __TwigTemplate_87925b1f0ea647c7df7057e254354f75 extends Template
             echo "\" class=\"card-img-top\" alt=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 21), "html", null, true);
             echo "\">
-                <div class=\"card-body\">
+                <div class=\"card-body card-center-perso\">
                     <h5 class=\"card-title\">";
             // line 23
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 23), "html", null, true);
@@ -188,14 +188,14 @@ class __TwigTemplate_87925b1f0ea647c7df7057e254354f75 extends Template
   <a class=\"inactive\" href=\"{{ path ('communications')}}\"> Communications </a>
 </section>
 
-<div class=\"container-fluid\">
+<div class=\"container-fluid my-5\">
     <div class=\"row\">
 
         {% for article in articles %}
         
             <div class=\"card col-4\" style=\"max-width: 25rem; min-height:40rem;\">
                 <img src=\"{{ asset('uploads/')}}{{ article.image }}\" class=\"card-img-top\" alt=\"{{ article.title}}\">
-                <div class=\"card-body\">
+                <div class=\"card-body card-center-perso\">
                     <h5 class=\"card-title\">{{ article.title}}</h5>
                     <p class=\"card-text\">{{ article.shortdescription}}</p>
                     <a href=\"{{ path('front_onearticle', {id: article.id})}}\" class=\"btn btn-perso\">Lire l'article</a>
