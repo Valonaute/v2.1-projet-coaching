@@ -90,7 +90,7 @@ class TestStripeController extends AbstractController
         $user = $this->getUser();
         
         // Récupération de l'email de l'utilisateur 
-        // ! Se renseigner sur la fonction "instanceof" !
+        // "instanceof" vérifie si $user est une instance de userinterface 
         if ($user instanceof UserInterface) {
             $userEmail = $user->getEmail();
         }

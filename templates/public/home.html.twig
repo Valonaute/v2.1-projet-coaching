@@ -25,9 +25,48 @@ Accueil
             <h4> Ensuite <a href="{{ path ('connexion') }}">Connexion</a> pour acheter des produits et devenir un membre actif de notre forum. </h4>
             
         </section>
+        <section id="lastArticles">
+            <h2 class="my-5"> Voici nos derniers articles du blog : </h2>
+            <div class="container-fluid">
+                <div class="row">
+                    {% for article in articles %}
+                        <div class="card col-4 " style="max-width: 25rem; min-height:40rem;">
+                            <img src="{{ asset('uploads/')}}{{ article.image }}" class="card-img-top" alt="{{ article.title}}">
+                            <div class="card-body card-center-perso">
+                                <h5 class="card-title">{{ article.title}}</h5>
+                                <p class="card-text">{{ article.shortdescription}}</p>
+                                <a href="{{ path('front_onearticle', {id: article.id})}}" class="btn btn-perso">Lire l'article</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <h3 ><a class="btn btn-perso my-5" href="{{ path ('blog')}}"> Accéder au blog </a></h3>
+        </section>
+        <section id="bestSellers">
+            <h2 class="my-5"> Voici nos meilleurs produits et formations : </h2>
+            <div class="container-fluid my-5">
+                <div class="row">
+                {% for product in bestsellers %}
+                <div class="card col-4 card-center-perso" style="max-width: 25rem; min-height:40rem;">
+                  <a class="my-4" href="{{ path('front_product', {id: product.id})}}"><img src="{{ asset('uploads/')}}{{ product.image }}" class="card-img-top" alt="{{ product.title}}" title="{{ product.title}}"></a>
+                  <div class="card-body card-center-perso ">
+                    <h5 class="card-title my-4">{{ product.title}}</h5>
+                    <h5 class="card-title my-4">{{ product.price}} €</h5>
+                    <p class="card-text my-4">{{ product.shortdescription}}</p>
+                    <p class="guarantee my-3"> Garantie 100% Satisfait ou remboursé !* </p>
+                    <h4><a href="{{ path('cart_add', {id: product.id })}}" class="btn btn-perso">Ajouter au panier</a>
+                    <a href="{{ path('front_product', {id: product.id})}}" class="btn btn-perso-dark">Details</a></h4>
+                  </div>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+            <h3><a class="btn btn-perso" href="{{ path ('formations')}}"> Accéder à la boutique </a></h3>
+        </section>
         <section id="apropos">
             <h2> A propos </h2>
-            <p> Entrepreneur, coach et conseiller de particuliers et top performers, passionné des dernières avancées en neurosciences, Valentin Gautier bouscule depuis plus de dix mois le paysage du business coaching et du développement personnel.<p>Fondateur et dirigeant de Valonaute Inc, comptant une équipe de plus de 2 personnes, Valentin Gautier compte pour clients ses parents, sa soeur, sa copine, des amis et des volontaires du métro parisien.</p><p> Il accompagne ces personnalités à améliorer leur performance ou la croissance de leur business mais aussi des dizaines de particuliers sur le plan du développement personnel et de la confiance en soi. </p><p>Fasciné par comment de petits changements peuvent radicalement transformer notre vie ou nos résultats, son obsession réside dans le fait de partager des outils concrets de la manière la plus captivante et pédagogique possible.</p><p>Le tout validé, ou invalidé, par des recherches scientifiques que son équipe de chercheurs mène. </p>
+            <p> Entrepreneur, coach et conseiller de particuliers et top performers, passionné des dernières avancées en neurosciences, EasyWebFactory bouscule depuis plus de dix mois le paysage du business coaching et du développement personnel.<p>Comptant une équipe de plus de 2 personnes, EasyWebFactory comptent pour clients ses parents, sa soeur, sa copine, des amis et des volontaires du métro parisien.</p><p> Ils accompagnent ces personnalités à améliorer leur performance ou la croissance de leur business mais aussi des dizaines de particuliers sur le plan du développement personnel et de la confiance en soi. </p><p>Fascinés par comment de petits changements peuvent radicalement transformer notre vie ou nos résultats, leur obsession réside dans le fait de partager des outils concrets de la manière la plus captivante et pédagogique possible.</p><p>Le tout validé, ou invalidé, par des recherches scientifiques que leur équipe de chercheurs mène. </p>
         </section>
 
 

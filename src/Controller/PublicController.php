@@ -2,15 +2,26 @@
 
 namespace App\Controller ;
 
+use App\Repository\ArticleRepository;
+use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 // Controller dédié à l'affichage des pages public via les templates twig
 
 class PublicController extends AbstractController
 {
-    public function showHome()
+    public function showHome(ArticleRepository $articleRepository, ProductRepository $productRepository)
     {
-        return $this->render('public/home.html.twig', []);
+        // Récupérer les derniers articles du blog : 
+        $articles = $articleRepository->findby([], ['datearticle' => 'DESC'], 3); 
+
+        // Récupérer les best-sellers (+ cher pour l'instant) de la boutique : 
+        $bestsellers = $productRepository->findby([], ['price' => 'DESC'], 3);
+
+        return $this->render('public/home.html.twig', [
+            'articles' => $articles, 
+            'bestsellers' => $bestsellers
+        ]);
     }
 
     public function showFormations()

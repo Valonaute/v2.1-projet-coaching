@@ -125,9 +125,114 @@ class __TwigTemplate_9becadca917a34116e4bf81540ea513f extends Template
         echo "\">Connexion</a> pour acheter des produits et devenir un membre actif de notre forum. </h4>
             
         </section>
+        <section id=\"lastArticles\">
+            <h2 class=\"my-5\"> Voici nos derniers articles du blog : </h2>
+            <div class=\"container-fluid\">
+                <div class=\"row\">
+                    ";
+        // line 32
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 32, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
+            // line 33
+            echo "                        <div class=\"card col-4 \" style=\"max-width: 25rem; min-height:40rem;\">
+                            <img src=\"";
+            // line 34
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "image", [], "any", false, false, false, 34), "html", null, true);
+            echo "\" class=\"card-img-top\" alt=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 34), "html", null, true);
+            echo "\">
+                            <div class=\"card-body card-center-perso\">
+                                <h5 class=\"card-title\">";
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 36), "html", null, true);
+            echo "</h5>
+                                <p class=\"card-text\">";
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "shortdescription", [], "any", false, false, false, 37), "html", null, true);
+            echo "</p>
+                                <a href=\"";
+            // line 38
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_onearticle", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 38)]), "html", null, true);
+            echo "\" class=\"btn btn-perso\">Lire l'article</a>
+                            </div>
+                        </div>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 42
+        echo "                </div>
+            </div>
+            <h3 ><a class=\"btn btn-perso my-5\" href=\"";
+        // line 44
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog");
+        echo "\"> Accéder au blog </a></h3>
+        </section>
+        <section id=\"bestSellers\">
+            <h2 class=\"my-5\"> Voici nos meilleurs produits et formations : </h2>
+            <div class=\"container-fluid my-5\">
+                <div class=\"row\">
+                ";
+        // line 50
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["bestsellers"]) || array_key_exists("bestsellers", $context) ? $context["bestsellers"] : (function () { throw new RuntimeError('Variable "bestsellers" does not exist.', 50, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
+            // line 51
+            echo "                <div class=\"card col-4 card-center-perso\" style=\"max-width: 25rem; min-height:40rem;\">
+                  <a class=\"my-4\" href=\"";
+            // line 52
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_product", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 52)]), "html", null, true);
+            echo "\"><img src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "image", [], "any", false, false, false, 52), "html", null, true);
+            echo "\" class=\"card-img-top\" alt=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 52), "html", null, true);
+            echo "\" title=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 52), "html", null, true);
+            echo "\"></a>
+                  <div class=\"card-body card-center-perso \">
+                    <h5 class=\"card-title my-4\">";
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 54), "html", null, true);
+            echo "</h5>
+                    <h5 class=\"card-title my-4\">";
+            // line 55
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 55), "html", null, true);
+            echo " €</h5>
+                    <p class=\"card-text my-4\">";
+            // line 56
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "shortdescription", [], "any", false, false, false, 56), "html", null, true);
+            echo "</p>
+                    <p class=\"guarantee my-3\"> Garantie 100% Satisfait ou remboursé !* </p>
+                    <h4><a href=\"";
+            // line 58
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 58)]), "html", null, true);
+            echo "\" class=\"btn btn-perso\">Ajouter au panier</a>
+                    <a href=\"";
+            // line 59
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_product", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 59)]), "html", null, true);
+            echo "\" class=\"btn btn-perso-dark\">Details</a></h4>
+                  </div>
+                </div>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 63
+        echo "                </div>
+            </div>
+            <h3><a class=\"btn btn-perso\" href=\"";
+        // line 65
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("formations");
+        echo "\"> Accéder à la boutique </a></h3>
+        </section>
         <section id=\"apropos\">
             <h2> A propos </h2>
-            <p> Entrepreneur, coach et conseiller de particuliers et top performers, passionné des dernières avancées en neurosciences, Valentin Gautier bouscule depuis plus de dix mois le paysage du business coaching et du développement personnel.<p>Fondateur et dirigeant de Valonaute Inc, comptant une équipe de plus de 2 personnes, Valentin Gautier compte pour clients ses parents, sa soeur, sa copine, des amis et des volontaires du métro parisien.</p><p> Il accompagne ces personnalités à améliorer leur performance ou la croissance de leur business mais aussi des dizaines de particuliers sur le plan du développement personnel et de la confiance en soi. </p><p>Fasciné par comment de petits changements peuvent radicalement transformer notre vie ou nos résultats, son obsession réside dans le fait de partager des outils concrets de la manière la plus captivante et pédagogique possible.</p><p>Le tout validé, ou invalidé, par des recherches scientifiques que son équipe de chercheurs mène. </p>
+            <p> Entrepreneur, coach et conseiller de particuliers et top performers, passionné des dernières avancées en neurosciences, EasyWebFactory bouscule depuis plus de dix mois le paysage du business coaching et du développement personnel.<p>Comptant une équipe de plus de 2 personnes, EasyWebFactory comptent pour clients ses parents, sa soeur, sa copine, des amis et des volontaires du métro parisien.</p><p> Ils accompagnent ces personnalités à améliorer leur performance ou la croissance de leur business mais aussi des dizaines de particuliers sur le plan du développement personnel et de la confiance en soi. </p><p>Fascinés par comment de petits changements peuvent radicalement transformer notre vie ou nos résultats, leur obsession réside dans le fait de partager des outils concrets de la manière la plus captivante et pédagogique possible.</p><p>Le tout validé, ou invalidé, par des recherches scientifiques que leur équipe de chercheurs mène. </p>
         </section>
 
 
@@ -152,7 +257,7 @@ class __TwigTemplate_9becadca917a34116e4bf81540ea513f extends Template
 
     public function getDebugInfo()
     {
-        return array (  124 => 25,  120 => 24,  114 => 21,  110 => 20,  106 => 19,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  230 => 65,  226 => 63,  216 => 59,  212 => 58,  207 => 56,  203 => 55,  199 => 54,  187 => 52,  184 => 51,  180 => 50,  171 => 44,  167 => 42,  157 => 38,  153 => 37,  149 => 36,  141 => 34,  138 => 33,  134 => 32,  124 => 25,  120 => 24,  114 => 21,  110 => 20,  106 => 19,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -184,12 +289,51 @@ Accueil
             <h4> Ensuite <a href=\"{{ path ('connexion') }}\">Connexion</a> pour acheter des produits et devenir un membre actif de notre forum. </h4>
             
         </section>
+        <section id=\"lastArticles\">
+            <h2 class=\"my-5\"> Voici nos derniers articles du blog : </h2>
+            <div class=\"container-fluid\">
+                <div class=\"row\">
+                    {% for article in articles %}
+                        <div class=\"card col-4 \" style=\"max-width: 25rem; min-height:40rem;\">
+                            <img src=\"{{ asset('uploads/')}}{{ article.image }}\" class=\"card-img-top\" alt=\"{{ article.title}}\">
+                            <div class=\"card-body card-center-perso\">
+                                <h5 class=\"card-title\">{{ article.title}}</h5>
+                                <p class=\"card-text\">{{ article.shortdescription}}</p>
+                                <a href=\"{{ path('front_onearticle', {id: article.id})}}\" class=\"btn btn-perso\">Lire l'article</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <h3 ><a class=\"btn btn-perso my-5\" href=\"{{ path ('blog')}}\"> Accéder au blog </a></h3>
+        </section>
+        <section id=\"bestSellers\">
+            <h2 class=\"my-5\"> Voici nos meilleurs produits et formations : </h2>
+            <div class=\"container-fluid my-5\">
+                <div class=\"row\">
+                {% for product in bestsellers %}
+                <div class=\"card col-4 card-center-perso\" style=\"max-width: 25rem; min-height:40rem;\">
+                  <a class=\"my-4\" href=\"{{ path('front_product', {id: product.id})}}\"><img src=\"{{ asset('uploads/')}}{{ product.image }}\" class=\"card-img-top\" alt=\"{{ product.title}}\" title=\"{{ product.title}}\"></a>
+                  <div class=\"card-body card-center-perso \">
+                    <h5 class=\"card-title my-4\">{{ product.title}}</h5>
+                    <h5 class=\"card-title my-4\">{{ product.price}} €</h5>
+                    <p class=\"card-text my-4\">{{ product.shortdescription}}</p>
+                    <p class=\"guarantee my-3\"> Garantie 100% Satisfait ou remboursé !* </p>
+                    <h4><a href=\"{{ path('cart_add', {id: product.id })}}\" class=\"btn btn-perso\">Ajouter au panier</a>
+                    <a href=\"{{ path('front_product', {id: product.id})}}\" class=\"btn btn-perso-dark\">Details</a></h4>
+                  </div>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+            <h3><a class=\"btn btn-perso\" href=\"{{ path ('formations')}}\"> Accéder à la boutique </a></h3>
+        </section>
         <section id=\"apropos\">
             <h2> A propos </h2>
-            <p> Entrepreneur, coach et conseiller de particuliers et top performers, passionné des dernières avancées en neurosciences, Valentin Gautier bouscule depuis plus de dix mois le paysage du business coaching et du développement personnel.<p>Fondateur et dirigeant de Valonaute Inc, comptant une équipe de plus de 2 personnes, Valentin Gautier compte pour clients ses parents, sa soeur, sa copine, des amis et des volontaires du métro parisien.</p><p> Il accompagne ces personnalités à améliorer leur performance ou la croissance de leur business mais aussi des dizaines de particuliers sur le plan du développement personnel et de la confiance en soi. </p><p>Fasciné par comment de petits changements peuvent radicalement transformer notre vie ou nos résultats, son obsession réside dans le fait de partager des outils concrets de la manière la plus captivante et pédagogique possible.</p><p>Le tout validé, ou invalidé, par des recherches scientifiques que son équipe de chercheurs mène. </p>
+            <p> Entrepreneur, coach et conseiller de particuliers et top performers, passionné des dernières avancées en neurosciences, EasyWebFactory bouscule depuis plus de dix mois le paysage du business coaching et du développement personnel.<p>Comptant une équipe de plus de 2 personnes, EasyWebFactory comptent pour clients ses parents, sa soeur, sa copine, des amis et des volontaires du métro parisien.</p><p> Ils accompagnent ces personnalités à améliorer leur performance ou la croissance de leur business mais aussi des dizaines de particuliers sur le plan du développement personnel et de la confiance en soi. </p><p>Fascinés par comment de petits changements peuvent radicalement transformer notre vie ou nos résultats, leur obsession réside dans le fait de partager des outils concrets de la manière la plus captivante et pédagogique possible.</p><p>Le tout validé, ou invalidé, par des recherches scientifiques que leur équipe de chercheurs mène. </p>
         </section>
 
 
-{% endblock main %}", "public/home.html.twig", "C:\\wamp64\\www\\symfony\\2.1 projet-coaching\\templates\\public\\home.html.twig");
+{% endblock main %}", "public/home.html.twig", "C:\\wamp64\\www\\symfony\\2.4.0 projet-coaching\\templates\\public\\home.html.twig");
     }
 }

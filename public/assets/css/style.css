@@ -172,6 +172,12 @@ ul {
 .card {
     border-radius: 10px;
 }
+.card-center-perso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
 .card-img-top {
     border-radius: 10px;
 }
