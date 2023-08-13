@@ -29,16 +29,20 @@
                     <td>{{ item.product.price }} €</td>
                     <td> <a class="btn btn-perso-dark" href="{{ path ('cart_delete_one', {id: item.product.id})}}">-</a> <span class="mx-4">{{ item.qty }}</span> <a class="btn btn-perso" href="{{ path ('cart_add', {id: item.product.id})}}">+</a> </td>
                     <td>
-                        <a href="{{ path('cart_delete', {id: item.product.id })}}"><i class="fas fa-trash">Supprimer</i></a>
+                        <a href="{{ path('cart_delete', {id: item.product.id })}}">Supprimer l'article</a>
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
+        <tfoot class="bold">
+            <td> Total : </td>
+            <td> {{ total|number_format(2, ',', ' ') }} €</td>
+            <td > Vider le panier : </td>
+            <td> <a class='btn btn-outline-perso' href="{{ path('cart_remove')}}">Supprimer le panier </a></td>
+        </tfoot>
         
     </table>  
 
-
-<h3 class="my-5"> Total : {{ total|number_format(2, ',', ' ') }} € </h3>
 <a class='btn btn-perso my-5' href="{{ path('cart_validate')}}">Valider mon panier </a>
 {% endif %}
 {% endblock %}

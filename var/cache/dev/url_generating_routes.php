@@ -29,6 +29,7 @@ return [
     'cart_validate' => [[], ['_controller' => 'App\\Controller\\CartController::cartValidate'], [], [['text', '/cart/validate']], [], [], []],
     'cart_delete' => [['id'], ['_controller' => 'App\\Controller\\CartController::delete'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/cart/delete']], [], [], []],
     'cart_delete_one' => [['id'], ['_controller' => 'App\\Controller\\CartController::deleteOne'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/cart/deleteone']], [], [], []],
+    'cart_remove' => [[], ['_controller' => 'App\\Controller\\CartController::cartRemove'], [], [['text', '/cart/remove']], [], [], []],
     'checkout' => [[], ['_controller' => 'App\\Controller\\TestStripeController::checkout'], [], [['text', '/checkout']], [], [], []],
     'cgu' => [[], ['_controller' => 'App\\Controller\\PublicController::showCgu'], [], [['text', '/cgu']], [], [], []],
     'connexion' => [[], ['_controller' => 'App\\Controller\\PublicController::showConnexion'], [], [['text', '/connexion']], [], [], []],

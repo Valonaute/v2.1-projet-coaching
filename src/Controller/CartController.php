@@ -7,30 +7,40 @@ use App\Form\CartConfirmationType;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use App\Entity\User;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Validator\Constraints\Url;
 
 class CartController extends AbstractController
 {
 
     protected $cartservice;
     protected $productRepository;
+    protected $session;
 
     // Création des services du panier et du repo 
-    public function __construct(CartService $cartservice, ProductRepository $productRepository)
+    public function __construct(CartService $cartservice, ProductRepository $productRepository, RequestStack $session)
     {
         $this->cartservice = $cartservice;
         $this->productRepository = $productRepository;
+        $this->session = $session; 
     }
   
-    public function add($id)
+    public function add($id) : RedirectResponse
     {
         // Récupération de la fonction dans les services Cart 
         $this->cartservice->add($id);
 
         // redirection vers la fiche produit avec ajout message flash 
         $this->addFlash('success',"Le produit a bien été ajouté au panier");
-        return $this->redirectToRoute('cart_show');
+
+        // Récupération de la page précédente 
+        $request = $this->session->getCurrentRequest();
+        $referer = $request->headers->get('referer');
+
+        // Redirection vers la page précédente 
+        return $this->redirect($referer);
     }
 
     public function cartshow()
@@ -126,5 +136,20 @@ class CartController extends AbstractController
             'total' => $total,
             'confirmationform' => $form->createView()
         ]);
+    }
+
+    public function cartRemove()
+    {
+        // Vider le panier :
+        // Récupérer le panier existant dans la session 
+        $cart = $this->session->getSession()->get('cart', []);
+        
+        // Supprimer le panier complètement 
+        unset($cart);
+        
+        // Créer un nouveau panier vide 
+        $this->session->getSession()->set('cart', []);
+
+        return $this->redirectToRoute('cart_show');
     }
 }

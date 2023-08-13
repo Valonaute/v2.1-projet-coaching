@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Cart\CartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,19 +15,22 @@ use App\Repository\UserRepository;
 use Symfony\Bridge\Doctrine\ManagerRegistry;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\SecurityBundle\Security;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 class TestStripeController extends AbstractController
 {
-    public $productRepository;
-    public $security;
+    protected $productRepository;
+    protected $security;
+    protected $session; 
 
-    public function __construct(ProductRepository $productRepository, Security $security)
+    public function __construct(ProductRepository $productRepository, Security $security, RequestStack $session)
     {
         $this->productRepository = $productRepository;
         $this->security = $security;
+        $this->session = $session;
     }
 
     public function checkout($stripeSK, SessionInterface $session_cart)
@@ -80,12 +84,13 @@ class TestStripeController extends AbstractController
           return $this->redirect($session->url, 303);
     }
 
-    public function success(MailerInterface $mailer, SessionInterface $session_cart)
+    public function success(MailerInterface $mailer, SessionInterface $session_cart, CartService $cartService)
     {
         // Récupération de l'utilisateur de la session
         $user = $this->getUser();
         
         // Récupération de l'email de l'utilisateur 
+        // ! Se renseigner sur la fonction "instanceof" !
         if ($user instanceof UserInterface) {
             $userEmail = $user->getEmail();
         }
@@ -107,7 +112,7 @@ class TestStripeController extends AbstractController
         }
         
 
-        // Envoi d'un mail de confirmation 
+        // Envoi d'un mail de confirmation :
         $email = (new TemplatedEmail())
         ->from('thankyou@monsite.com')
         ->to($userEmail)
@@ -119,7 +124,17 @@ class TestStripeController extends AbstractController
 
         $mailer->send($email);
 
-        // Ajout message flash
+        // Vider le panier :
+        // Récupérer le panier existant dans la session 
+        $cart = $this->session->getSession()->get('cart', []);
+        
+        // Supprimer le panier complètement 
+        unset($cart);
+        
+        // Créer un nouveau panier vide 
+        $this->session->getSession()->set('cart', []);
+
+        // Ajout message flash :
         $this->addFlash('success', 'Votre commande a bien été effectué, Merci de votre confiance ! Vous avez reçu une confirmation par email.');
         return $this->redirectToRoute(('home'));
 

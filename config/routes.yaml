@@ -54,6 +54,10 @@ cart_delete_one:
     requirements: 
         id: '\d+'
 
+cart_remove:
+    path: /cart/remove
+    controller: App\Controller\CartController::cartRemove
+
 checkout:
     path: /checkout
     controller: App\Controller\TestStripeController::checkout

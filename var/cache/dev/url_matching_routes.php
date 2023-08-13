@@ -24,6 +24,7 @@ return [
         '/careers' => [[['_route' => 'careers', '_controller' => 'App\\Controller\\PublicController::showCareers'], null, null, null, false, false, null]],
         '/cart' => [[['_route' => 'cart_show', '_controller' => 'App\\Controller\\CartController::cartshow'], null, null, null, false, false, null]],
         '/cart/validate' => [[['_route' => 'cart_validate', '_controller' => 'App\\Controller\\CartController::cartValidate'], null, null, null, false, false, null]],
+        '/cart/remove' => [[['_route' => 'cart_remove', '_controller' => 'App\\Controller\\CartController::cartRemove'], null, null, null, false, false, null]],
         '/checkout' => [[['_route' => 'checkout', '_controller' => 'App\\Controller\\TestStripeController::checkout'], null, null, null, false, false, null]],
         '/cgu' => [[['_route' => 'cgu', '_controller' => 'App\\Controller\\PublicController::showCgu'], null, null, null, false, false, null]],
         '/connexion' => [[['_route' => 'connexion', '_controller' => 'App\\Controller\\PublicController::showConnexion'], null, null, null, false, false, null]],

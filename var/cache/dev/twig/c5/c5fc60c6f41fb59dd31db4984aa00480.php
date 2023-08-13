@@ -143,7 +143,7 @@ class __TwigTemplate_072364bd1db5bde5a96a603dc04ebacf extends Template
                         <a href=\"";
                 // line 32
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 32), "id", [], "any", false, false, false, 32)]), "html", null, true);
-                echo "\"><i class=\"fas fa-trash\">Supprimer</i></a>
+                echo "\">Supprimer l'article</a>
                     </td>
                 </tr>
             ";
@@ -153,16 +153,23 @@ class __TwigTemplate_072364bd1db5bde5a96a603dc04ebacf extends Template
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 36
             echo "        </tbody>
+        <tfoot class=\"bold\">
+            <td> Total : </td>
+            <td> ";
+            // line 39
+            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 39, $this->source); })()), 2, ",", " "), "html", null, true);
+            echo " €</td>
+            <td > Vider le panier : </td>
+            <td> <a class='btn btn-outline-perso' href=\"";
+            // line 41
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_remove");
+            echo "\">Supprimer le panier </a></td>
+        </tfoot>
         
     </table>  
 
-
-<h3 class=\"my-5\"> Total : ";
-            // line 41
-            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 41, $this->source); })()), 2, ",", " "), "html", null, true);
-            echo " € </h3>
 <a class='btn btn-perso my-5' href=\"";
-            // line 42
+            // line 46
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_validate");
             echo "\">Valider mon panier </a>
 ";
@@ -187,7 +194,7 @@ class __TwigTemplate_072364bd1db5bde5a96a603dc04ebacf extends Template
 
     public function getDebugInfo()
     {
-        return array (  166 => 42,  162 => 41,  155 => 36,  145 => 32,  136 => 30,  132 => 29,  128 => 28,  125 => 27,  121 => 26,  108 => 15,  102 => 12,  97 => 10,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  173 => 46,  165 => 41,  160 => 39,  155 => 36,  145 => 32,  136 => 30,  132 => 29,  128 => 28,  125 => 27,  121 => 26,  108 => 15,  102 => 12,  97 => 10,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -223,21 +230,25 @@ class __TwigTemplate_072364bd1db5bde5a96a603dc04ebacf extends Template
                     <td>{{ item.product.price }} €</td>
                     <td> <a class=\"btn btn-perso-dark\" href=\"{{ path ('cart_delete_one', {id: item.product.id})}}\">-</a> <span class=\"mx-4\">{{ item.qty }}</span> <a class=\"btn btn-perso\" href=\"{{ path ('cart_add', {id: item.product.id})}}\">+</a> </td>
                     <td>
-                        <a href=\"{{ path('cart_delete', {id: item.product.id })}}\"><i class=\"fas fa-trash\">Supprimer</i></a>
+                        <a href=\"{{ path('cart_delete', {id: item.product.id })}}\">Supprimer l'article</a>
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
+        <tfoot class=\"bold\">
+            <td> Total : </td>
+            <td> {{ total|number_format(2, ',', ' ') }} €</td>
+            <td > Vider le panier : </td>
+            <td> <a class='btn btn-outline-perso' href=\"{{ path('cart_remove')}}\">Supprimer le panier </a></td>
+        </tfoot>
         
     </table>  
 
-
-<h3 class=\"my-5\"> Total : {{ total|number_format(2, ',', ' ') }} € </h3>
 <a class='btn btn-perso my-5' href=\"{{ path('cart_validate')}}\">Valider mon panier </a>
 {% endif %}
 {% endblock %}
 
 
-", "cart/index.html.twig", "C:\\wamp64\\www\\symfony\\2.3.0 projet-coaching\\templates\\cart\\index.html.twig");
+", "cart/index.html.twig", "C:\\wamp64\\www\\symfony\\2.4.0 projet-coaching\\templates\\cart\\index.html.twig");
     }
 }
