@@ -10,9 +10,8 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class OrderPaymentSuccessController extends AbstractController {
 
-    public function success(OrderRepository $OrderRepository, EntityManagerInterface $em, Request $request,$id) {
+    public function success(OrderRepository $OrderRepository, EntityManagerInterface $entityManager, Request $request,$id) {
 
-        die('test');
         $Order = $OrderRepository->find($request->attributes->get('id'));
 
         if(!$Order ||
@@ -24,7 +23,7 @@ class OrderPaymentSuccessController extends AbstractController {
 
         
         $Order->setStatus(Order::STATUS_PAID);
-        $em->flush();
+        $entityManager->flush();
 
         $request->getSession()->remove('cart');
 

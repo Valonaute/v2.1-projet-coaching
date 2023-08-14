@@ -28,6 +28,7 @@ class OrderConfirmationController extends AbstractController {
 
     public function confirm(Request $request)
     {
+        /*
         // Création et gestion du formulaire 
 
         $form = $this->createForm(CartConfirmationType::class);
@@ -46,7 +47,8 @@ class OrderConfirmationController extends AbstractController {
             $this->addFlash('warning', 'Vous devez être connecté pour confirmer une commande');
             return $this->redirectToRoute('app_login');
         }
-
+        */
+        
         // Récupération des éléments du panier 
         $cartitems = $this->cartservice->getDetailedCartItems();
 

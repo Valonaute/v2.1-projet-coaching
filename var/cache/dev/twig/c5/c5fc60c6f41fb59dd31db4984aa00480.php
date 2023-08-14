@@ -96,7 +96,7 @@ class __TwigTemplate_072364bd1db5bde5a96a603dc04ebacf extends Template
             // line 10
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/oops.jpg"), "html", null, true);
             echo "\" alt=\"oops\" title=\"oops !\">
-<p class=\"my-4 fst-bold\"> Votre panier est vide ! </p>
+<p class=\"my-4 bold\"> Votre panier est vide ! </p>
 <h3 ><a class=\"my-5 btn btn-perso\" href=\"";
             // line 12
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("formations");
@@ -209,7 +209,7 @@ class __TwigTemplate_072364bd1db5bde5a96a603dc04ebacf extends Template
 {% if items is empty %}
 
 <img class=\"border-bg\" src=\"{{ asset ('assets/img/oops.jpg')}}\" alt=\"oops\" title=\"oops !\">
-<p class=\"my-4 fst-bold\"> Votre panier est vide ! </p>
+<p class=\"my-4 bold\"> Votre panier est vide ! </p>
 <h3 ><a class=\"my-5 btn btn-perso\" href=\"{{ path ('formations')}}\">Visiter la boutique </a></h3>
 
 {% else %}

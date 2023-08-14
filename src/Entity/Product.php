@@ -37,9 +37,13 @@ class Product
     #[ORM\ManyToMany(targetEntity: Order::class, mappedBy: 'idproduct')]
     private Collection $orders;
 
+    #[ORM\OneToMany(mappedBy: 'product_id', targetEntity: OrderItem::class)]
+    private Collection $orderItems;
+
     public function __construct()
     {
         $this->orders = new ArrayCollection();
+        $this->orderItems = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -141,6 +145,36 @@ class Product
     {
         if ($this->orders->removeElement($order)) {
             $order->removeIdproduct($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, OrderItem>
+     */
+    public function getOrderItems(): Collection
+    {
+        return $this->orderItems;
+    }
+
+    public function addOrderItem(OrderItem $orderItem): static
+    {
+        if (!$this->orderItems->contains($orderItem)) {
+            $this->orderItems->add($orderItem);
+            $orderItem->setProductId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrderItem(OrderItem $orderItem): static
+    {
+        if ($this->orderItems->removeElement($orderItem)) {
+            // set the owning side to null (unless already changed)
+            if ($orderItem->getProductId() === $this) {
+                $orderItem->setProductId(null);
+            }
         }
 
         return $this;
