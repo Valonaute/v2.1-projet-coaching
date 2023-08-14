@@ -130,7 +130,7 @@ class __TwigTemplate_92dedaadfeef72f87a889d1cac083cc1 extends Template
             <a class=\"btn btn-perso\" href=\"";
         // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog");
-        echo "\">Retour</a>
+        echo "\">Retour Blog</a>
         </div>
     </div>
 </div>
@@ -184,12 +184,12 @@ class __TwigTemplate_92dedaadfeef72f87a889d1cac083cc1 extends Template
             <h1>{{ article.0.title }}</h1>
             <p>{{ article.0.description }} <p>
             <p> Auteur : {{ article.0.Iduser.firstname }}</p>
-            <a class=\"btn btn-perso\" href=\"{{ path ('blog')}}\">Retour</a>
+            <a class=\"btn btn-perso\" href=\"{{ path ('blog')}}\">Retour Blog</a>
         </div>
     </div>
 </div>
 
 {% endblock %}
-", "article/showOneFront.html.twig", "C:\\wamp64\\www\\symfony\\2.1 projet-coaching\\templates\\article\\showOneFront.html.twig");
+", "article/showOneFront.html.twig", "C:\\wamp64\\www\\symfony\\2.5.0 projet-coaching\\templates\\article\\showOneFront.html.twig");
     }
 }
