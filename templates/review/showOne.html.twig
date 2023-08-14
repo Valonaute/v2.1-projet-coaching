@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avis client N°{{ review.0.id }} {% endblock %}
+
+{% block content %}
+
+<h2 class="my-5 text-perso"> Voici l'avis client N° {{ review.0.id }} : </h2>
+
+<h3> Pseudo : {{ review.0.pseudo }} </h3>
+
+<h4> Titre de l'avis : "{{ review.0.title }}" </h4>
+
+<h5 class="mt-5"> Contenu de l'avis : </h5>
+<p> "{{ review.0.comment }}" </p>
+
+<h5 class="mt-5"> Note : {{ review.0.rating }} / 10 </h5>
+
+<h5> Date : Laissé le {{ review.0.date | date ('d/m/Y') }} </h5>
+
+
+<a class="btn btn-perso my-5" href="{{ path ('formations')}}"> Aller à la boutique </a>
+{% endblock %}

@@ -182,6 +182,22 @@ relations:
     path: /blog/relations
     controller: App\Controller\ArticleController::showrelations
 
+review_create:
+    path: /review/create/{id}
+    controller: App\Controller\ReviewController::create
+    requirements:
+        id: '\d+'
+
+review_show:
+    path: /review/show
+    controller: App\Controller\ReviewController::show
+
+review_show_one:
+    path: /review/show/{id}
+    controller: App\Controller\ReviewController::showOne
+    requirements: 
+        id: '\d+'
+
 rdv:
     path: /rdv
     controller: App\Controller\CategoryController::showRdv

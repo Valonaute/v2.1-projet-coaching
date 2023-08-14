@@ -29,6 +29,18 @@ class Review
     #[ORM\Column(type: Types::SMALLINT, nullable: true)]
     private ?int $rating = null;
 
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $Date = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $user = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $orderreviewed = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $pseudo = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +102,54 @@ class Review
     public function setRating(?int $rating): static
     {
         $this->rating = $rating;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->Date;
+    }
+
+    public function setDate(\DateTimeInterface $Date): static
+    {
+        $this->Date = $Date;
+
+        return $this;
+    }
+
+    public function getUser(): ?int
+    {
+        return $this->user;
+    }
+
+    public function setUser(?int $user): static
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getOrderreviewed(): ?int
+    {
+        return $this->orderreviewed;
+    }
+
+    public function setOrderreviewed(?int $orderreviewed): static
+    {
+        $this->orderreviewed = $orderreviewed;
+
+        return $this;
+    }
+
+    public function getPseudo(): ?string
+    {
+        return $this->pseudo;
+    }
+
+    public function setPseudo(?string $pseudo): static
+    {
+        $this->pseudo = $pseudo;
 
         return $this;
     }

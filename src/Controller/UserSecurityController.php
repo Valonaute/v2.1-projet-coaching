@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Repository\OrderRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class UserSecurityController extends AbstractController
@@ -35,8 +37,18 @@ class UserSecurityController extends AbstractController
         return $this->render('public/home.html.twig');
     }
 
-    public function showAccount() 
+    public function showAccount(OrderRepository $orderRepository) 
     {
-        return $this->render('security/account.html.twig');
+        // On récupère l'ID Utilisateur
+        $user = $this->getUser();
+            if ($user instanceof UserInterface) {
+                $idUser = $user->getId();
+            }
+        // On récupère les commandes passées par l'utilisateur 
+        $orders = $orderRepository->findBy(['iduser' => $idUser]);
+        // On envoi les commandes passés dans twig 
+        return $this->render('security/account.html.twig', [
+            'orders' => $orders
+        ]);
     }
 }

@@ -73,6 +73,37 @@
     </tbody>
 </table>  
 
+<h3 class="text-perso"> Voici votre historique de commande : </h3>
+
+<div class="container my-5">
+    <table class="table border-bg">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ID commande</th>
+                <th scope="col">Date</th>
+                <th scope="col">Montant Total </th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% set numorder = 0 %}
+            {% for order in orders %}
+            {% if order.statut == 'PAID' %}
+            {% set numorder = numorder + 1 %}
+                <tr>
+                    <th scope="row"> {{ numorder }} </th>
+                    <td> {{ order.id }} </td>
+                    <td> {{ order.dateorder | date('d/m/Y') }} </td>
+                    <td> {{ order.totalamount }} € </td>
+                    <td>  <a class="btn btn-perso mx-1" href=" {{ path ('review_create', {id: order.id})}}"> Laisser Avis</a><a class="btn btn-outline-perso mx-1" href="{{ path ('review_show_one', {id: order.id})}}">Voir l'avis</a></td>
+                </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
 <a class="btn btn-outline-perso my-5" href="">Supprimer votre compte</a>
 {% endblock content %}
 

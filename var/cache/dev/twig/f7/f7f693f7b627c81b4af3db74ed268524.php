@@ -204,6 +204,72 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
     </tbody>
 </table>  
 
+<h3 class=\"text-perso\"> Voici votre historique de commande : </h3>
+
+<div class=\"container my-5\">
+    <table class=\"table border-bg\">
+        <thead>
+            <tr>
+                <th scope=\"col\">#</th>
+                <th scope=\"col\">ID commande</th>
+                <th scope=\"col\">Date</th>
+                <th scope=\"col\">Montant Total </th>
+                <th scope=\"col\">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            ";
+        // line 90
+        $context["numorder"] = 0;
+        // line 91
+        echo "            ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["orders"]) || array_key_exists("orders", $context) ? $context["orders"] : (function () { throw new RuntimeError('Variable "orders" does not exist.', 91, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["order"]) {
+            // line 92
+            echo "            ";
+            if ((twig_get_attribute($this->env, $this->source, $context["order"], "statut", [], "any", false, false, false, 92) == "PAID")) {
+                // line 93
+                echo "            ";
+                $context["numorder"] = ((isset($context["numorder"]) || array_key_exists("numorder", $context) ? $context["numorder"] : (function () { throw new RuntimeError('Variable "numorder" does not exist.', 93, $this->source); })()) + 1);
+                // line 94
+                echo "                <tr>
+                    <th scope=\"row\"> ";
+                // line 95
+                echo twig_escape_filter($this->env, (isset($context["numorder"]) || array_key_exists("numorder", $context) ? $context["numorder"] : (function () { throw new RuntimeError('Variable "numorder" does not exist.', 95, $this->source); })()), "html", null, true);
+                echo " </th>
+                    <td> ";
+                // line 96
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "id", [], "any", false, false, false, 96), "html", null, true);
+                echo " </td>
+                    <td> ";
+                // line 97
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "dateorder", [], "any", false, false, false, 97), "d/m/Y"), "html", null, true);
+                echo " </td>
+                    <td> ";
+                // line 98
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "totalamount", [], "any", false, false, false, 98), "html", null, true);
+                echo " € </td>
+                    <td>  <a class=\"btn btn-perso mx-1\" href=\" ";
+                // line 99
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("review_create", ["id" => twig_get_attribute($this->env, $this->source, $context["order"], "id", [], "any", false, false, false, 99)]), "html", null, true);
+                echo "\"> Laisser Avis</a><a class=\"btn btn-outline-perso mx-1\" href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("review_show_one", ["id" => twig_get_attribute($this->env, $this->source, $context["order"], "id", [], "any", false, false, false, 99)]), "html", null, true);
+                echo "\">Voir l'avis</a></td>
+                </tr>
+            ";
+            }
+            // line 102
+            echo "            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['order'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 103
+        echo "        </tbody>
+    </table>
+
+</div>
 <a class=\"btn btn-outline-perso my-5\" href=\"\">Supprimer votre compte</a>
 ";
         
@@ -226,7 +292,7 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  191 => 67,  174 => 59,  157 => 51,  143 => 44,  133 => 37,  123 => 30,  113 => 23,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  269 => 103,  263 => 102,  255 => 99,  251 => 98,  247 => 97,  243 => 96,  239 => 95,  236 => 94,  233 => 93,  230 => 92,  225 => 91,  223 => 90,  191 => 67,  174 => 59,  157 => 51,  143 => 44,  133 => 37,  123 => 30,  113 => 23,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -306,10 +372,41 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
     </tbody>
 </table>  
 
+<h3 class=\"text-perso\"> Voici votre historique de commande : </h3>
+
+<div class=\"container my-5\">
+    <table class=\"table border-bg\">
+        <thead>
+            <tr>
+                <th scope=\"col\">#</th>
+                <th scope=\"col\">ID commande</th>
+                <th scope=\"col\">Date</th>
+                <th scope=\"col\">Montant Total </th>
+                <th scope=\"col\">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% set numorder = 0 %}
+            {% for order in orders %}
+            {% if order.statut == 'PAID' %}
+            {% set numorder = numorder + 1 %}
+                <tr>
+                    <th scope=\"row\"> {{ numorder }} </th>
+                    <td> {{ order.id }} </td>
+                    <td> {{ order.dateorder | date('d/m/Y') }} </td>
+                    <td> {{ order.totalamount }} € </td>
+                    <td>  <a class=\"btn btn-perso mx-1\" href=\" {{ path ('review_create', {id: order.id})}}\"> Laisser Avis</a><a class=\"btn btn-outline-perso mx-1\" href=\"{{ path ('review_show_one', {id: order.id})}}\">Voir l'avis</a></td>
+                </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
 <a class=\"btn btn-outline-perso my-5\" href=\"\">Supprimer votre compte</a>
 {% endblock content %}
 
 
-", "security/account.html.twig", "C:\\wamp64\\www\\symfony\\2.4.0 projet-coaching\\templates\\security\\account.html.twig");
+", "security/account.html.twig", "C:\\wamp64\\www\\symfony\\2.5.0 projet-coaching\\templates\\security\\account.html.twig");
     }
 }
