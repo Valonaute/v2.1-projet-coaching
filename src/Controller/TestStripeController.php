@@ -173,20 +173,16 @@ class TestStripeController extends AbstractController
         // Mise à jour statut commande :
         
         // Vérification de la commande 
-        /* if(!$order || $order->getStatut() == Order::STATUS_PAID)
+        if(!$order || $order->getStatut() == Order::STATUS_PAID)
         {
             $this->addflash('warning', 'La commande n\'existe pas ou a déja été payée');
             return $this->redirectToRoute('home');
         }
         // Changement du statut 
         $order->setStatut(Order::STATUS_PAID);
-        $this->entityManager->flush();
-        */
+        $this->entityManager->flush();      
 
-
-        
-
-
+        // Récupération des éléments du panier 
         // $order_items = $orderItemRepository->findBy(['order_id' => $id_order]); 
 
         // Vider le panier :
