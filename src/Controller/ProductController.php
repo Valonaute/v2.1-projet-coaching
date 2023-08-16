@@ -27,39 +27,44 @@ class ProductController extends AbstractController
 
     public function createProduct(Request $request)
     {
+        // Création d'une nouvelle entité produit : 
         $product = new Product();
+        // Création d'un formulaire : 
         $form = $this->createForm(ProductType::class, $product);
-
         $form->handleRequest($request);
 
+        // Si le formulaire est soumis et valide : 
         if($form->isSubmitted() && $form->isValid())
         {
+            // Récupération de l'image 
             $image = $form->get('image')->getData();
-
+            // S'il y a bien une image : 
            if($image) {
-            // $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
-
-            // $finalImage = $originalFilename . '.' .$image->guessExtension();
+            // Nom de l'image = heure unix + extension 
             $finalImage = time() . '.' . $image->guessExtension();
 
+            // On essaie d'uploader l'image 
              try {
+                // Déplacement de l'image 
                 $image->move(
                     $this->getParameter('image_directory')
                     , $finalImage
                 );
-                
+                // Gestion des erreurs 
                 } catch (FileException $e) {
                     throw new ErrorException("un problème est survenue lors de l'envoi de l'image");
                 }
 
+                // On sauvegarde l'image dans l'entité 
                 $product->setImage($finalImage);
+                // On sauvegarde dans la base de données 
                 $this->productRepository->save($product, $flush =  true);
 
+                // On confirme avec un message flash
                 $this->addflash('success', 'Le produit a bien été mis en ligne !');
+                // On redirige vers les produits 
                 return $this->redirectToRoute('show_product');
-
              }
-           
         }
 
         return $this->render('product/create.html.twig', [
