@@ -126,24 +126,29 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
         <label for=\"inputPassword\">Mot de passe :</label>
         <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control m-2\" autocomplete=\"current-password\" required>
 
+        <h6><a href=\"";
+        // line 27
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_forgot_password_request");
+        echo "\"> Mot de passe oublié ? </a></h6>
+
         <input type=\"hidden\" name=\"_csrf_token\"
             value=\"";
-        // line 28
+        // line 30
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
         >
 
         ";
-        // line 41
+        // line 43
         echo "
-        <button class=\"btn btn-perso\" type=\"submit\">
+        <button class=\"btn btn-perso my-5\" type=\"submit\">
             Connexion
         </button>
     </form>
 
     <h4 class=\"my-5\"> Vous n'êtes pas inscrit ? </h4>
-    <a class=\"btn btn-perso\" href=\"";
-        // line 48
+    <a class=\"btn btn-perso mb-5\" href=\"";
+        // line 50
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription");
         echo "\"> C'est parti !</a>
 </div>
@@ -169,7 +174,7 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  147 => 48,  138 => 41,  132 => 28,  122 => 21,  116 => 17,  108 => 14,  105 => 13,  103 => 12,  100 => 11,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  152 => 50,  143 => 43,  137 => 30,  131 => 27,  122 => 21,  116 => 17,  108 => 14,  105 => 13,  103 => 12,  100 => 11,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -200,6 +205,8 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
         <label for=\"inputPassword\">Mot de passe :</label>
         <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control m-2\" autocomplete=\"current-password\" required>
 
+        <h6><a href=\"{{ path ('app_forgot_password_request')}}\"> Mot de passe oublié ? </a></h6>
+
         <input type=\"hidden\" name=\"_csrf_token\"
             value=\"{{ csrf_token('authenticate') }}\"
         >
@@ -215,16 +222,16 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
             </div>
         #}
 
-        <button class=\"btn btn-perso\" type=\"submit\">
+        <button class=\"btn btn-perso my-5\" type=\"submit\">
             Connexion
         </button>
     </form>
 
     <h4 class=\"my-5\"> Vous n'êtes pas inscrit ? </h4>
-    <a class=\"btn btn-perso\" href=\"{{ path ('inscription')}}\"> C'est parti !</a>
+    <a class=\"btn btn-perso mb-5\" href=\"{{ path ('inscription')}}\"> C'est parti !</a>
 </div>
 
 {% endblock %}
-", "security/login.html.twig", "C:\\wamp64\\www\\symfony\\2.5.0 projet-coaching\\templates\\security\\login.html.twig");
+", "security/login.html.twig", "C:\\wamp64\\www\\symfony\\2.6.0 projet-coaching\\templates\\security\\login.html.twig");
     }
 }

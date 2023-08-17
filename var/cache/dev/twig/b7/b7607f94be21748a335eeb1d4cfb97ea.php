@@ -86,7 +86,7 @@ class __TwigTemplate_7368c98c4536f5aacf000c5c8718f820 extends Template
 
         // line 6
         echo "
-<h2> Nos ";
+<h2>";
         // line 7
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 7, $this->source); })()), 0, [], "any", false, false, false, 7), "idcategory", [], "any", false, false, false, 7), "name", [], "any", false, false, false, 7), "html", null, true);
         echo "</h2>
@@ -174,7 +174,7 @@ class __TwigTemplate_7368c98c4536f5aacf000c5c8718f820 extends Template
 
 {% block content %}
 
-<h2> Nos {{ products.0.idcategory.name}}</h2>
+<h2>{{ products.0.idcategory.name}}</h2>
 
 <div class=\"container-fluid\">
     <div class=\"row\">
@@ -196,6 +196,6 @@ class __TwigTemplate_7368c98c4536f5aacf000c5c8718f820 extends Template
     </div>
 </div>
 
-{% endblock %}", "category/showfront.html.twig", "C:\\wamp64\\www\\symfony\\projet-coaching-V1.4\\templates\\category\\showfront.html.twig");
+{% endblock %}", "category/showfront.html.twig", "C:\\wamp64\\www\\symfony\\2.6.0 projet-coaching\\templates\\category\\showfront.html.twig");
     }
 }

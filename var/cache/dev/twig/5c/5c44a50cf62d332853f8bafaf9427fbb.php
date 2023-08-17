@@ -98,9 +98,9 @@ class __TwigTemplate_408ce5155bfc46f5cf00e59535522d56 extends Template
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 13
             echo "\t\t\t\t\t\t\t<div style=\"color: green;
-\t\t\t\t\t\t\t\t\t                                    border: 2px green solid;
-\t\t\t\t\t\t\t\t\t                                    text-align: center;
-\t\t\t\t\t\t\t\t\t                                    padding: 5px;margin-bottom: 10px;\">
+\t\t\t\t\t\t\t\tborder: 2px green solid;
+\t\t\t\t\t\t\t\ttext-align: center;
+\t\t\t\t\t\t\t\tpadding: 5px;margin-bottom: 10px;\">
 \t\t\t\t\t\t\t\t";
             // line 17
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
@@ -203,9 +203,9 @@ document.getElementById('checkout-form').submit();
 \t\t\t\t\t<div class=\"card-body\">
 \t\t\t\t\t\t{% for message in app.flashes('success') %}
 \t\t\t\t\t\t\t<div style=\"color: green;
-\t\t\t\t\t\t\t\t\t                                    border: 2px green solid;
-\t\t\t\t\t\t\t\t\t                                    text-align: center;
-\t\t\t\t\t\t\t\t\t                                    padding: 5px;margin-bottom: 10px;\">
+\t\t\t\t\t\t\t\tborder: 2px green solid;
+\t\t\t\t\t\t\t\ttext-align: center;
+\t\t\t\t\t\t\t\tpadding: 5px;margin-bottom: 10px;\">
 \t\t\t\t\t\t\t\t{{ message }}
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t{% endfor %}
@@ -256,6 +256,6 @@ document.getElementById('checkout-form').submit();
 \t\t</body>
 \t</html>
 {% endblock %}
-", "stripe/index.html.twig", "C:\\wamp64\\www\\symfony\\projet-coaching-V1.4\\templates\\stripe\\index.html.twig");
+", "stripe/index.html.twig", "C:\\wamp64\\www\\symfony\\2.6.0 projet-coaching\\templates\\stripe\\index.html.twig");
     }
 }

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mot de passe oublié email envoyé{% endblock %}
+
+{% block content %}
+    <p class="my-5">
+        Si un compte avec votre email existe, un email contenant le lien a été envoyé. Vous pouvez l'utiliser pour changer votre mot de passe.
+        Ce lien va expirer dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+    </p>
+    <p class="my-5">Si vous ne recevez pas d'email veuillez vérifier votre dossier "spams" ou <a href="{{ path('app_forgot_password_request') }}">essayer encore </a></p>
+{% endblock %}
