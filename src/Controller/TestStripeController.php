@@ -111,7 +111,7 @@ class TestStripeController extends AbstractController
         return $this->redirect($session->url, 303);
     }
 
-    public function success(MailerInterface $mailer, SessionInterface $session_cart, OrderRepository $orderRepository /*, OrderItemRepository $orderItemRepository */)
+    public function success(MailerInterface $mailer, SessionInterface $session_cart, OrderRepository $orderRepository)
     {
         // Récupération de l'utilisateur de la session
         $user = $this->getUser();

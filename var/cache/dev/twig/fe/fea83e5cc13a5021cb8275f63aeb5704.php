@@ -86,7 +86,7 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
 
         // line 6
         echo "<div class=\"container\">
-    <form method=\"post\" class=\"form col-4 mx-auto\">
+    <form method=\"post\" class=\"form col-4 mx-auto my-5\">
         ";
         // line 8
         if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 8, $this->source); })())) {
@@ -114,7 +114,7 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
         }
         // line 17
         echo "
-        <h1 class=\"h3 mb-3 font-weight-normal\">Veuillez vous connecter :</h1>
+        <h1 class=\"h3 mb-3 font-weight-normal\">Connectez-vous :</h1>
         
         <label for=\"inputEmail\">Email :</label>
         <input type=\"email\" value=\"";
@@ -180,7 +180,7 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
 
 {% block content %}
 <div class=\"container\">
-    <form method=\"post\" class=\"form col-4 mx-auto\">
+    <form method=\"post\" class=\"form col-4 mx-auto my-5\">
         {% if error %}
             <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
@@ -191,7 +191,7 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
             </div>
         {% endif %}
 
-        <h1 class=\"h3 mb-3 font-weight-normal\">Veuillez vous connecter :</h1>
+        <h1 class=\"h3 mb-3 font-weight-normal\">Connectez-vous :</h1>
         
         <label for=\"inputEmail\">Email :</label>
         <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control m-2\" autocomplete=\"email\" required autofocus>
@@ -225,6 +225,6 @@ class __TwigTemplate_584eb2c5b8286764645780847e7987d2 extends Template
 </div>
 
 {% endblock %}
-", "security/login.html.twig", "C:\\wamp64\\www\\symfony\\2.2.0 projet-coaching\\templates\\security\\login.html.twig");
+", "security/login.html.twig", "C:\\wamp64\\www\\symfony\\2.5.0 projet-coaching\\templates\\security\\login.html.twig");
     }
 }

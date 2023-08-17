@@ -19,6 +19,7 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
 {
     use TargetPathTrait;
 
+    // Définition de la constante Login_Route
     public const LOGIN_ROUTE = 'app_login';
 
     public function __construct(private UrlGeneratorInterface $urlGenerator)
@@ -27,8 +28,10 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
 
     public function authenticate(Request $request): Passport
     {
+        // Récupération de l'email 
         $email = $request->request->get('email', '');
 
+        // Récupération du dernier username connecté 
         $request->getSession()->set(Security::LAST_USERNAME, $email);
 
         return new Passport(
@@ -46,7 +49,8 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse($this->urlGenerator->generate('user_home'));
+        // redirection vers l'accueil 
+        return new RedirectResponse($this->urlGenerator->generate('home'));
         throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 

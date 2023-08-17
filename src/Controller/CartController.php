@@ -29,6 +29,12 @@ class CartController extends AbstractController
   
     public function add($id) : RedirectResponse
     {
+        // On vérifie que l'utilisateur est bien connecté 
+        $user = $this->getUser();
+        if(!$user){
+            $this->addFlash('warning', "Vous devez être connectés pour ajouter au panier");
+            return $this->redirectToRoute('app_login');
+        }
         // Récupération de la fonction dans les services Cart 
         $this->cartservice->add($id);
 

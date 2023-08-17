@@ -163,7 +163,10 @@ class __TwigTemplate_c8c89ed4a57b3159ba7abe4578eabbff extends Template
         echo "      
     </div>
 </div>
-
+<a class=\"btn btn-perso my-5\" href=\"";
+        // line 34
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("review_show");
+        echo "\"> Voir nos avis clients </a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -185,7 +188,7 @@ class __TwigTemplate_c8c89ed4a57b3159ba7abe4578eabbff extends Template
 
     public function getDebugInfo()
     {
-        return array (  163 => 31,  153 => 27,  149 => 26,  144 => 24,  140 => 23,  136 => 22,  124 => 20,  121 => 19,  117 => 18,  108 => 12,  104 => 11,  100 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  168 => 34,  163 => 31,  153 => 27,  149 => 26,  144 => 24,  140 => 23,  136 => 22,  124 => 20,  121 => 19,  117 => 18,  108 => 12,  104 => 11,  100 => 10,  96 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -223,7 +226,7 @@ class __TwigTemplate_c8c89ed4a57b3159ba7abe4578eabbff extends Template
       
     </div>
 </div>
-
-{% endblock %}", "category/frontstages.html.twig", "C:\\wamp64\\www\\symfony\\2.2.0 projet-coaching\\templates\\category\\frontstages.html.twig");
+<a class=\"btn btn-perso my-5\" href=\"{{ path('review_show')}}\"> Voir nos avis clients </a>
+{% endblock %}", "category/frontstages.html.twig", "C:\\wamp64\\www\\symfony\\2.5.0 projet-coaching\\templates\\category\\frontstages.html.twig");
     }
 }

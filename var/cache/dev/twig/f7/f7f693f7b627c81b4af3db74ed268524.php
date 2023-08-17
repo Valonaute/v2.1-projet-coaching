@@ -207,7 +207,7 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
 <h3 class=\"text-perso\"> Voici votre historique de commande : </h3>
 
 <div class=\"container my-5\">
-    <table class=\"table border-bg\">
+    <table class=\"table\">
         <thead>
             <tr>
                 <th scope=\"col\">#</th>
@@ -375,7 +375,7 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
 <h3 class=\"text-perso\"> Voici votre historique de commande : </h3>
 
 <div class=\"container my-5\">
-    <table class=\"table border-bg\">
+    <table class=\"table\">
         <thead>
             <tr>
                 <th scope=\"col\">#</th>

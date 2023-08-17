@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Purchase;
+use App\Entity\Order;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -54,7 +54,7 @@ class CartConfirmationType extends AbstractType
     {
         $resolver->setDefaults([
             // Configure your form options here
-            'data_class' => Purchase::class
+            'data_class' => Order::class
         ]);
     }
 }
