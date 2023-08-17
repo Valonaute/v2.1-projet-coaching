@@ -234,7 +234,54 @@ class __TwigTemplate_9becadca917a34116e4bf81540ea513f extends Template
             <h2> A propos </h2>
             <p> Entrepreneur, coach et conseiller de particuliers et top performers, passionné des dernières avancées en neurosciences, EasyWebFactory bouscule depuis plus de dix mois le paysage du business coaching et du développement personnel.<p>Comptant une équipe de plus de 2 personnes, EasyWebFactory comptent pour clients ses parents, sa soeur, sa copine, des amis et des volontaires du métro parisien.</p><p> Ils accompagnent ces personnalités à améliorer leur performance ou la croissance de leur business mais aussi des dizaines de particuliers sur le plan du développement personnel et de la confiance en soi. </p><p>Fascinés par comment de petits changements peuvent radicalement transformer notre vie ou nos résultats, leur obsession réside dans le fait de partager des outils concrets de la manière la plus captivante et pédagogique possible.</p><p>Le tout validé, ou invalidé, par des recherches scientifiques que leur équipe de chercheurs mène. </p>
         </section>
+        <h3 ><a class=\"btn btn-perso my-5\" href=\"";
+        // line 71
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog");
+        echo "\"> Accéder au blog </a></h3>
+        <section id=\"temoignages\">
+            <h2 class=\"my-5\"> Nos meilleurs avis clients : </h2>
+            <div class=\"container-fluid\">
+                
+                    ";
+        // line 76
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["bestreviews"]) || array_key_exists("bestreviews", $context) ? $context["bestreviews"] : (function () { throw new RuntimeError('Variable "bestreviews" does not exist.', 76, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["review"]) {
+            // line 77
+            echo "                    <div class=\"row\">
+                        <h5 class=\"my-5\"> \"";
+            // line 78
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "title", [], "any", false, false, false, 78), "html", null, true);
+            echo "\" </h5>
+                        <p class=\"my-3\"> \"";
+            // line 79
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "comment", [], "any", false, false, false, 79), "html", null, true);
+            echo "\"</p>
+                        <h4 class=\"my-3\">";
+            // line 80
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "rating", [], "any", false, false, false, 80), "html", null, true);
+            echo "/10</h4>
+                        <p> Avis laissé le ";
+            // line 81
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "date", [], "any", false, false, false, 81), "d/m/Y"), "html", null, true);
+            echo " par <span class=\"bold\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "pseudo", [], "any", false, false, false, 81), "html", null, true);
+            echo "</span> </p>
+                    </div>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['review'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 84
+        echo "                
+            </div>
+        </section>
 
+        <a class=\"btn btn-perso my-5\" href=\"";
+        // line 88
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
+        echo "\">Nous Contacter</a>
 
 ";
         
@@ -257,7 +304,7 @@ class __TwigTemplate_9becadca917a34116e4bf81540ea513f extends Template
 
     public function getDebugInfo()
     {
-        return array (  230 => 65,  226 => 63,  216 => 59,  212 => 58,  207 => 56,  203 => 55,  199 => 54,  187 => 52,  184 => 51,  180 => 50,  171 => 44,  167 => 42,  157 => 38,  153 => 37,  149 => 36,  141 => 34,  138 => 33,  134 => 32,  124 => 25,  120 => 24,  114 => 21,  110 => 20,  106 => 19,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  283 => 88,  277 => 84,  266 => 81,  262 => 80,  258 => 79,  254 => 78,  251 => 77,  247 => 76,  239 => 71,  230 => 65,  226 => 63,  216 => 59,  212 => 58,  207 => 56,  203 => 55,  199 => 54,  187 => 52,  184 => 51,  180 => 50,  171 => 44,  167 => 42,  157 => 38,  153 => 37,  149 => 36,  141 => 34,  138 => 33,  134 => 32,  124 => 25,  120 => 24,  114 => 21,  110 => 20,  106 => 19,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -332,8 +379,25 @@ Accueil
             <h2> A propos </h2>
             <p> Entrepreneur, coach et conseiller de particuliers et top performers, passionné des dernières avancées en neurosciences, EasyWebFactory bouscule depuis plus de dix mois le paysage du business coaching et du développement personnel.<p>Comptant une équipe de plus de 2 personnes, EasyWebFactory comptent pour clients ses parents, sa soeur, sa copine, des amis et des volontaires du métro parisien.</p><p> Ils accompagnent ces personnalités à améliorer leur performance ou la croissance de leur business mais aussi des dizaines de particuliers sur le plan du développement personnel et de la confiance en soi. </p><p>Fascinés par comment de petits changements peuvent radicalement transformer notre vie ou nos résultats, leur obsession réside dans le fait de partager des outils concrets de la manière la plus captivante et pédagogique possible.</p><p>Le tout validé, ou invalidé, par des recherches scientifiques que leur équipe de chercheurs mène. </p>
         </section>
+        <h3 ><a class=\"btn btn-perso my-5\" href=\"{{ path ('blog')}}\"> Accéder au blog </a></h3>
+        <section id=\"temoignages\">
+            <h2 class=\"my-5\"> Nos meilleurs avis clients : </h2>
+            <div class=\"container-fluid\">
+                
+                    {% for review in bestreviews %}
+                    <div class=\"row\">
+                        <h5 class=\"my-5\"> \"{{ review.title }}\" </h5>
+                        <p class=\"my-3\"> \"{{ review.comment }}\"</p>
+                        <h4 class=\"my-3\">{{ review.rating }}/10</h4>
+                        <p> Avis laissé le {{ review.date | date ('d/m/Y') }} par <span class=\"bold\">{{ review.pseudo }}</span> </p>
+                    </div>
+                    {% endfor %}
+                
+            </div>
+        </section>
 
+        <a class=\"btn btn-perso my-5\" href=\"{{ path ('contact')}}\">Nous Contacter</a>
 
-{% endblock main %}", "public/home.html.twig", "C:\\wamp64\\www\\symfony\\2.4.0 projet-coaching\\templates\\public\\home.html.twig");
+{% endblock main %}", "public/home.html.twig", "C:\\wamp64\\www\\symfony\\2.6.0 projet-coaching\\templates\\public\\home.html.twig");
     }
 }

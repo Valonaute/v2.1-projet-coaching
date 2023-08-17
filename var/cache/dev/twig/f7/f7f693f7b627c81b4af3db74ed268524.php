@@ -140,15 +140,20 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
                 <td>Role  </td>
                 <td>";
         // line 44
-        if (twig_test_empty(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "user", [], "any", false, false, false, 44), "roles", [], "any", false, false, false, 44))) {
-            echo " Utilisateur ";
-        } else {
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
             echo " Administrateur ";
+        } else {
+            echo " Utilisateur ";
         }
         echo "</td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
-                </td>
+                    ";
+        // line 46
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            echo " <a class=\"btn btn-perso\" href=\"\">Modifier</a> ";
+        }
+        // line 47
+        echo "                </td>
             </tr>
             <tr>
                 <td>Adresse </td>
@@ -292,7 +297,7 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  269 => 103,  263 => 102,  255 => 99,  251 => 98,  247 => 97,  243 => 96,  239 => 95,  236 => 94,  233 => 93,  230 => 92,  225 => 91,  223 => 90,  191 => 67,  174 => 59,  157 => 51,  143 => 44,  133 => 37,  123 => 30,  113 => 23,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  274 => 103,  268 => 102,  260 => 99,  256 => 98,  252 => 97,  248 => 96,  244 => 95,  241 => 94,  238 => 93,  235 => 92,  230 => 91,  228 => 90,  196 => 67,  179 => 59,  162 => 51,  156 => 47,  152 => 46,  143 => 44,  133 => 37,  123 => 30,  113 => 23,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -340,9 +345,9 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
             </tr>
             <tr>
                 <td>Role  </td>
-                <td>{% if app.user.roles is empty %} Utilisateur {% else %} Administrateur {% endif %}</td>
+                <td>{% if is_granted('ROLE_ADMIN') %} Administrateur {% else %} Utilisateur {% endif %}</td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
+                    {% if is_granted('ROLE_ADMIN') %} <a class=\"btn btn-perso\" href=\"\">Modifier</a> {% endif %}
                 </td>
             </tr>
             <tr>
@@ -407,6 +412,6 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
 {% endblock content %}
 
 
-", "security/account.html.twig", "C:\\wamp64\\www\\symfony\\2.5.0 projet-coaching\\templates\\security\\account.html.twig");
+", "security/account.html.twig", "C:\\wamp64\\www\\symfony\\2.6.0 projet-coaching\\templates\\security\\account.html.twig");
     }
 }

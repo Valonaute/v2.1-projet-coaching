@@ -46,12 +46,10 @@ class __TwigTemplate_b27cd389129f832f36375492ef06214b extends Template
 
 <a style=\"background-color: #b78544;
 color: black;border-radius: 10px;
-font-weight: 600;\" href=\"";
+font-weight: 600; padding:1em;\" href=\"";
         // line 7
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_reset_password", ["token" => twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 7, $this->source); })()), "token", [], "any", false, false, false, 7)]), "html", null, true);
-        echo "\">";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_reset_password", ["token" => twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 7, $this->source); })()), "token", [], "any", false, false, false, 7)]), "html", null, true);
-        echo "</a>
+        echo "\">Changer le mot de passe</a>
 
 <p>Ce lien va expirer dans ";
         // line 9
@@ -80,7 +78,7 @@ font-weight: 600;\" href=\"";
 
     public function getDebugInfo()
     {
-        return array (  58 => 9,  51 => 7,  43 => 1,);
+        return array (  56 => 9,  51 => 7,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -91,7 +89,7 @@ font-weight: 600;\" href=\"";
 
 <a style=\"background-color: #b78544;
 color: black;border-radius: 10px;
-font-weight: 600;\" href=\"{{ url('app_reset_password', {token: resetToken.token}) }}\">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
+font-weight: 600; padding:1em;\" href=\"{{ url('app_reset_password', {token: resetToken.token}) }}\">Changer le mot de passe</a>
 
 <p>Ce lien va expirer dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
 

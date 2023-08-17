@@ -68,6 +68,23 @@ Accueil
             <h2> A propos </h2>
             <p> Entrepreneur, coach et conseiller de particuliers et top performers, passionné des dernières avancées en neurosciences, EasyWebFactory bouscule depuis plus de dix mois le paysage du business coaching et du développement personnel.<p>Comptant une équipe de plus de 2 personnes, EasyWebFactory comptent pour clients ses parents, sa soeur, sa copine, des amis et des volontaires du métro parisien.</p><p> Ils accompagnent ces personnalités à améliorer leur performance ou la croissance de leur business mais aussi des dizaines de particuliers sur le plan du développement personnel et de la confiance en soi. </p><p>Fascinés par comment de petits changements peuvent radicalement transformer notre vie ou nos résultats, leur obsession réside dans le fait de partager des outils concrets de la manière la plus captivante et pédagogique possible.</p><p>Le tout validé, ou invalidé, par des recherches scientifiques que leur équipe de chercheurs mène. </p>
         </section>
+        <h3 ><a class="btn btn-perso my-5" href="{{ path ('blog')}}"> Accéder au blog </a></h3>
+        <section id="temoignages">
+            <h2 class="my-5"> Nos meilleurs avis clients : </h2>
+            <div class="container-fluid">
+                
+                    {% for review in bestreviews %}
+                    <div class="row">
+                        <h5 class="my-5"> "{{ review.title }}" </h5>
+                        <p class="my-3"> "{{ review.comment }}"</p>
+                        <h4 class="my-3">{{ review.rating }}/10</h4>
+                        <p> Avis laissé le {{ review.date | date ('d/m/Y') }} par <span class="bold">{{ review.pseudo }}</span> </p>
+                    </div>
+                    {% endfor %}
+                
+            </div>
+        </section>
 
+        <a class="btn btn-perso my-5" href="{{ path ('contact')}}">Nous Contacter</a>
 
 {% endblock main %}

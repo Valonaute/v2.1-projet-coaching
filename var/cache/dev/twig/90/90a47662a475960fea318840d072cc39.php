@@ -90,7 +90,7 @@ class __TwigTemplate_a69a2d72324af4744518806761005006 extends Template
             <a href=\"";
         // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 13, $this->source); })()), 0, [], "any", false, false, false, 13), "id", [], "any", false, false, false, 13)]), "html", null, true);
-        echo "\" class=\"btn btn-perso\"><i class=\"fas fa-shopping-cart\"></i> Ajouter au panier</a>
+        echo "\" class=\"btn btn-perso my-5\"> Ajouter au panier</a>
         </div>
     </div>
 </div>
@@ -132,11 +132,11 @@ class __TwigTemplate_a69a2d72324af4744518806761005006 extends Template
             <h1>{{ product.0.title }}</h1>
             <p>Prix : {{ product.0.price }} €<p>
             <p>{{ product.0.description }}</p>
-            <a href=\"{{ path('cart_add', {id: product.0.id })}}\" class=\"btn btn-perso\"><i class=\"fas fa-shopping-cart\"></i> Ajouter au panier</a>
+            <a href=\"{{ path('cart_add', {id: product.0.id })}}\" class=\"btn btn-perso my-5\"> Ajouter au panier</a>
         </div>
     </div>
 </div>
 {% endblock %}
-", "product/showfront.html.twig", "C:\\wamp64\\www\\symfony\\2.1 projet-coaching\\templates\\product\\showfront.html.twig");
+", "product/showfront.html.twig", "C:\\wamp64\\www\\symfony\\2.6.0 projet-coaching\\templates\\product\\showfront.html.twig");
     }
 }

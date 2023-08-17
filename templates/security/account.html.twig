@@ -41,9 +41,9 @@
             </tr>
             <tr>
                 <td>Role  </td>
-                <td>{% if app.user.roles is empty %} Utilisateur {% else %} Administrateur {% endif %}</td>
+                <td>{% if is_granted('ROLE_ADMIN') %} Administrateur {% else %} Utilisateur {% endif %}</td>
                 <td>
-                    <a class="btn btn-perso" href="">Modifier</a>
+                    {% if is_granted('ROLE_ADMIN') %} <a class="btn btn-perso" href="">Modifier</a> {% endif %}
                 </td>
             </tr>
             <tr>
