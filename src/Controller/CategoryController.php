@@ -57,23 +57,30 @@ class CategoryController extends AbstractController
     {
         $category = $this->categoryRepository->find($id);
 
-        if(!$category){
+        if(!$category)
+        {
             return $this->redirectToRoute('show_category');
         }
 
+        // Création du formulaire 
         $form = $this->createForm(CategoryType::class,$category);
-
         $form->handleRequest($request);
 
-        if($form->isSubmitted()){
-
+        // Si le formulaire est valide : 
+        if($form->isSubmitted() && $form->isValid())
+        {
+            // Sauvegarde des changements 
             $this->categoryRepository->save($category, $flush = true);
+
+            // ajout message flash
             $this->addFlash('success','La catégorie a bien été ajouté');
 
+            // Redirection 
             return $this->redirectToRoute('show_category');
 
         }
 
+        // Afficher le formulaire 
         return $this->render('category/update.html.twig',[
             'form' => $form->createView()
         ]);

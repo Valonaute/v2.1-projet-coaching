@@ -14,5 +14,25 @@ class AdminSecurityController extends AbstractController
         return $this->render('admin/dashboard.html.twig', []);
     }
 
+    public function showOrders()
+    {
+
+    }
+
+    public function showUsers()
+    {
+
+    }
+
+    public function showReviews()
+    {
+
+    }
+
+    public function showStatistiques()
+    {
+        
+    }
+
 
 }

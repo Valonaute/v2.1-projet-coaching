@@ -98,6 +98,10 @@ dashboard:
     path: /admin/dashboard
     controller: App\Controller\AdminSecurityController::showDashboard
 
+delete_account:
+    path: /user/delete/account
+    controller: App\Controller\UserSecurityController::deleteAccount
+
 delete_article:
     path: /admin/article/delete/{id}
     controller: App\Controller\ArticleController::deleteArticle
@@ -225,6 +229,10 @@ stages:
 success_url:
     path: /success
     controller: App\Controller\TestStripeController::success
+
+update_account: 
+    path: /user/update/account
+    controller: App\Controller\UserSecurityController::updateAccount
 
 update_category:
     path: /admin/category/update/{id}

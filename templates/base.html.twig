@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="{{ asset ('assets/css/style.css') }}">
         {% endblock %}
         {% block javascripts %}
-        <script src="{{ asset ('assets/js/script.js') }}"></script>
+        <script src="{{ asset ('assets/js/script.js') }}" defer></script>
         {% endblock %}
     </head>
     <body>
@@ -39,8 +39,11 @@
                 <a class="btn btn-perso" href="{{ path ('dashboard')}}">Tableau de Bord</a>
                 {% endif %}
             </nav> 
+            <div id="progress-bar" class="progress-bar"></div>
         </header>
+        
         <main>
+        
         {% for label, messages in app.flashes %}
             {% for message in messages %}
                 <div class="alert alert-{{ label }}">

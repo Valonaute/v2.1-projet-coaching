@@ -83,10 +83,10 @@ class ProductController extends AbstractController
     {
         $product = $this->productRepository->find($id);
 
-        /* if(!$product)
+        if(!$product)
         {
             return $this->redirectToRoute('show_product');
-        } */
+        }
 
         $form = $this->createForm(ProductType::class, $product);
 
@@ -96,11 +96,12 @@ class ProductController extends AbstractController
         {
             $image = $form->get('image')->getData();
 
-            if($image) {
+            if($image) 
+            {
                 /* $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME); */
                 $finalImage = time() . '.' .$image->guessExtension();
     
-                 try {
+                try {
                     $image->move(
                         $this->getparameter('image_directory')
                         , $finalImage
@@ -117,18 +118,16 @@ class ProductController extends AbstractController
                     } catch (FileException $e) {
                         throw new ErrorException("un problème est survenue lors de l'upload de l'image");
                     }
+                $product->setImage($finalImage);
+                $this->productRepository->save($product, $flush =  true);
+
+                $this->addflash('success', 'Le produit a bien été uploadé');
+                return $this->redirectToRoute('show_product');
+            }
     
-                    $product->setImage($finalImage);
-                    $this->productRepository->save($product, $flush =  true);
-    
-                    $this->addflash('success', 'Le produit a bien été uploadé');
-                    return $this->redirectToRoute('show_product');
-    
-                 }
-    
-                    $this->productRepository->save($product, $flush = true);
-                    $this->addFlash('success', 'Le produit a bien été modifié');
-                    return $this->redirectToRoute('show_product');
+            $this->productRepository->save($product, $flush = true);
+            $this->addFlash('success', 'Le produit a bien été modifié');
+            return $this->redirectToRoute('show_product');
         }
 
         return $this->render('product/update.html.twig', [

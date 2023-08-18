@@ -2,15 +2,27 @@
 
 namespace App\Controller;
 
+use App\Form\UserUpdateType;
 use App\Repository\OrderRepository;
+use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class UserSecurityController extends AbstractController
 {
+    public $entityManager;
+    public $userRepository;
+
+    public function __construct(UserRepository $userRepository, EntityManagerInterface $entityManager)
+    {
+        $this->userRepository = $userRepository; 
+        $this->entityManager = $entityManager;
+    }
+
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         // Redirection si utilisateur déja connecter 
@@ -51,4 +63,45 @@ class UserSecurityController extends AbstractController
             'orders' => $orders
         ]);
     }
+
+    public function updateAccount(Request $request)
+    {
+        // Récupération de l'utilisateur existant 
+        $user = $this->getUser();
+
+        // Si utilisateur bien présent 
+        if(!$user)
+        {
+            // Redirection 
+            return $this->redirectToRoute('account');
+        }
+
+        // Création du formulaire adapté et déja rempli 
+        $form = $this->createForm(UserUpdateType::class, $user);
+        $form->handleRequest($request);
+
+        // Si le formulaire est valide 
+        if($form->isSubmitted() && $form->isValid())
+        {
+            // Sauvegarder les changements de l'utilisateur 
+            $this->userRepository->save($user, $flush = true);
+
+            // Ajout message Flash
+            $this->addFlash('success', 'Votre profil a bien été modifié');
+            
+            // Redirection sur la page du compte 
+            return $this->redirectToRoute('account');
+        }
+
+        // Afficher le formulaire 
+        return $this->render('security/update.html.twig', [
+            'form' => $form->createview()
+        ]);
+    }
+
+    public function deleteAccount()
+    {
+
+    }
+
 }

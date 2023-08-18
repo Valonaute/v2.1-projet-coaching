@@ -51,6 +51,7 @@ body {
     font-family: 'Lato', sans-serif;
     background-color: var(--background);
     color: var(--link);
+    margin-top: 5em;
 }
 footer section h2, footer section h3 {
     font-family: 'Horizon';
@@ -71,6 +72,11 @@ header {
     align-items: center;
     justify-content: center;
     margin: auto;
+    width: 100%;
+    position: fixed;
+    background-color: var(--background);
+    top: 0;
+    z-index: 10;
 }
 header img {
     max-width: 10vw;
@@ -290,6 +296,14 @@ ul {
     font-size: 2em;
     margin-bottom: 2vh;
     color: var(--text);
+}
+.progress-bar {
+    height: 0.5em;
+    width: 0%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #b78544;
 }
 .panier > a.on {
     font-weight: 1000;

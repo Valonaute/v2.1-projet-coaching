@@ -113,7 +113,10 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 23, $this->source); })()), "user", [], "any", false, false, false, 23), "firstname", [], "any", false, false, false, 23), "html", null, true);
         echo " </td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
+                    <a class=\"btn btn-perso\" href=\"";
+        // line 25
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("update_account");
+        echo "\">Modifier</a>
                 </td>
             </tr>
             <tr>
@@ -123,7 +126,10 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "user", [], "any", false, false, false, 30), "lastname", [], "any", false, false, false, 30), "html", null, true);
         echo " </td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
+                    <a class=\"btn btn-perso\" href=\"";
+        // line 32
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("update_account");
+        echo "\">Modifier</a>
                 </td>
             </tr>
             <tr>
@@ -133,7 +139,10 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 37, $this->source); })()), "user", [], "any", false, false, false, 37), "email", [], "any", false, false, false, 37), "html", null, true);
         echo " </td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
+                    <a class=\"btn btn-perso\" href=\"";
+        // line 39
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("update_account");
+        echo "\">Modifier</a>
                 </td>
             </tr>
             <tr>
@@ -168,7 +177,10 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
         }
         echo "</td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
+                    <a class=\"btn btn-perso\" href=\"";
+        // line 53
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("update_account");
+        echo "\">Modifier</a>
                     <a class=\"btn btn-outline-perso\" href=\"\">Supprimer</a>
                 </td>
             </tr>
@@ -185,7 +197,10 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
         }
         echo "</td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
+                    <a class=\"btn btn-perso\" href=\"";
+        // line 61
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("update_account");
+        echo "\">Modifier</a>
                     <a class=\"btn btn-outline-perso\" href=\"\">Supprimer</a>
                 </td>
             </tr>
@@ -202,7 +217,10 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
         }
         echo " </td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
+                    <a class=\"btn btn-perso\" href=\"";
+        // line 69
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("update_account");
+        echo "\">Modifier</a>
                     <a class=\"btn btn-outline-perso\" href=\"\">Supprimer</a>
                 </td>
             </tr>
@@ -275,7 +293,10 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
     </table>
 
 </div>
-<a class=\"btn btn-outline-perso my-5\" href=\"\">Supprimer votre compte</a>
+<a class=\"btn btn-outline-perso my-5\" href=\"";
+        // line 107
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_account");
+        echo "\">Supprimer votre compte</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -297,7 +318,7 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  274 => 103,  268 => 102,  260 => 99,  256 => 98,  252 => 97,  248 => 96,  244 => 95,  241 => 94,  238 => 93,  235 => 92,  230 => 91,  228 => 90,  196 => 67,  179 => 59,  162 => 51,  156 => 47,  152 => 46,  143 => 44,  133 => 37,  123 => 30,  113 => 23,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  298 => 107,  292 => 103,  286 => 102,  278 => 99,  274 => 98,  270 => 97,  266 => 96,  262 => 95,  259 => 94,  256 => 93,  253 => 92,  248 => 91,  246 => 90,  222 => 69,  211 => 67,  202 => 61,  191 => 59,  182 => 53,  171 => 51,  165 => 47,  161 => 46,  152 => 44,  144 => 39,  139 => 37,  131 => 32,  126 => 30,  118 => 25,  113 => 23,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -326,21 +347,21 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
                 <td>Prénom </td>
                 <td>{{ app.user.firstname }} </td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
+                    <a class=\"btn btn-perso\" href=\"{{ path ('update_account')}}\">Modifier</a>
                 </td>
             </tr>
             <tr>
                 <td>Nom </td>
                 <td>{{ app.user.lastname }} </td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
+                    <a class=\"btn btn-perso\" href=\"{{ path ('update_account')}}\">Modifier</a>
                 </td>
             </tr>
             <tr>
                 <td>Email </td>
                 <td>{{ app.user.email }} </td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
+                    <a class=\"btn btn-perso\" href=\"{{ path ('update_account')}}\">Modifier</a>
                 </td>
             </tr>
             <tr>
@@ -354,7 +375,7 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
                 <td>Adresse </td>
                 <td>{% if app.user.address is empty %} N/A {% else %} {{ app.user.address }} {% endif %}</td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
+                    <a class=\"btn btn-perso\" href=\"{{ path ('update_account')}}\">Modifier</a>
                     <a class=\"btn btn-outline-perso\" href=\"\">Supprimer</a>
                 </td>
             </tr>
@@ -362,7 +383,7 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
                 <td>Code postal  </td>
                 <td>{% if app.user.zipcode is empty %} N/A {% else %} {{ app.user.zipcode }} {% endif %}</td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
+                    <a class=\"btn btn-perso\" href=\"{{ path ('update_account')}}\">Modifier</a>
                     <a class=\"btn btn-outline-perso\" href=\"\">Supprimer</a>
                 </td>
             </tr>
@@ -370,7 +391,7 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
                 <td>Ville </td>
                 <td>{% if app.user.city is empty %} N/A {% else %} {{ app.user.city }} {% endif %} </td>
                 <td>
-                    <a class=\"btn btn-perso\" href=\"\">Modifier</a>
+                    <a class=\"btn btn-perso\" href=\"{{ path ('update_account')}}\">Modifier</a>
                     <a class=\"btn btn-outline-perso\" href=\"\">Supprimer</a>
                 </td>
             </tr>
@@ -408,7 +429,7 @@ class __TwigTemplate_d4701726f73c2599a5c60ded28117df3 extends Template
     </table>
 
 </div>
-<a class=\"btn btn-outline-perso my-5\" href=\"\">Supprimer votre compte</a>
+<a class=\"btn btn-outline-perso my-5\" href=\"{{ path ('delete_account')}}\">Supprimer votre compte</a>
 {% endblock content %}
 
 
