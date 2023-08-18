@@ -21,14 +21,13 @@ class RegisterController extends AbstractController
         $user->setRegistrationdate(new \DateTime);
         // Création du formulaire 
         $form = $this->createForm(UserType::class, $user);
-
         $form->handleRequest($request);
 
         // Si le formulaire est soumis et valid : 
         if($form->isSubmitted() && $form->isValid())
         {
             // encodage du mot de passe
-            $password_hashed = $encoder->hashPassword($user, $user->getPassword());
+            $password_hashed = $encoder->hashPassword($user, $form->get('plainPassword')->getData());
 
             // Insertion du mot de passe crypté
             $user->setPassword($password_hashed);

@@ -75,8 +75,7 @@ class ResetPasswordController extends AbstractController
     public function reset(Request $request, UserPasswordHasherInterface $passwordHasher, string $token = null): Response
     {
         if ($token) {
-            // We store the token in session and remove it from the URL, to avoid the URL being
-            // loaded in a browser and potentially leaking the token to 3rd party JavaScript.
+            // On stocke le token dans la session et on le supprime de l'URL, pour éviter une fuite du token par un tiers en javascript
             $this->storeTokenInSession($token);
 
             return $this->redirectToRoute('app_reset_password');
@@ -96,21 +95,21 @@ class ResetPasswordController extends AbstractController
 
             return $this->redirectToRoute('app_forgot_password_request');
         }
-        // The token is valid; allow the user to change their password.
+        // Le token est valide, l'utilisateur peut changer de mot de passe 
         $form = $this->createForm(ChangePasswordFormType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            // A password reset token should be used only once, remove it.
+            // Un token doit être utiliser une seule fois, suppression du token 
             $this->resetPasswordHelper->removeResetRequest($token);
 
-            // Encode(hash) the plain password, and set it.
+            // on hash le mot de passe et on le sauvegarde 
             $encodedPassword = $passwordHasher->hashPassword(
                 $user,
                 $form->get('plainPassword')->getData()
             );
             $user->setPassword($encodedPassword);
             $this->entityManager->flush();
-            // The session is cleaned up after the password has been changed.
+            // On clean la session après avoir changer le mot de passe 
             $this->cleanSessionAfterReset();
             return $this->redirectToRoute('app_login');
         }

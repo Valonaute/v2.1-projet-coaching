@@ -40,20 +40,18 @@ class __TwigTemplate_b27cd389129f832f36375492ef06214b extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "reset_password/email.html.twig"));
 
         // line 1
-        echo "<h1>Salut!</h1>
+        echo "<h1>Bonjour !</h1>
 
 <p>Pour changer votre mot de passe, veuillez cliquer sur ce lien : </p>
 
-<a style=\"background-color: #b78544;
-color: black;border-radius: 10px;
-font-weight: 600; padding:1em;\" href=\"";
-        // line 7
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_reset_password", ["token" => twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 7, $this->source); })()), "token", [], "any", false, false, false, 7)]), "html", null, true);
+<a style=\"background-color: #b78544; color: black;border-radius: 10px;font-weight: 600; padding:1em;margin: 2em;text-decoration:none;\" href=\"";
+        // line 5
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_reset_password", ["token" => twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 5, $this->source); })()), "token", [], "any", false, false, false, 5)]), "html", null, true);
         echo "\">Changer le mot de passe</a>
 
 <p>Ce lien va expirer dans ";
-        // line 9
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 9, $this->source); })()), "expirationMessageKey", [], "any", false, false, false, 9), twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 9, $this->source); })()), "expirationMessageData", [], "any", false, false, false, 9), "ResetPasswordBundle"), "html", null, true);
+        // line 7
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 7, $this->source); })()), "expirationMessageKey", [], "any", false, false, false, 7), twig_get_attribute($this->env, $this->source, (isset($context["resetToken"]) || array_key_exists("resetToken", $context) ? $context["resetToken"] : (function () { throw new RuntimeError('Variable "resetToken" does not exist.', 7, $this->source); })()), "expirationMessageData", [], "any", false, false, false, 7), "ResetPasswordBundle"), "html", null, true);
         echo ".</p>
 
 <p>A très vite sur notre site !</p>
@@ -78,18 +76,16 @@ font-weight: 600; padding:1em;\" href=\"";
 
     public function getDebugInfo()
     {
-        return array (  56 => 9,  51 => 7,  43 => 1,);
+        return array (  54 => 7,  49 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<h1>Salut!</h1>
+        return new Source("<h1>Bonjour !</h1>
 
 <p>Pour changer votre mot de passe, veuillez cliquer sur ce lien : </p>
 
-<a style=\"background-color: #b78544;
-color: black;border-radius: 10px;
-font-weight: 600; padding:1em;\" href=\"{{ url('app_reset_password', {token: resetToken.token}) }}\">Changer le mot de passe</a>
+<a style=\"background-color: #b78544; color: black;border-radius: 10px;font-weight: 600; padding:1em;margin: 2em;text-decoration:none;\" href=\"{{ url('app_reset_password', {token: resetToken.token}) }}\">Changer le mot de passe</a>
 
 <p>Ce lien va expirer dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
 
