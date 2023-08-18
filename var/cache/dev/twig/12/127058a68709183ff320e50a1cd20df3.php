@@ -133,10 +133,22 @@ class __TwigTemplate_576e8a9e7a8894280b130dbf2bcf9bb6 extends Template
 
 <section>
     <h4 class=\"my-4 text-color-perso\"> Consulter des données </h4>
-    <h4><a class=\"my-2 btn btn-outline-info\" href=\"\"> Commandes Clients</a></h4>
-    <h4><a class=\"my-2 btn btn-outline-dark\" href=\"\"> Liste des utilisateurs </a></h4>
-    <h4><a class=\"my-2 btn btn-outline-danger\" href=\"\"> Avis clients</a></h4>
-    <h4><a class=\"my-2 btn btn-outline-perso\" href=\"\"> Statistiques </a></h4>
+    <h4><a class=\"my-2 btn btn-outline-info\" href=\"";
+        // line 33
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard_orders");
+        echo "\"> Commandes Clients</a></h4>
+    <h4><a class=\"my-2 btn btn-outline-dark\" href=\"";
+        // line 34
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard_users");
+        echo "\"> Liste des utilisateurs </a></h4>
+    <h4><a class=\"my-2 btn btn-outline-danger\" href=\"";
+        // line 35
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard_reviews");
+        echo "\"> Avis clients</a></h4>
+    <h4><a class=\"my-2 btn btn-outline-perso\" href=\"";
+        // line 36
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard_stats");
+        echo "\"> Statistiques </a></h4>
 </section>
 
 <a class=\"my-5 btn btn-perso\" href=\"";
@@ -165,7 +177,7 @@ class __TwigTemplate_576e8a9e7a8894280b130dbf2bcf9bb6 extends Template
 
     public function getDebugInfo()
     {
-        return array (  144 => 39,  129 => 27,  125 => 26,  118 => 22,  114 => 21,  108 => 18,  104 => 17,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  156 => 39,  150 => 36,  146 => 35,  142 => 34,  138 => 33,  129 => 27,  125 => 26,  118 => 22,  114 => 21,  108 => 18,  104 => 17,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -202,14 +214,14 @@ Tableau de bord
 
 <section>
     <h4 class=\"my-4 text-color-perso\"> Consulter des données </h4>
-    <h4><a class=\"my-2 btn btn-outline-info\" href=\"\"> Commandes Clients</a></h4>
-    <h4><a class=\"my-2 btn btn-outline-dark\" href=\"\"> Liste des utilisateurs </a></h4>
-    <h4><a class=\"my-2 btn btn-outline-danger\" href=\"\"> Avis clients</a></h4>
-    <h4><a class=\"my-2 btn btn-outline-perso\" href=\"\"> Statistiques </a></h4>
+    <h4><a class=\"my-2 btn btn-outline-info\" href=\"{{ path ('dashboard_orders')}}\"> Commandes Clients</a></h4>
+    <h4><a class=\"my-2 btn btn-outline-dark\" href=\"{{ path ('dashboard_users')}}\"> Liste des utilisateurs </a></h4>
+    <h4><a class=\"my-2 btn btn-outline-danger\" href=\"{{ path ('dashboard_reviews')}}\"> Avis clients</a></h4>
+    <h4><a class=\"my-2 btn btn-outline-perso\" href=\"{{ path ('dashboard_stats')}}\"> Statistiques </a></h4>
 </section>
 
 <a class=\"my-5 btn btn-perso\" href=\"{{ path ('home')}}\"> Retour Accueil </a>
 
-{% endblock main %}", "admin/dashboard.html.twig", "C:\\wamp64\\www\\symfony\\2.2.0 projet-coaching\\templates\\admin\\dashboard.html.twig");
+{% endblock main %}", "admin/dashboard.html.twig", "C:\\wamp64\\www\\symfony\\2.6.0 projet-coaching\\templates\\admin\\dashboard.html.twig");
     }
 }

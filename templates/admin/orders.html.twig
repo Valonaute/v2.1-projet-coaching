@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Tableau de bord
+{% endblock title %}
+
+{% block main %}
+
+<p class="my-4"> Vous êtes bien connecté en tant qu'<span class="text-color-perso">administrateur</span> avec le mail : {{ app.user.userIdentifier }}</p>
+
+<h3>Que souhaitez vous faire ? </h3>
+
+<section>
+    <h4 class="my-4 text-color-perso"> Modifier le contenu du site </h4>
+
+    <div class="my-4">
+        <a class='btn btn-outline-success' href="{{ path ('create_category')}}"> Ajouter une catégorie</a>
+        <a class='btn btn-success' href="{{ path ('show_category')}}"> Voir les catégories</a>
+    </div>
+    <div class="my-4">
+        <a class='btn btn-outline-primary' href="{{ path ('create_product')}}"> Ajouter un produit</a>
+        <a class='btn btn-primary' href="{{ path ('show_product')}}"> Voir tous les produits</a>
+    </div>
+
+    <div class="my-4">
+        <a class='btn btn-outline-secondary' href="{{ path ('create_article')}}"> Ajouter un article du Blog</a>
+        <a class='btn btn-secondary' href="{{ path ('show_article')}}"> Voir les articles du blog</a>
+    </div>
+</section>
+
+<section>
+    <h4 class="my-4 text-color-perso"> Consulter des données </h4>
+    <h4><a class="my-2 btn btn-outline-info" href=""> Commandes Clients</a></h4>
+
+    <div class="container my-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ID commande</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Montant Total </th>
+                    <th scope="col">Statut</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set numorder = 0 %}
+                {% for order in orders %}
+                {% set numorder = numorder + 1 %}
+                    <tr>
+                        <th scope="row"> {{ numorder }} </th>
+                        <td> {{ order.id }} </td>
+                        <td> {{ order.dateorder | date('d/m/Y') }} </td>
+                        <td> {{ order.totalamount }} € </td>
+                        <td> {{ order.statut }} </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    </div>
+
+    <h4><a class="my-2 btn btn-outline-dark" href="{{ path ('dashboard_users')}}"> Liste des utilisateurs </a></h4>
+    <h4><a class="my-2 btn btn-outline-danger" href="{{ path ('dashboard_reviews')}}"> Avis clients</a></h4>
+    <h4><a class="my-2 btn btn-outline-perso" href="{{ path ('dashboard_stats')}}"> Statistiques </a></h4>
+</section>
+
+<a class="my-5 btn btn-perso" href="{{ path ('home')}}"> Retour Accueil </a>
+
+{% endblock main %}

@@ -98,6 +98,22 @@ dashboard:
     path: /admin/dashboard
     controller: App\Controller\AdminSecurityController::showDashboard
 
+dashboard_orders:
+    path: /admin/dashboard/orders
+    controller: App\Controller\AdminSecurityController::showOrders
+
+dashboard_users:
+    path: /admin/dashboard/users
+    controller: App\Controller\AdminSecurityController::showUsers
+
+dashboard_reviews:
+    path: /admin/dashboard/reviews
+    controller: App\Controller\AdminSecurityController::showReviews
+
+dashboard_stats:
+    path: /admin/dashboard/stats
+    controller: App\Controller\AdminSecurityController::showStats
+
 delete_account:
     path: /user/delete/account
     controller: App\Controller\UserSecurityController::deleteAccount
