@@ -5,8 +5,8 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev</parameter>
+    <parameter key="kernel.build_dir">C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev</parameter>
     <parameter key="kernel.logs_dir">C:\wamp64\www\symfony\2.6.0 projet-coaching\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -99,13 +99,15 @@
     <parameter key="debug.file_link_format">%env(default::SYMFONY_IDE)%</parameter>
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
+    <parameter key="translator.logging">false</parameter>
+    <parameter key="translator.default_path">C:\wamp64\www\symfony\2.6.0 projet-coaching/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-    <parameter key="router.cache_dir">C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev</parameter>
+    <parameter key="router.cache_dir">C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="cache.prefix.seed">_C:\wamp64\www\symfony\2.6.0 projet-coaching.App_KernelDevDebugContainer</parameter>
@@ -121,11 +123,11 @@
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
-    <parameter key="validator.mapping.cache.file">C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/profiler</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
       <parameter>@KarserRecaptcha3/Form/karser_recaptcha3_widget.html.twig</parameter>
@@ -196,7 +198,7 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -260,6 +262,10 @@
       <parameter key="data_collector.cache" type="collection">
         <parameter>cache</parameter>
         <parameter>@WebProfiler/Collector/cache.html.twig</parameter>
+      </parameter>
+      <parameter key="data_collector.translation" type="collection">
+        <parameter>translation</parameter>
+        <parameter>@WebProfiler/Collector/translation.html.twig</parameter>
       </parameter>
       <parameter key="data_collector.security" type="collection">
         <parameter>security</parameter>
@@ -594,7 +600,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/http_cache</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -604,7 +610,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -637,6 +643,7 @@
         <argument key="cache.asset_mapper" type="service" id="cache.asset_mapper" on-invalid="ignore_uninitialized"/>
         <argument key="cache.scheduler" type="service" id="cache.scheduler" on-invalid="ignore_uninitialized"/>
         <argument key="mailer.message_logger_listener" type="service" id="mailer.message_logger_listener" on-invalid="ignore_uninitialized"/>
+        <argument key="translation.locale_switcher" type="service" id="translation.locale_switcher" on-invalid="ignore_uninitialized"/>
         <argument key="debug.stopwatch" type="service" id="debug.stopwatch" on-invalid="ignore_uninitialized"/>
         <argument key="debug.event_dispatcher" type="service" id="debug.event_dispatcher" on-invalid="ignore_uninitialized"/>
         <argument key="session_listener" type="service" id="session_listener" on-invalid="ignore_uninitialized"/>
@@ -677,6 +684,9 @@
           <argument>reset</argument>
         </argument>
         <argument key="mailer.message_logger_listener" type="collection">
+          <argument>reset</argument>
+        </argument>
+        <argument key="translation.locale_switcher" type="collection">
           <argument>reset</argument>
         </argument>
         <argument key="debug.stopwatch" type="collection">
@@ -731,6 +741,8 @@
       <tag name="container.hot_path"/>
       <argument type="iterator">
         <argument type="service" id="slugger"/>
+        <argument type="service" id="translator.default"/>
+        <argument type="service" id="translation.locale_switcher"/>
       </argument>
       <argument type="service" id="request_stack"/>
     </service>
@@ -1070,6 +1082,57 @@
         <argument>Help debug routes by simulating a path info match</argument>
       </call>
     </service>
+    <service id="console.command.translation_debug" class="Symfony\Bundle\FrameworkBundle\Command\TranslationDebugCommand">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="translator.data_collector"/>
+      <argument type="service" id="translation.reader"/>
+      <argument type="service" id="translation.extractor"/>
+      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching/translations</argument>
+      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching/templates</argument>
+      <argument type="collection">
+        <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations</argument>
+        <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations</argument>
+        <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations</argument>
+      </argument>
+      <argument type="collection">
+        <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+      </argument>
+      <argument type="collection"/>
+      <call method="setName">
+        <argument>debug:translation</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Display translation messages information</argument>
+      </call>
+    </service>
+    <service id="console.command.translation_extract" class="Symfony\Bundle\FrameworkBundle\Command\TranslationUpdateCommand">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="translation.writer"/>
+      <argument type="service" id="translation.reader"/>
+      <argument type="service" id="translation.extractor"/>
+      <argument>en</argument>
+      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching/translations</argument>
+      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching/templates</argument>
+      <argument type="collection">
+        <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations</argument>
+        <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations</argument>
+        <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations</argument>
+      </argument>
+      <argument type="collection">
+        <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+      </argument>
+      <argument type="collection"/>
+      <call method="setName">
+        <argument>translation:extract</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Extract missing translations keys from code to translation files.</argument>
+      </call>
+    </service>
     <service id="console.command.validator_debug" class="Symfony\Component\Validator\Command\DebugCommand">
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
@@ -1079,6 +1142,46 @@
       </call>
       <call method="setDescription">
         <argument>Display validation constraints for classes</argument>
+      </call>
+    </service>
+    <service id="console.command.translation_pull" class="Symfony\Component\Translation\Command\TranslationPullCommand">
+      <tag name="console.command" command="translation:pull"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="translation.provider_collection"/>
+      <argument type="service" id="translation.writer"/>
+      <argument type="service" id="translation.reader"/>
+      <argument>en</argument>
+      <argument type="collection"/>
+      <argument type="collection"/>
+      <call method="setName">
+        <argument>translation:pull</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Pull translations from a given provider.</argument>
+      </call>
+    </service>
+    <service id="console.command.translation_push" class="Symfony\Component\Translation\Command\TranslationPushCommand">
+      <tag name="console.command" command="translation:push"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="translation.provider_collection"/>
+      <argument type="service" id="translation.reader"/>
+      <argument type="collection"/>
+      <argument type="collection"/>
+      <call method="setName">
+        <argument>translation:push</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Push translations to a given provider.</argument>
+      </call>
+    </service>
+    <service id="console.command.xliff_lint" class="Symfony\Component\Translation\Command\XliffLintCommand">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <call method="setName">
+        <argument>lint:xliff</argument>
+      </call>
+      <call method="setDescription">
+        <argument>Lint an XLIFF file and outputs encountered errors</argument>
       </call>
     </service>
     <service id="console.command.yaml_lint" class="Symfony\Bundle\FrameworkBundle\Command\YamlLintCommand">
@@ -1126,6 +1229,7 @@
         <argument>Symfony\Component\Form\Extension\Validator\Type\FormTypeValidatorExtension</argument>
         <argument>Symfony\Component\Form\Extension\Validator\Type\RepeatedTypeValidatorExtension</argument>
         <argument>Symfony\Component\Form\Extension\Validator\Type\SubmitTypeValidatorExtension</argument>
+        <argument>Symfony\Component\Form\Extension\Validator\Type\UploadValidatorExtension</argument>
         <argument>Symfony\Component\Form\Extension\Csrf\Type\FormTypeCsrfExtension</argument>
         <argument>Symfony\Component\Form\Extension\DataCollector\Type\DataCollectorTypeExtension</argument>
         <argument>Symfony\Component\Form\Extension\PasswordHasher\Type\FormTypePasswordHasherExtension</argument>
@@ -1265,7 +1369,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1284,7 +1388,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/pools/app</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1405,6 +1509,7 @@
         <argument key="cache.security_is_granted_attribute_expression_language" type="service" id="cache.security_is_granted_attribute_expression_language" on-invalid="ignore_uninitialized"/>
       </argument>
     </service>
+    <service id="identity_translator" class="Symfony\Component\Translation\IdentityTranslator"/>
     <service id="assets.packages" class="Symfony\Component\Asset\Packages">
       <argument type="service" id="assets._default_package"/>
       <argument type="tagged_iterator" tag="assets.package" index-by="package" default-index-method="getDefaultPackageName" default-priority-method="getDefaultPackagePriority"/>
@@ -1524,6 +1629,697 @@
       <argument type="service" id="debug.event_dispatcher"/>
       <argument>null</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
+    </service>
+    <service id="translator.default" class="Symfony\Bundle\FrameworkBundle\Translation\Translator">
+      <tag name="kernel.locale_aware"/>
+      <argument type="service" id=".service_locator.yY.p4P7"/>
+      <argument type="service" id="translator.formatter.default"/>
+      <argument>en</argument>
+      <argument type="collection">
+        <argument key="translation.loader.php" type="collection">
+          <argument>php</argument>
+        </argument>
+        <argument key="translation.loader.yml" type="collection">
+          <argument>yaml</argument>
+          <argument>yml</argument>
+        </argument>
+        <argument key="translation.loader.xliff" type="collection">
+          <argument>xlf</argument>
+          <argument>xliff</argument>
+        </argument>
+        <argument key="translation.loader.po" type="collection">
+          <argument>po</argument>
+        </argument>
+        <argument key="translation.loader.mo" type="collection">
+          <argument>mo</argument>
+        </argument>
+        <argument key="translation.loader.qt" type="collection">
+          <argument>ts</argument>
+        </argument>
+        <argument key="translation.loader.csv" type="collection">
+          <argument>csv</argument>
+        </argument>
+        <argument key="translation.loader.res" type="collection">
+          <argument>res</argument>
+        </argument>
+        <argument key="translation.loader.dat" type="collection">
+          <argument>dat</argument>
+        </argument>
+        <argument key="translation.loader.ini" type="collection">
+          <argument>ini</argument>
+        </argument>
+        <argument key="translation.loader.json" type="collection">
+          <argument>json</argument>
+        </argument>
+      </argument>
+      <argument type="collection">
+        <argument key="cache_dir">C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/translations</argument>
+        <argument key="debug">true</argument>
+        <argument key="resource_files" type="collection">
+          <argument key="af" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.af.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.af.xlf</argument>
+          </argument>
+          <argument key="ar" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ar.xlf</argument>
+          </argument>
+          <argument key="az" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
+          </argument>
+          <argument key="be" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.be.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
+          </argument>
+          <argument key="bg" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
+          </argument>
+          <argument key="bs" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.bs.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.bs.xlf</argument>
+          </argument>
+          <argument key="ca" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ca.xlf</argument>
+          </argument>
+          <argument key="cs" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.cs.xlf</argument>
+          </argument>
+          <argument key="cy" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
+          </argument>
+          <argument key="da" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+          </argument>
+          <argument key="de" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.de.xlf</argument>
+          </argument>
+          <argument key="el" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
+          </argument>
+          <argument key="en" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.en.xlf</argument>
+          </argument>
+          <argument key="es" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.es.xlf</argument>
+          </argument>
+          <argument key="et" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.et.xlf</argument>
+          </argument>
+          <argument key="eu" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+          </argument>
+          <argument key="fa" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+          </argument>
+          <argument key="fi" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fi.xlf</argument>
+          </argument>
+          <argument key="fr" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fr.xlf</argument>
+          </argument>
+          <argument key="gl" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
+          </argument>
+          <argument key="he" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
+          </argument>
+          <argument key="hr" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+          </argument>
+          <argument key="hu" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.hu.xlf</argument>
+          </argument>
+          <argument key="hy" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.hy.xlf</argument>
+          </argument>
+          <argument key="id" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
+          </argument>
+          <argument key="it" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.it.xlf</argument>
+          </argument>
+          <argument key="ja" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ja.xlf</argument>
+          </argument>
+          <argument key="lb" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
+          </argument>
+          <argument key="lt" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+          </argument>
+          <argument key="lv" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
+          </argument>
+          <argument key="mn" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.mn.xlf</argument>
+          </argument>
+          <argument key="my" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.my.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.my.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.my.xlf</argument>
+          </argument>
+          <argument key="nb" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
+          </argument>
+          <argument key="nl" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle+intl-icu.nl.xlf</argument>
+          </argument>
+          <argument key="nn" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
+          </argument>
+          <argument key="no" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+          </argument>
+          <argument key="pl" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pl.xlf</argument>
+          </argument>
+          <argument key="pt" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pt.xlf</argument>
+          </argument>
+          <argument key="pt_BR" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+          </argument>
+          <argument key="ro" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
+          </argument>
+          <argument key="ru" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ru.xlf</argument>
+          </argument>
+          <argument key="sk" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.sk.xlf</argument>
+          </argument>
+          <argument key="sl" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
+          </argument>
+          <argument key="sq" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.sq.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.sq.xlf</argument>
+          </argument>
+          <argument key="sr_Cyrl" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
+          </argument>
+          <argument key="sr_Latn" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
+          </argument>
+          <argument key="sv" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+          </argument>
+          <argument key="th" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
+          </argument>
+          <argument key="tl" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
+          </argument>
+          <argument key="tr" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.tr.xlf</argument>
+          </argument>
+          <argument key="uk" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.uk.xlf</argument>
+          </argument>
+          <argument key="ur" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.ur.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.ur.xlf</argument>
+          </argument>
+          <argument key="uz" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.uz.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.uz.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.uz.xlf</argument>
+          </argument>
+          <argument key="vi" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
+          </argument>
+          <argument key="zh_CN" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
+          </argument>
+          <argument key="zh_TW" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations\validators.zh_TW.xlf</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
+          </argument>
+          <argument key="sr" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.sr.xlf</argument>
+          </argument>
+        </argument>
+        <argument key="scanned_directories" type="collection">
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations</argument>
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations</argument>
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations</argument>
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching/translations</argument>
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\framework-bundle/translations</argument>
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\twig-bundle/translations</argument>
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\twig\extra-bundle/translations</argument>
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\doctrine\doctrine-bundle/translations</argument>
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\web-profiler-bundle/translations</argument>
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\maker-bundle\src/translations</argument>
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-bundle/translations</argument>
+          <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\karser\karser-recaptcha3-bundle/translations</argument>
+        </argument>
+        <argument key="cache_vary" type="collection">
+          <argument key="scanned_directories" type="collection">
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\validator/Resources/translations</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\form/Resources/translations</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-core/Resources/translations</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
+            <argument>translations</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\framework-bundle/translations</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\twig-bundle/translations</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\twig\extra-bundle/translations</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\doctrine\doctrine-bundle/translations</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\web-profiler-bundle/translations</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\maker-bundle\src/translations</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\symfony\security-bundle/translations</argument>
+            <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\vendor\karser\karser-recaptcha3-bundle/translations</argument>
+          </argument>
+        </argument>
+      </argument>
+      <argument type="collection"/>
+      <call method="setConfigCacheFactory">
+        <argument type="service" id="config_cache_factory"/>
+      </call>
+      <call method="setFallbackLocales">
+        <argument type="collection">
+          <argument>en</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="translator.logging" class="Symfony\Component\Translation\LoggingTranslator">
+      <tag name="monolog.logger" channel="translation"/>
+      <argument type="service" id="translator.logging.inner"/>
+      <argument type="service" id="logger"/>
+    </service>
+    <service id="translator.formatter.default" class="Symfony\Component\Translation\Formatter\MessageFormatter">
+      <argument type="service" id="identity_translator"/>
+    </service>
+    <service id="translation.loader.php" class="Symfony\Component\Translation\Loader\PhpFileLoader">
+      <tag name="translation.loader" alias="php"/>
+    </service>
+    <service id="translation.loader.yml" class="Symfony\Component\Translation\Loader\YamlFileLoader">
+      <tag name="translation.loader" alias="yaml" legacy-alias="yml"/>
+    </service>
+    <service id="translation.loader.xliff" class="Symfony\Component\Translation\Loader\XliffFileLoader">
+      <tag name="translation.loader" alias="xlf" legacy-alias="xliff"/>
+    </service>
+    <service id="translation.loader.po" class="Symfony\Component\Translation\Loader\PoFileLoader">
+      <tag name="translation.loader" alias="po"/>
+    </service>
+    <service id="translation.loader.mo" class="Symfony\Component\Translation\Loader\MoFileLoader">
+      <tag name="translation.loader" alias="mo"/>
+    </service>
+    <service id="translation.loader.qt" class="Symfony\Component\Translation\Loader\QtFileLoader">
+      <tag name="translation.loader" alias="ts"/>
+    </service>
+    <service id="translation.loader.csv" class="Symfony\Component\Translation\Loader\CsvFileLoader">
+      <tag name="translation.loader" alias="csv"/>
+    </service>
+    <service id="translation.loader.res" class="Symfony\Component\Translation\Loader\IcuResFileLoader">
+      <tag name="translation.loader" alias="res"/>
+    </service>
+    <service id="translation.loader.dat" class="Symfony\Component\Translation\Loader\IcuDatFileLoader">
+      <tag name="translation.loader" alias="dat"/>
+    </service>
+    <service id="translation.loader.ini" class="Symfony\Component\Translation\Loader\IniFileLoader">
+      <tag name="translation.loader" alias="ini"/>
+    </service>
+    <service id="translation.loader.json" class="Symfony\Component\Translation\Loader\JsonFileLoader">
+      <tag name="translation.loader" alias="json"/>
+    </service>
+    <service id="translation.dumper.php" class="Symfony\Component\Translation\Dumper\PhpFileDumper">
+      <tag name="translation.dumper" alias="php"/>
+    </service>
+    <service id="translation.dumper.xliff" class="Symfony\Component\Translation\Dumper\XliffFileDumper">
+      <tag name="translation.dumper" alias="xlf"/>
+    </service>
+    <service id="translation.dumper.xliff.xliff" class="Symfony\Component\Translation\Dumper\XliffFileDumper">
+      <tag name="translation.dumper" alias="xliff"/>
+      <argument>xliff</argument>
+    </service>
+    <service id="translation.dumper.po" class="Symfony\Component\Translation\Dumper\PoFileDumper">
+      <tag name="translation.dumper" alias="po"/>
+    </service>
+    <service id="translation.dumper.mo" class="Symfony\Component\Translation\Dumper\MoFileDumper">
+      <tag name="translation.dumper" alias="mo"/>
+    </service>
+    <service id="translation.dumper.yml" class="Symfony\Component\Translation\Dumper\YamlFileDumper">
+      <tag name="translation.dumper" alias="yml"/>
+    </service>
+    <service id="translation.dumper.yaml" class="Symfony\Component\Translation\Dumper\YamlFileDumper">
+      <tag name="translation.dumper" alias="yaml"/>
+      <argument>yaml</argument>
+    </service>
+    <service id="translation.dumper.qt" class="Symfony\Component\Translation\Dumper\QtFileDumper">
+      <tag name="translation.dumper" alias="ts"/>
+    </service>
+    <service id="translation.dumper.csv" class="Symfony\Component\Translation\Dumper\CsvFileDumper">
+      <tag name="translation.dumper" alias="csv"/>
+    </service>
+    <service id="translation.dumper.ini" class="Symfony\Component\Translation\Dumper\IniFileDumper">
+      <tag name="translation.dumper" alias="ini"/>
+    </service>
+    <service id="translation.dumper.json" class="Symfony\Component\Translation\Dumper\JsonFileDumper">
+      <tag name="translation.dumper" alias="json"/>
+    </service>
+    <service id="translation.dumper.res" class="Symfony\Component\Translation\Dumper\IcuResFileDumper">
+      <tag name="translation.dumper" alias="res"/>
+    </service>
+    <service id="translation.extractor.php_ast" class="Symfony\Component\Translation\Extractor\PhpAstExtractor">
+      <tag name="translation.extractor" alias="php"/>
+      <argument type="tagged_iterator" tag="translation.extractor.visitor"/>
+    </service>
+    <service id="translation.extractor.visitor.trans_method" class="Symfony\Component\Translation\Extractor\Visitor\TransMethodVisitor">
+      <tag name="translation.extractor.visitor"/>
+    </service>
+    <service id="translation.extractor.visitor.translatable_message" class="Symfony\Component\Translation\Extractor\Visitor\TranslatableMessageVisitor">
+      <tag name="translation.extractor.visitor"/>
+    </service>
+    <service id="translation.extractor.visitor.constraint" class="Symfony\Component\Translation\Extractor\Visitor\ConstraintVisitor">
+      <tag name="translation.extractor.visitor"/>
+      <argument type="collection">
+        <argument>All</argument>
+        <argument>AtLeastOneOf</argument>
+        <argument>Bic</argument>
+        <argument>Blank</argument>
+        <argument>Callback</argument>
+        <argument>CardScheme</argument>
+        <argument>Choice</argument>
+        <argument>Cidr</argument>
+        <argument>Collection</argument>
+        <argument>Compound</argument>
+        <argument>Count</argument>
+        <argument>Country</argument>
+        <argument>CssColor</argument>
+        <argument>Currency</argument>
+        <argument>DateTime</argument>
+        <argument>Date</argument>
+        <argument>DivisibleBy</argument>
+        <argument>Email</argument>
+        <argument>EqualTo</argument>
+        <argument>ExpressionSyntax</argument>
+        <argument>Expression</argument>
+        <argument>File</argument>
+        <argument>GreaterThanOrEqual</argument>
+        <argument>GreaterThan</argument>
+        <argument>Hostname</argument>
+        <argument>Iban</argument>
+        <argument>IdenticalTo</argument>
+        <argument>Image</argument>
+        <argument>Ip</argument>
+        <argument>IsFalse</argument>
+        <argument>IsNull</argument>
+        <argument>IsTrue</argument>
+        <argument>Isbn</argument>
+        <argument>Isin</argument>
+        <argument>Issn</argument>
+        <argument>Json</argument>
+        <argument>Language</argument>
+        <argument>Length</argument>
+        <argument>LessThanOrEqual</argument>
+        <argument>LessThan</argument>
+        <argument>Locale</argument>
+        <argument>Luhn</argument>
+        <argument>NoSuspiciousCharacters</argument>
+        <argument>NotBlank</argument>
+        <argument>NotCompromisedPassword</argument>
+        <argument>NotEqualTo</argument>
+        <argument>NotIdenticalTo</argument>
+        <argument>NotNull</argument>
+        <argument>PasswordStrength</argument>
+        <argument>Range</argument>
+        <argument>Regex</argument>
+        <argument>Sequentially</argument>
+        <argument>Time</argument>
+        <argument>Timezone</argument>
+        <argument>Type</argument>
+        <argument>Ulid</argument>
+        <argument>Unique</argument>
+        <argument>Url</argument>
+        <argument>Uuid</argument>
+        <argument>Valid</argument>
+        <argument>When</argument>
+        <argument>Expression</argument>
+        <argument>Email</argument>
+        <argument>NotCompromisedPassword</argument>
+        <argument>When</argument>
+        <argument>NoSuspiciousCharacters</argument>
+        <argument>UniqueEntity</argument>
+        <argument>UserPassword</argument>
+        <argument>Recaptcha3</argument>
+      </argument>
+    </service>
+    <service id="translation.reader" class="Symfony\Component\Translation\Reader\TranslationReader">
+      <call method="addLoader">
+        <argument>php</argument>
+        <argument type="service" id="translation.loader.php"/>
+      </call>
+      <call method="addLoader">
+        <argument>yaml</argument>
+        <argument type="service" id="translation.loader.yml"/>
+      </call>
+      <call method="addLoader">
+        <argument>yml</argument>
+        <argument type="service" id="translation.loader.yml"/>
+      </call>
+      <call method="addLoader">
+        <argument>xlf</argument>
+        <argument type="service" id="translation.loader.xliff"/>
+      </call>
+      <call method="addLoader">
+        <argument>xliff</argument>
+        <argument type="service" id="translation.loader.xliff"/>
+      </call>
+      <call method="addLoader">
+        <argument>po</argument>
+        <argument type="service" id="translation.loader.po"/>
+      </call>
+      <call method="addLoader">
+        <argument>mo</argument>
+        <argument type="service" id="translation.loader.mo"/>
+      </call>
+      <call method="addLoader">
+        <argument>ts</argument>
+        <argument type="service" id="translation.loader.qt"/>
+      </call>
+      <call method="addLoader">
+        <argument>csv</argument>
+        <argument type="service" id="translation.loader.csv"/>
+      </call>
+      <call method="addLoader">
+        <argument>res</argument>
+        <argument type="service" id="translation.loader.res"/>
+      </call>
+      <call method="addLoader">
+        <argument>dat</argument>
+        <argument type="service" id="translation.loader.dat"/>
+      </call>
+      <call method="addLoader">
+        <argument>ini</argument>
+        <argument type="service" id="translation.loader.ini"/>
+      </call>
+      <call method="addLoader">
+        <argument>json</argument>
+        <argument type="service" id="translation.loader.json"/>
+      </call>
+    </service>
+    <service id="translation.extractor" class="Symfony\Component\Translation\Extractor\ChainExtractor">
+      <call method="addExtractor">
+        <argument>php</argument>
+        <argument type="service" id="translation.extractor.php_ast"/>
+      </call>
+      <call method="addExtractor">
+        <argument>twig</argument>
+        <argument type="service" id="twig.translation.extractor"/>
+      </call>
+    </service>
+    <service id="translation.writer" class="Symfony\Component\Translation\Writer\TranslationWriter">
+      <call method="addDumper">
+        <argument>php</argument>
+        <argument type="service" id="translation.dumper.php"/>
+      </call>
+      <call method="addDumper">
+        <argument>xlf</argument>
+        <argument type="service" id="translation.dumper.xliff"/>
+      </call>
+      <call method="addDumper">
+        <argument>xliff</argument>
+        <argument type="service" id="translation.dumper.xliff.xliff"/>
+      </call>
+      <call method="addDumper">
+        <argument>po</argument>
+        <argument type="service" id="translation.dumper.po"/>
+      </call>
+      <call method="addDumper">
+        <argument>mo</argument>
+        <argument type="service" id="translation.dumper.mo"/>
+      </call>
+      <call method="addDumper">
+        <argument>yml</argument>
+        <argument type="service" id="translation.dumper.yml"/>
+      </call>
+      <call method="addDumper">
+        <argument>yaml</argument>
+        <argument type="service" id="translation.dumper.yaml"/>
+      </call>
+      <call method="addDumper">
+        <argument>ts</argument>
+        <argument type="service" id="translation.dumper.qt"/>
+      </call>
+      <call method="addDumper">
+        <argument>csv</argument>
+        <argument type="service" id="translation.dumper.csv"/>
+      </call>
+      <call method="addDumper">
+        <argument>ini</argument>
+        <argument type="service" id="translation.dumper.ini"/>
+      </call>
+      <call method="addDumper">
+        <argument>json</argument>
+        <argument type="service" id="translation.dumper.json"/>
+      </call>
+      <call method="addDumper">
+        <argument>res</argument>
+        <argument type="service" id="translation.dumper.res"/>
+      </call>
+    </service>
+    <service id="translation.warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TranslationsCacheWarmer">
+      <tag name="container.service_subscriber" id="translator"/>
+      <tag name="kernel.cache_warmer"/>
+      <argument type="service" id=".service_locator.fuYM_Z..translation.warmer"/>
+    </service>
+    <service id="translation.locale_switcher" class="Symfony\Component\Translation\LocaleSwitcher">
+      <tag name="kernel.reset" method="reset"/>
+      <tag name="kernel.locale_aware"/>
+      <argument>en</argument>
+      <argument type="tagged_iterator" tag="kernel.locale_aware" exclude="translation.locale_switcher"/>
+      <argument type="service" id="router.request_context" on-invalid="ignore"/>
+    </service>
+    <service id="translation.provider_collection" class="Symfony\Component\Translation\Provider\TranslationProviderCollection">
+      <argument type="collection"/>
+      <factory service="translation.provider_collection_factory" method="fromConfig"/>
+    </service>
+    <service id="translation.provider_collection_factory" class="Symfony\Component\Translation\Provider\TranslationProviderCollectionFactory">
+      <argument type="tagged_iterator" tag="translation.provider_factory"/>
+      <argument type="collection"/>
+    </service>
+    <service id="translation.provider_factory.null" class="Symfony\Component\Translation\Provider\NullProviderFactory">
+      <tag name="translation.provider_factory"/>
     </service>
     <service id="debug.error_handler_configurator" class="Symfony\Component\HttpKernel\Debug\ErrorHandlerConfigurator" public="true">
       <tag name="monolog.logger" channel="php"/>
@@ -2030,7 +2826,7 @@
     </service>
     <service id="routing.loader.annotation" class="Symfony\Bundle\FrameworkBundle\Routing\AnnotatedRouteControllerLoader">
       <tag name="routing.loader" priority="-10"/>
-      <argument>null</argument>
+      <argument type="service" id="annotations.cached_reader" on-invalid="null"/>
       <argument>dev</argument>
     </service>
     <service id="routing.loader.annotation.directory" class="Symfony\Component\Routing\Loader\AnnotationDirectoryLoader">
@@ -2060,7 +2856,7 @@
       <argument type="service" id=".service_locator.PvoQzFT.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev</argument>
+        <argument key="cache_dir">C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -2127,6 +2923,38 @@
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\TemplateController" class="Symfony\Bundle\FrameworkBundle\Controller\TemplateController" public="true">
       <argument type="service" id="twig" on-invalid="ignore"/>
+    </service>
+    <service id="annotations.reader" class="Doctrine\Common\Annotations\AnnotationReader">
+      <call method="addGlobalIgnoredName">
+        <argument>required</argument>
+      </call>
+    </service>
+    <service id="annotations.cached_reader" class="Doctrine\Common\Annotations\PsrCachedReader">
+      <tag name="annotations.cached_reader"/>
+      <tag name="container.do_not_inline"/>
+      <argument type="service" id="annotations.reader"/>
+      <argument type="service">
+        <service class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
+      </argument>
+      <argument>true</argument>
+      <argument type="service_closure" id="annotations.cache_adapter"/>
+    </service>
+    <service id="annotations.filesystem_cache_adapter" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
+      <argument></argument>
+      <argument>0</argument>
+      <argument type="abstract">Cache-Directory</argument>
+    </service>
+    <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
+      <tag name="kernel.cache_warmer"/>
+      <argument type="service" id="annotations.reader"/>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/annotations.php</argument>
+      <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
+      <argument>true</argument>
+    </service>
+    <service id="annotations.cache_adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
+      <tag name="container.hot_path"/>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/annotations.php</argument>
+      <argument type="service" id="cache.annotations"/>
     </service>
     <service id="property_accessor" class="Symfony\Component\PropertyAccess\PropertyAccessor">
       <argument>3</argument>
@@ -2217,7 +3045,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/sessions</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -2291,6 +3119,7 @@
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
           <argument type="service" id="form.type_extension.form.http_foundation"/>
           <argument type="service" id="form.type_extension.form.validator"/>
+          <argument type="service" id="form.type_extension.upload.validator"/>
           <argument type="service" id="form.type_extension.csrf"/>
           <argument type="service" id="form.type_extension.form.data_collector"/>
           <argument type="service" id="form.type_extension.form.password_hasher"/>
@@ -2330,19 +3159,19 @@
     <service id="form.type.choice" class="Symfony\Component\Form\Extension\Core\Type\ChoiceType">
       <tag name="form.type"/>
       <argument type="service" id="form.choice_list_factory.cached"/>
-      <argument>null</argument>
+      <argument type="service" id="translator.data_collector" on-invalid="ignore"/>
     </service>
     <service id="form.type.file" class="Symfony\Component\Form\Extension\Core\Type\FileType">
       <tag name="form.type"/>
-      <argument>null</argument>
+      <argument type="service" id="translator.data_collector" on-invalid="ignore"/>
     </service>
     <service id="form.type.color" class="Symfony\Component\Form\Extension\Core\Type\ColorType">
       <tag name="form.type"/>
-      <argument>null</argument>
+      <argument type="service" id="translator.data_collector" on-invalid="ignore"/>
     </service>
     <service id="form.type_extension.form.transformation_failure_handling" class="Symfony\Component\Form\Extension\Core\Type\TransformationFailureExtension">
       <tag name="form.type_extension" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
-      <argument>null</argument>
+      <argument type="service" id="translator.data_collector" on-invalid="ignore"/>
     </service>
     <service id="form.type_extension.form.http_foundation" class="Symfony\Component\Form\Extension\HttpFoundation\Type\FormTypeHttpFoundationExtension">
       <tag name="form.type_extension"/>
@@ -2359,7 +3188,7 @@
       <argument type="service" id="debug.validator"/>
       <argument>false</argument>
       <argument type="service" id="twig.form.renderer" on-invalid="ignore"/>
-      <argument>null</argument>
+      <argument type="service" id="translator.data_collector" on-invalid="ignore"/>
     </service>
     <service id="form.type_extension.repeated.validator" class="Symfony\Component\Form\Extension\Validator\Type\RepeatedTypeValidatorExtension">
       <tag name="form.type_extension"/>
@@ -2367,18 +3196,26 @@
     <service id="form.type_extension.submit.validator" class="Symfony\Component\Form\Extension\Validator\Type\SubmitTypeValidatorExtension">
       <tag name="form.type_extension" extended-type="Symfony\Component\Form\Extension\Core\Type\SubmitType"/>
     </service>
+    <service id="form.type_extension.upload.validator" class="Symfony\Component\Form\Extension\Validator\Type\UploadValidatorExtension">
+      <tag name="form.type_extension"/>
+      <argument type="service" id="translator.data_collector"/>
+      <argument>validators</argument>
+    </service>
     <service id="form.type_extension.csrf" class="Symfony\Component\Form\Extension\Csrf\Type\FormTypeCsrfExtension">
       <tag name="form.type_extension"/>
       <argument type="service" id="security.csrf.token_manager"/>
       <argument>true</argument>
       <argument>_token</argument>
-      <argument>null</argument>
+      <argument type="service" id="translator.data_collector" on-invalid="null"/>
       <argument>validators</argument>
       <argument type="service" id="form.server_params"/>
     </service>
     <service id="validator.builder" class="Symfony\Component\Validator\ValidatorBuilder">
       <call method="setConstraintValidatorFactory">
         <argument type="service" id="validator.validator_factory"/>
+      </call>
+      <call method="setTranslator">
+        <argument type="service" id="translator.data_collector" on-invalid="ignore"/>
       </call>
       <call method="setTranslationDomain">
         <argument>validators</argument>
@@ -2390,6 +3227,9 @@
       </call>
       <call method="enableAnnotationMapping">
         <argument>true</argument>
+      </call>
+      <call method="setDoctrineAnnotationReader">
+        <argument type="service" id="annotations.cached_reader"/>
       </call>
       <call method="addMethodMapping">
         <argument>loadValidatorMetadata</argument>
@@ -2410,10 +3250,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/validation.php</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/validation.php</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
@@ -2745,6 +3585,9 @@
         <argument type="service" id="data_collector.cache"/>
       </call>
       <call method="add">
+        <argument type="service" id="data_collector.translation"/>
+      </call>
+      <call method="add">
         <argument type="service" id="data_collector.security"/>
       </call>
       <call method="add">
@@ -2761,7 +3604,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/profiler</argument>
+      <argument>file:C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -2808,7 +3651,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="logger" on-invalid="ignore"/>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/App_KernelDevDebugContainer</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -2905,6 +3748,13 @@
       <tag name="data_collector" template="@WebProfiler/Collector/validator.html.twig" id="validator" priority="320"/>
       <argument type="service" id="debug.validator"/>
     </service>
+    <service id="translator.data_collector" class="Symfony\Component\Translation\DataCollectorTranslator">
+      <argument type="service" id="translator.default"/>
+    </service>
+    <service id="data_collector.translation" class="Symfony\Component\Translation\DataCollector\TranslationDataCollector">
+      <tag name="data_collector" template="@WebProfiler/Collector/translation.html.twig" id="translation" priority="275"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
     <service id="mailer.data_collector" class="Symfony\Component\Mailer\DataCollector\MessageDataCollector">
       <tag name="data_collector" template="@WebProfiler/Collector/mailer.html.twig" id="mailer"/>
       <argument type="service" id="mailer.message_logger_listener"/>
@@ -2926,7 +3776,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/twig</argument>
+        <argument key="cache">C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -3022,6 +3872,9 @@
       <call method="setRequestStack">
         <argument type="service" id="request_stack" on-invalid="ignore"/>
       </call>
+      <call method="setLocaleSwitcher">
+        <argument type="service" id="translation.locale_switcher" on-invalid="ignore"/>
+      </call>
     </service>
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
@@ -3111,7 +3964,7 @@
     </service>
     <service id="twig.extension.trans" class="Symfony\Bridge\Twig\Extension\TranslationExtension">
       <tag name="twig.extension"/>
-      <argument>null</argument>
+      <argument type="service" id="translator.data_collector" on-invalid="null"/>
     </service>
     <service id="twig.extension.assets" class="Symfony\Bridge\Twig\Extension\AssetExtension">
       <tag name="twig.extension"/>
@@ -3159,6 +4012,10 @@
     <service id="twig.extension.weblink" class="Symfony\Bridge\Twig\Extension\WebLinkExtension">
       <argument type="service" id="request_stack"/>
     </service>
+    <service id="twig.translation.extractor" class="Symfony\Bridge\Twig\Translation\TwigExtractor">
+      <tag name="translation.extractor" alias="twig"/>
+      <argument type="service" id="twig"/>
+    </service>
     <service id="twig.configurator.environment" class="Symfony\Bundle\TwigBundle\DependencyInjection\Configurator\EnvironmentConfigurator">
       <argument>F j, Y H:i</argument>
       <argument>%d days</argument>
@@ -3191,7 +4048,7 @@
     </service>
     <service id="twig.extension.form" class="Symfony\Bridge\Twig\Extension\FormExtension">
       <tag name="twig.extension"/>
-      <argument>null</argument>
+      <argument type="service" id="translator.data_collector" on-invalid="null"/>
     </service>
     <service id="twig.form.engine" class="Symfony\Bridge\Twig\Form\TwigRendererEngine">
       <tag name="kernel.reset" method="reset"/>
@@ -3634,7 +4491,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -4502,7 +5359,7 @@
       <argument type="abstract">options</argument>
       <argument type="service" id="property_accessor" on-invalid="null"/>
       <call method="setTranslator">
-        <argument type="service" id="translator" on-invalid="ignore"/>
+        <argument type="service" id="translator.data_collector" on-invalid="ignore"/>
       </call>
     </service>
     <service id="security.authenticator.x509" class="Symfony\Component\Security\Http\Authenticator\X509Authenticator" abstract="true">
@@ -4534,7 +5391,7 @@
       <argument>null</argument>
       <argument>null</argument>
       <call method="setTranslator">
-        <argument type="service" id="translator" on-invalid="ignore"/>
+        <argument type="service" id="translator.data_collector" on-invalid="ignore"/>
       </call>
     </service>
     <service id="security.authenticator.access_token.chain_extractor" class="Symfony\Component\Security\Http\AccessToken\ChainAccessTokenExtractor" abstract="true">
@@ -5643,6 +6500,22 @@
       <argument type="service" id="request_stack"/>
       <configurator class="Symfony\Bundle\FrameworkBundle\DependencyInjection\Compiler\EnableLoggerDebugModePass" method="configureLogger"/>
     </service>
+    <service id=".service_locator.yY.p4P7" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="translation.loader.csv" type="service_closure" id="translation.loader.csv"/>
+        <argument key="translation.loader.dat" type="service_closure" id="translation.loader.dat"/>
+        <argument key="translation.loader.ini" type="service_closure" id="translation.loader.ini"/>
+        <argument key="translation.loader.json" type="service_closure" id="translation.loader.json"/>
+        <argument key="translation.loader.mo" type="service_closure" id="translation.loader.mo"/>
+        <argument key="translation.loader.php" type="service_closure" id="translation.loader.php"/>
+        <argument key="translation.loader.po" type="service_closure" id="translation.loader.po"/>
+        <argument key="translation.loader.qt" type="service_closure" id="translation.loader.qt"/>
+        <argument key="translation.loader.res" type="service_closure" id="translation.loader.res"/>
+        <argument key="translation.loader.xliff" type="service_closure" id="translation.loader.xliff"/>
+        <argument key="translation.loader.yml" type="service_closure" id="translation.loader.yml"/>
+      </argument>
+    </service>
     <service id="debug.security.event_dispatcher.main" class="Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcher">
       <tag name="security.event_dispatcher.main">event_dispatcher.dispatcher</tag>
       <tag name="container.decorator" id="security.event_dispatcher.main"/>
@@ -5844,6 +6717,18 @@
       <argument>App\Controller\UserSecurityController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.o6bgBvu" method="withContext"/>
+    </service>
+    <service id=".service_locator.fuYM_Z." class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="translator" type="service_closure" id="translator.data_collector"/>
+      </argument>
+    </service>
+    <service id=".service_locator.fuYM_Z..translation.warmer" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="translation.warmer"/>
+      <argument>translation.warmer</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.fuYM_Z." method="withContext"/>
     </service>
     <service id=".service_locator.PvoQzFT" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -6143,12 +7028,47 @@
       <argument>false</argument>
       <argument type="service_closure" id="console.command.router_match"/>
     </service>
+    <service id=".console.command.translation_debug.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>debug:translation</argument>
+      <argument type="collection"/>
+      <argument>Display translation messages information</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="console.command.translation_debug"/>
+    </service>
+    <service id=".console.command.translation_extract.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>translation:extract</argument>
+      <argument type="collection"/>
+      <argument>Extract missing translations keys from code to translation files.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="console.command.translation_extract"/>
+    </service>
     <service id=".console.command.validator_debug.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>debug:validator</argument>
       <argument type="collection"/>
       <argument>Display validation constraints for classes</argument>
       <argument>false</argument>
       <argument type="service_closure" id="console.command.validator_debug"/>
+    </service>
+    <service id=".console.command.translation_pull.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>translation:pull</argument>
+      <argument type="collection"/>
+      <argument>Pull translations from a given provider.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="console.command.translation_pull"/>
+    </service>
+    <service id=".console.command.translation_push.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>translation:push</argument>
+      <argument type="collection"/>
+      <argument>Push translations to a given provider.</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="console.command.translation_push"/>
+    </service>
+    <service id=".console.command.xliff_lint.lazy" class="Symfony\Component\Console\Command\LazyCommand">
+      <argument>lint:xliff</argument>
+      <argument type="collection"/>
+      <argument>Lint an XLIFF file and outputs encountered errors</argument>
+      <argument>false</argument>
+      <argument type="service_closure" id="console.command.xliff_lint"/>
     </service>
     <service id=".console.command.yaml_lint.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>lint:yaml</argument>
@@ -6414,7 +7334,7 @@
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.Dk6QD8p"/>
+      <argument type="service" id=".service_locator.lK6VwuL"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -6434,7 +7354,12 @@
         <argument key="debug:event-dispatcher">console.command.event_dispatcher_debug</argument>
         <argument key="debug:router">console.command.router_debug</argument>
         <argument key="router:match">console.command.router_match</argument>
+        <argument key="debug:translation">console.command.translation_debug</argument>
+        <argument key="translation:extract">console.command.translation_extract</argument>
         <argument key="debug:validator">console.command.validator_debug</argument>
+        <argument key="translation:pull">console.command.translation_pull</argument>
+        <argument key="translation:push">console.command.translation_push</argument>
+        <argument key="lint:xliff">console.command.xliff_lint</argument>
         <argument key="lint:yaml">console.command.yaml_lint</argument>
         <argument key="debug:form">console.command.form_debug</argument>
         <argument key="secrets:set">console.command.secrets_set</argument>
@@ -6509,7 +7434,7 @@
         <argument key="make:security:form-login">maker.auto_command.make_security_form_login</argument>
       </argument>
     </service>
-    <service id=".service_locator.Dk6QD8p" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.lK6VwuL" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service_closure" id=".console.command.about.lazy"/>
@@ -6530,7 +7455,12 @@
         <argument key="console.command.event_dispatcher_debug" type="service_closure" id=".console.command.event_dispatcher_debug.lazy"/>
         <argument key="console.command.router_debug" type="service_closure" id=".console.command.router_debug.lazy"/>
         <argument key="console.command.router_match" type="service_closure" id=".console.command.router_match.lazy"/>
+        <argument key="console.command.translation_debug" type="service_closure" id=".console.command.translation_debug.lazy"/>
+        <argument key="console.command.translation_extract" type="service_closure" id=".console.command.translation_extract.lazy"/>
         <argument key="console.command.validator_debug" type="service_closure" id=".console.command.validator_debug.lazy"/>
+        <argument key="console.command.translation_pull" type="service_closure" id=".console.command.translation_pull.lazy"/>
+        <argument key="console.command.translation_push" type="service_closure" id=".console.command.translation_push.lazy"/>
+        <argument key="console.command.xliff_lint" type="service_closure" id=".console.command.xliff_lint.lazy"/>
         <argument key="console.command.yaml_lint" type="service_closure" id=".console.command.yaml_lint.lazy"/>
         <argument key="console.command.form_debug" type="service_closure" id=".console.command.form_debug.lazy"/>
         <argument key="console.command.secrets_set" type="service_closure" id=".console.command.secrets_set.lazy"/>
@@ -6606,7 +7536,7 @@
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>vPkCuBKuGy</argument>
       <argument>0</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/pools/app</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -6616,7 +7546,7 @@
       <argument>5rdF19xchd</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6624,7 +7554,7 @@
       <argument>90r8Xbk1kF</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6632,7 +7562,7 @@
       <argument>TIO4QO53LG</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6640,7 +7570,7 @@
       <argument>wn9IAVbHDP</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6648,7 +7578,7 @@
       <argument>U2NPpberEB</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6656,14 +7586,14 @@
       <argument>i+C6Psv4ZC</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.scheduler.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <argument>LCPxglAZZY</argument>
       <argument>0</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/pools/app</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -6673,7 +7603,7 @@
       <argument>5TYblBAHYb</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6683,7 +7613,7 @@
       <argument>peWIwADtuf</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6691,7 +7621,7 @@
       <argument>sPwKOfs7EZ</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\wamp64\www\symfony\2.6.0 projet-coaching\var\cache\dev/pools/system</argument>
+      <argument>C:/wamp64/www/symfony/2.6.0 projet-coaching/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6729,10 +7659,18 @@
     <service id="Psr\Cache\CacheItemPoolInterface" alias="cache.app"/>
     <service id="Symfony\Contracts\Cache\CacheInterface" alias="cache.app"/>
     <service id="Symfony\Contracts\Cache\TagAwareCacheInterface" alias="cache.app.taggable"/>
+    <service id="Symfony\Contracts\Translation\TranslatorInterface" alias="translator.data_collector"/>
     <service id="Symfony\Component\Asset\Packages" alias="assets.packages"/>
     <service id="mailer" alias="mailer.mailer"/>
     <service id="Symfony\Component\Mailer\MailerInterface" alias="mailer.mailer"/>
     <service id="Symfony\Component\Mailer\Transport\TransportInterface" alias="mailer.default_transport"/>
+    <service id="Symfony\Component\Translation\Reader\TranslationReaderInterface" alias="translation.reader"/>
+    <service id="Symfony\Component\Translation\Extractor\ExtractorInterface" alias="translation.extractor"/>
+    <service id="Symfony\Component\Translation\Writer\TranslationWriterInterface" alias="translation.writer"/>
+    <service id="Symfony\Contracts\Translation\LocaleAwareInterface" alias="translation.locale_switcher"/>
+    <service id="Symfony\Component\Translation\LocaleSwitcher" alias="translation.locale_switcher"/>
+    <service id="translator" alias="translator.data_collector" public="true"/>
+    <service id="translator.formatter" alias="translator.formatter.default"/>
     <service id="Symfony\Component\HttpKernel\Debug\FileLinkFormatter" alias="debug.file_link_formatter"/>
     <service id="Symfony\Component\Stopwatch\Stopwatch" alias="debug.stopwatch"/>
     <service id="router" alias="router.default" public="true"/>
@@ -6741,6 +7679,8 @@
     <service id="Symfony\Component\Routing\Matcher\UrlMatcherInterface" alias="router.default"/>
     <service id="Symfony\Component\Routing\RequestContextAwareInterface" alias="router.default"/>
     <service id="Symfony\Component\Routing\RequestContext" alias="router.request_context"/>
+    <service id="annotation_reader" alias="annotations.cached_reader"/>
+    <service id="Doctrine\Common\Annotations\Reader" alias="annotations.cached_reader"/>
     <service id="Symfony\Component\PropertyAccess\PropertyAccessorInterface" alias="property_accessor"/>
     <service id="Symfony\Component\PropertyInfo\PropertyAccessExtractorInterface" alias="property_info"/>
     <service id="Symfony\Component\PropertyInfo\PropertyDescriptionExtractorInterface" alias="property_info"/>
@@ -6780,6 +7720,7 @@
     <service id="doctrine.dbal.event_manager" alias="doctrine.dbal.default_connection.event_manager"/>
     <service id="Doctrine\DBAL\Connection $defaultConnection" alias="doctrine.dbal.default_connection"/>
     <service id="Doctrine\ORM\EntityManagerInterface" alias="doctrine.orm.default_entity_manager"/>
+    <service id="doctrine.orm.metadata.annotation_reader" alias="annotations.cached_reader"/>
     <service id="doctrine.orm.entity_manager" alias="doctrine.orm.default_entity_manager" public="true"/>
     <service id="doctrine.orm.default_metadata_cache" alias="cache.doctrine.orm.default.metadata"/>
     <service id="doctrine.orm.default_result_cache" alias="cache.doctrine.orm.default.result"/>
@@ -6822,17 +7763,19 @@
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.o.uf2zi" alias=".service_locator.7nzbL4K"/>
     <service id=".service_locator.bf.I_kk" alias=".service_locator.M3Xv59D"/>
-    <service id=".service_locator.FI.QJeF" alias=".service_locator.heXyn7h"/>
+    <service id=".service_locator.OTs8_h1" alias=".service_locator.heXyn7h"/>
     <service id=".service_locator.wNNva15" alias=".service_locator.hDaPOks"/>
     <service id=".service_locator.sO2baFT" alias=".service_locator.UXbUH6B"/>
     <service id=".service_locator.lazJqeu" alias=".service_locator.g3jVEYl"/>
     <service id=".service_locator.LMuqDDe" alias=".service_locator.VHsrTPK"/>
-    <service id=".service_locator.VNLunR9" alias=".service_locator.o6bgBvu"/>
-    <service id=".service_locator.JX_LLZT" alias=".service_locator.V8bNEaM"/>
+    <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
+    <service id=".service_locator.xlRF5oT" alias=".service_locator.o6bgBvu"/>
+    <service id=".service_locator.4JiXmsw" alias=".service_locator.V8bNEaM"/>
     <service id="validator" alias="debug.validator"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
     <service id="controller_resolver" alias="debug.controller_resolver"/>
     <service id="argument_resolver" alias="debug.argument_resolver"/>
+    <service id="translator.data_collector.inner" alias="translator.default"/>
     <service id="twig.error_renderer.html.inner" alias="error_handler.error_renderer.html"/>
     <service id="doctrine.migrations.migrations_factory" alias="doctrine.migrations.container_aware_migrations_factory"/>
     <service id="security.access.decision_manager" alias="debug.security.access.decision_manager"/>
@@ -6851,8 +7794,8 @@
     <service id=".service_locator.C0.4ZCV" alias=".service_locator.Gpq0cWW"/>
     <service id=".service_locator.7NIAq8D" alias=".service_locator.rSTd.nA"/>
     <service id=".service_locator.BvvBT9K" alias=".service_locator.4n4ylFv"/>
-    <service id=".service_locator.f2Cj1tv" alias=".service_locator.o6bgBvu"/>
-    <service id=".service_locator.FmBIMmu" alias=".service_locator.V8bNEaM"/>
+    <service id=".service_locator.9ASTVsC" alias=".service_locator.o6bgBvu"/>
+    <service id=".service_locator.0wIjcjp" alias=".service_locator.V8bNEaM"/>
     <service id=".service_locator.dGUCsbe" alias=".service_locator.oR77BOj"/>
     <service id=".service_locator.u6DWx23" alias=".service_locator.cXsfP3P"/>
     <service id=".service_locator.BlxN3Cw" alias=".service_locator.LrCXAmX"/>

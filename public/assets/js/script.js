@@ -8,5 +8,3 @@ window.addEventListener('scroll', (e) => {
     let widthToAdd = ((scrollPosition / height) * 100);
     progressBarElement.style.width = `${widthToAdd}%`;
 });
-
-

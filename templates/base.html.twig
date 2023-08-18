@@ -13,6 +13,7 @@
         {% endblock %}
         {% block javascripts %}
         <script src="{{ asset ('assets/js/script.js') }}" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
         {% endblock %}
     </head>
     <body>
@@ -64,6 +65,15 @@
             
         {% endblock content %}
 
+        <div class="cookie-overlay p-4 d-none">
+            <div class="d-flex">
+              <div class="mr-3">
+                En cliquant sur "Accepter" vous autoriser notre site à stocker les cookies essentiels 
+              </div>
+            </div>
+            <button class="btn btn-perso mt-3 accept-cookies">Accept</button>
+        </div>
+        
         </main>
 
         <footer>
