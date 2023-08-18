@@ -72,19 +72,16 @@ Accueil
         <section id="temoignages">
             <h2 class="my-5"> Nos meilleurs avis clients : </h2>
             <div class="container-fluid">
-                
-                    {% for review in bestreviews %}
+                {% for review in bestreviews %}
                     <div class="row">
                         <h5 class="my-5"> "{{ review.title }}" </h5>
                         <p class="my-3"> "{{ review.comment }}"</p>
                         <h4 class="my-3">{{ review.rating }}/10</h4>
                         <p> Avis laissé le {{ review.date | date ('d/m/Y') }} par <span class="bold">{{ review.pseudo }}</span> </p>
                     </div>
-                    {% endfor %}
-                
+                {% endfor %}
             </div>
         </section>
-
         <a class="btn btn-perso my-5" href="{{ path ('contact')}}">Nous Contacter</a>
 
 {% endblock main %}

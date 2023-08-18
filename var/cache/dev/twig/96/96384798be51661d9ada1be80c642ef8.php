@@ -238,7 +238,7 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
                     <a href=\"";
         // line 100
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cgu");
-        echo "\">Légales</a>
+        echo "\">CGU / CGV </a>
                     <p> | </p>
                     <a href=\"";
         // line 102
@@ -515,7 +515,7 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
                 <h4> &copy; 2023 EASYWEBFACTORY INC. </h4>
                 <p> Made with 🤍</p>
                 <nav>
-                    <a href=\"{{ path ('cgu') }}\">Légales</a>
+                    <a href=\"{{ path ('cgu') }}\">CGU / CGV </a>
                     <p> | </p>
                     <a href=\"{{ path ('rgpd') }}\">Confidentialité</a>
                 </nav>
@@ -524,6 +524,6 @@ class __TwigTemplate_1c1930fddddc29c2757bcfa3b013f737 extends Template
     </body>
 </html>
 
-", "base.html.twig", "C:\\wamp64\\www\\symfony\\2.5.0 projet-coaching\\templates\\base.html.twig");
+", "base.html.twig", "C:\\wamp64\\www\\symfony\\2.6.0 projet-coaching\\templates\\base.html.twig");
     }
 }
