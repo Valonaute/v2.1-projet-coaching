@@ -28,6 +28,7 @@ class TestKernel extends Kernel
             new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new \Symfony\Bundle\TwigBundle\TwigBundle(),
             new \Karser\Recaptcha3Bundle\KarserRecaptcha3Bundle(),
+            new \ConnectHolland\CookieConsentBundle\CHCookieConsentBundle(),
         ];
     }
 

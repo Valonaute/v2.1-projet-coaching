@@ -42,14 +42,14 @@ ch_cookie_consent:
 Configure your Cookie Consent with the following possible settings
 ```yaml
 ch_cookie_consent:
-    theme: 'light' # light, dark
+    theme: 'dark' # light, dark
     categories: # Below are the default supported categories
         - 'analytics'
         - 'tracking'
         - 'marketing'
-        - 'social_media'
+#        - 'social_media'
     use_logger: true # Logs user actions to database
-    position: 'top' # top, bottom
+    position: 'bottom' # top, bottom
     simplified: false # When set to true the user can only deny or accept all cookies at once
     http_only: true # Sets HttpOnly on cookies
     form_action: $routeName # When set, xhr-Requests will only be sent to this route. Take care of having the route available.

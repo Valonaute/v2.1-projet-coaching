@@ -84,6 +84,7 @@ class ComposerStaticInit098dea4258584ccfde4052d0f55f73e7
             'Symfony\\Bridge\\Doctrine\\' => 24,
             'SymfonyCasts\\Bundle\\ResetPassword\\' => 34,
             'Stripe\\' => 7,
+            'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
         ),
         'R' => 
         array (
@@ -367,6 +368,10 @@ class ComposerStaticInit098dea4258584ccfde4052d0f55f73e7
         'Stripe\\' => 
         array (
             0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
+        ),
+        'Sensio\\Bundle\\FrameworkExtraBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src',
         ),
         'ReCaptcha\\' => 
         array (

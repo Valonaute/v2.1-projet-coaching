@@ -44,6 +44,8 @@
         </header>
         
         <main>
+        {{ render_esi(path('ch_cookie_consent.show')) }}
+        {{ render_esi(path('ch_cookie_consent.show_if_cookie_consent_not_set')) }}
         
         {% for label, messages in app.flashes %}
             {% for message in messages %}
@@ -64,15 +66,6 @@
         {% block content %}
             
         {% endblock content %}
-
-        <div class="cookie-overlay p-4 d-none">
-            <div class="d-flex">
-              <div class="mr-3">
-                En cliquant sur "Accepter" vous autoriser notre site à stocker les cookies essentiels 
-              </div>
-            </div>
-            <button class="btn btn-perso mt-3 accept-cookies">Accept</button>
-        </div>
         
         </main>
 

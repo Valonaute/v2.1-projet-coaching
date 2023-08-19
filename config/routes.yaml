@@ -4,6 +4,9 @@ controllers:
         namespace: App\Controller
     type: attribute
 
+ch_cookie_consent:
+    resource: "@CHCookieConsentBundle/Resources/config/routing.yaml"
+
 account:
     path: /user/account
     controller: App\Controller\UserSecurityController::showAccount
@@ -61,7 +64,7 @@ cart_remove:
 checkout:
     path: /checkout
     controller: App\Controller\TestStripeController::checkout
-    
+
 cgu:
     path: /cgu
     controller: App\Controller\PublicController::showCgu
