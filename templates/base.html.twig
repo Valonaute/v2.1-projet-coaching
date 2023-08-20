@@ -44,9 +44,7 @@
         </header>
         
         <main>
-        {{ render_esi(path('ch_cookie_consent.show')) }}
-        {{ render_esi(path('ch_cookie_consent.show_if_cookie_consent_not_set')) }}
-        
+                    
         {% for label, messages in app.flashes %}
             {% for message in messages %}
                 <div class="alert alert-{{ label }}">

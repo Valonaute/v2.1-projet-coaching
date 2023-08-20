@@ -1,0 +1,3 @@
+<?php //App%255CController%255CTestStripeController
+
+return [PHP_INT_MAX, []];

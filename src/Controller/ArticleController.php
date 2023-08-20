@@ -79,46 +79,30 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    public function showArticles(ArticleRepository $ArticleRepository)
-    {
-        // Retourner les articles dans un template via la methode findall du repo 
-        return $this->render('article/show.html.twig', [
-            'articles' => $ArticleRepository->findAll()
-        ]);
-    }
-
     public function updateArticle(Request $request, $id)
     {
         // Récupération de l'article déja présent avec la méthode find($id)
         $Article = $this->ArticleRepository->find($id);
-
         // S'il n'y a pas d'articles : redirection 
         if(!$Article)
         {
             return $this->redirectToRoute('show_article');
         }
-
         // Création nouveau formulaire en se basant sur l'article présent 
         $form = $this->createForm(ArticleType::class, $Article);
-
         $form->handleRequest($request);
-
         // Si le formulaire est remplit : 
         if($form->isSubmitted() && $form->isValid())
         {
             // Gestion de l'image 
             $image = $form->get('image')->getData();
-
             if($image) {
-                
                 $finalImage = time() . '.' .$image->guessExtension();
-    
                  try {
                     $image->move(
                         $this->getparameter('image_directory')
                         , $finalImage
                     );
-    
                     // si l'image est différente, suppression de l'ancienne 
                     if($Article->getImage() != $finalImage)
                     {
@@ -131,20 +115,15 @@ class ArticleController extends AbstractController
                     } catch (FileException $e) {
                         throw new ErrorException("un problème est survenue lors de l'upload de l'image");
                     }
-    
                     $Article->setImage($finalImage);
                     $this->ArticleRepository->save($Article, $flush =  true);
-    
                     $this->addflash('success', 'Le produit a bien été uploadé');
                     return $this->redirectToRoute('show_article');
-    
                  }
-    
                     $this->ArticleRepository->save($Article, $flush = true);
                     $this->addFlash('success', 'Le produit a bien été modifié');
                     return $this->redirectToRoute('show_article');
         }
-
         return $this->render('article/update.html.twig', [
             'form' => $form->createView()
         ]);
@@ -173,6 +152,14 @@ class ArticleController extends AbstractController
 
             return $this->redirectToRoute('show_article');
         }
+    }
+
+    public function showArticles(ArticleRepository $ArticleRepository)
+    {
+        // Retourner les articles dans un template via la methode findall du repo 
+        return $this->render('article/show.html.twig', [
+            'articles' => $ArticleRepository->findAll()
+        ]);
     }
 
     public function showArticlesFront(ArticleRepository $articleRepository)

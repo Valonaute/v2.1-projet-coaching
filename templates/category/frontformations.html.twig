@@ -3,19 +3,15 @@
 {% block title %}Catégories {% endblock %}
 
 {% block content %}
-
 <section class="menu">
   <a class="on" href="{{ path ('formations')}}"> Formations </a>
   <a class="inactive" href="{{ path ('stages')}}"> Stages et séminaires</a>
   <a class="inactive" href="{{ path ('rdv')}}"> Séances Individuelles </a>
   <a class="inactive" href="{{ path ('ebook')}}"> E-book </a>
   <a class="inactive" href="{{ path ('motivation')}}"> Motivation </a>
-  
 </section>
-
 <div class="container-fluid my-5">
     <div class="row">
-
     {% for product in products %}
     <div class="card col-4" style="max-width: 25rem; min-height:40rem;">
       <a class="my-4" href="{{ path('front_product', {id: product.id})}}"><img src="{{ asset('uploads/')}}{{ product.image }}" class="card-img-top" alt="{{ product.title}}" title="{{ product.title}}"></a>
@@ -29,11 +25,7 @@
       </div>
     </div>
     {% endfor %}
-
-
     </div>
 </div>
-
 <a class="btn btn-perso my-5" href="{{ path('review_show')}}"> Voir nos avis clients </a>
-
 {% endblock %}

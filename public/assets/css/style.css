@@ -7,20 +7,17 @@
 
 :root {
     --link: #dfaf67;
-    --navlink: #b78544;
+    --navlink: #b9833d;
     --buttons: #b78544;
     --background: #000000;
     --text: #ffffff;
     --footer: #808080;
 }
-
 * {
     margin: 0;
 }
-
 /* --000000000000000 --- Balise --- 000000000000000-- */
 /* --000000000000000 --- Section -- 000000000000000-- */
-
 a {
     color: var(--navlink);
     text-decoration: none ;

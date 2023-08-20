@@ -28,15 +28,11 @@ class ContactController extends AbstractController
         $contact = new Contact;
         $contact->setDate(new \DateTime);
         $form = $this->createForm(ContactType::class, $contact);
-        
-
         $form->handleRequest($request);
-
         if($form->isSubmitted() && $form->isValid())
         {
             // On sauvegarde dans la BDD
             $this->contactRepository->save($contact, $flush = true);
-
             // On envoi l'email 
             $email = (new TemplatedEmail())
             ->from($contact->getEmail())
@@ -46,10 +42,7 @@ class ContactController extends AbstractController
             ->context([
                 'contact' => $contact
             ]);
-
-
             $mailer->send($email);
-
             // Ajout message flash
             $this->addFlash('success', 'Le mail a bien été envoyé !');
             return $this->redirectToRoute(('home'));
