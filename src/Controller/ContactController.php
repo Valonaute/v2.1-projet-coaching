@@ -36,7 +36,7 @@ class ContactController extends AbstractController
             // On envoi l'email 
             $email = (new TemplatedEmail())
             ->from($contact->getEmail())
-            ->to('contact@monsite.com')
+            ->to('contact@easywebfactory.com')
             ->subject('Demande de contact')
             ->htmlTemplate('mailer/mail.html.twig')
             ->context([

@@ -37,7 +37,7 @@ class RegisterController extends AbstractController
 
             // Envoi email de confirmation : 
             $email = (new TemplatedEmail())
-            ->from('contact@coachingdevperso.fr')
+            ->from('contact@easywebfactory.com')
             ->to($user->getEmail())
             ->subject('Confirmation inscription : Bienvenue sur CoachingDevPerso.fr !')
             ->htmlTemplate('mailer/inscription.html.twig')
