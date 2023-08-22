@@ -161,7 +161,7 @@ class TestStripeController extends AbstractController
         
         // Envoi d'un mail de confirmation :
         $email = (new TemplatedEmail())
-        ->from('thankyou@monsite.com')
+        ->from('contact@easywebfactory.com')
         ->to($userEmail)
         ->subject('Confirmation de votre commande')
         ->htmlTemplate('mailer/successOrder.html.twig')
