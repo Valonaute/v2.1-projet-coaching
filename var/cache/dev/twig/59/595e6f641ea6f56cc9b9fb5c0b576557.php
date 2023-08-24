@@ -86,69 +86,71 @@ class __TwigTemplate_6fd0007ee125841f8f1a4ba62f9a0963 extends Template
 
         // line 6
         echo "<h1>Votre Panier </h1>
-<table class=\"table\">
-    <thead>
-        <tr>
-            <th>Produit</th>
-            <th>Prix</th>
-            <th>Quantité</th>
-            <th>Actions</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        ";
-        // line 18
+<div class=\"container-fluid\">
+    <table class=\"table\">
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Actions</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            ";
+        // line 19
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["items"]) || array_key_exists("items", $context) ? $context["items"] : (function () { throw new RuntimeError('Variable "items" does not exist.', 18, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["items"]) || array_key_exists("items", $context) ? $context["items"] : (function () { throw new RuntimeError('Variable "items" does not exist.', 19, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 19
+            // line 20
             echo "            <tr>
                 <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 20), "title", [], "any", false, false, false, 20), "html", null, true);
-            echo "</td>
-                    <td>";
             // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 21), "price", [], "any", false, false, false, 21), "html", null, true);
-            echo " €</td>
-                    <td> <a class=\"btn btn-perso-dark\" href=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 21), "title", [], "any", false, false, false, 21), "html", null, true);
+            echo "</td>
+                <td>";
             // line 22
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete_one", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 22), "id", [], "any", false, false, false, 22)]), "html", null, true);
+            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 22), "price", [], "any", false, false, false, 22), 2, ",", " "), "html", null, true);
+            echo " €</td>
+                <td> <a class=\"btn btn-perso-dark\" href=\"";
+            // line 23
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete_one", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 23), "id", [], "any", false, false, false, 23)]), "html", null, true);
             echo "\">-</a> <span class=\"mx-4\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "qty", [], "any", false, false, false, 22), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "qty", [], "any", false, false, false, 23), "html", null, true);
             echo "</span> <a class=\"btn btn-perso\" href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 22), "id", [], "any", false, false, false, 22)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 23), "id", [], "any", false, false, false, 23)]), "html", null, true);
             echo "\">+</a> </td>
-                    <td>
-                        <a href=\"";
-            // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 24), "id", [], "any", false, false, false, 24)]), "html", null, true);
+                <td>
+                    <a href=\"";
+            // line 25
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 25), "id", [], "any", false, false, false, 25)]), "html", null, true);
             echo "\"><i class=\"fas fa-trash\">Supprimer</i></a>
-                    </td>
+                </td>
             </tr>
-        ";
+            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
-        echo "    </tbody>
+        // line 29
+        echo "        </tbody>
+        
+    </table>  
+</div>
     
-</table>  
-
-<h3 class=\"mt-5\"> Total : ";
-        // line 32
-        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 32, $this->source); })()), 2, ",", " "), "html", null, true);
-        echo " € </h3>
-
-<a class=\"btn btn-perso my-5\" href=\"";
+    <h3 class=\"mt-5\"> Total : ";
         // line 34
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 34, $this->source); })()), 2, ",", " "), "html", null, true);
+        echo " € </h3>
+    
+    <a class=\"btn btn-perso my-5\" href=\"";
+        // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("checkout");
         echo "\"> Payer </a>
-
-";
-        // line 48
+    
+    ";
+        // line 50
         echo "
 ";
         
@@ -171,7 +173,7 @@ class __TwigTemplate_6fd0007ee125841f8f1a4ba62f9a0963 extends Template
 
     public function getDebugInfo()
     {
-        return array (  152 => 48,  147 => 34,  142 => 32,  136 => 28,  126 => 24,  117 => 22,  113 => 21,  109 => 20,  106 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  154 => 50,  149 => 36,  144 => 34,  137 => 29,  127 => 25,  118 => 23,  114 => 22,  110 => 21,  107 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -182,38 +184,40 @@ class __TwigTemplate_6fd0007ee125841f8f1a4ba62f9a0963 extends Template
 
 {% block content %}
 <h1>Votre Panier </h1>
-<table class=\"table\">
-    <thead>
-        <tr>
-            <th>Produit</th>
-            <th>Prix</th>
-            <th>Quantité</th>
-            <th>Actions</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in items %}
+<div class=\"container-fluid\">
+    <table class=\"table\">
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Actions</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
             <tr>
                 <td>{{ item.product.title }}</td>
-                    <td>{{ item.product.price }} €</td>
-                    <td> <a class=\"btn btn-perso-dark\" href=\"{{ path ('cart_delete_one', {id: item.product.id})}}\">-</a> <span class=\"mx-4\">{{ item.qty }}</span> <a class=\"btn btn-perso\" href=\"{{ path ('cart_add', {id: item.product.id})}}\">+</a> </td>
-                    <td>
-                        <a href=\"{{ path('cart_delete', {id: item.product.id })}}\"><i class=\"fas fa-trash\">Supprimer</i></a>
-                    </td>
+                <td>{{ item.product.price|number_format(2, ',', ' ') }} €</td>
+                <td> <a class=\"btn btn-perso-dark\" href=\"{{ path ('cart_delete_one', {id: item.product.id})}}\">-</a> <span class=\"mx-4\">{{ item.qty }}</span> <a class=\"btn btn-perso\" href=\"{{ path ('cart_add', {id: item.product.id})}}\">+</a> </td>
+                <td>
+                    <a href=\"{{ path('cart_delete', {id: item.product.id })}}\"><i class=\"fas fa-trash\">Supprimer</i></a>
+                </td>
             </tr>
-        {% endfor %}
-    </tbody>
+            {% endfor %}
+        </tbody>
+        
+    </table>  
+</div>
     
-</table>  
-
-<h3 class=\"mt-5\"> Total : {{ total|number_format(2, ',', ' ') }} € </h3>
-
-<a class=\"btn btn-perso my-5\" href=\"{{ path ('checkout')}}\"> Payer </a>
-
-{#
-
-<hr class=\"mx-5\">
+    <h3 class=\"mt-5\"> Total : {{ total|number_format(2, ',', ' ') }} € </h3>
+    
+    <a class=\"btn btn-perso my-5\" href=\"{{ path ('checkout')}}\"> Payer </a>
+    
+    {#
+        
+        <hr class=\"mx-5\">
 
 <h2> Confirmez votre commande en remplissant ce formulaire</h2>
 {{ form_start(confirmationform, {'action': path('order_validation')}) }}

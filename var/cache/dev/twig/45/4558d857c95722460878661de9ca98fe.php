@@ -86,7 +86,7 @@ class __TwigTemplate_89ef829d1b150fd68c26e16fb571fb3f extends Template
 
         // line 6
         echo "
-<div class=\"m-5\">";
+<div class=\"container-fluid m-5\">";
         // line 7
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'form');
         echo "</div>
@@ -123,7 +123,7 @@ class __TwigTemplate_89ef829d1b150fd68c26e16fb571fb3f extends Template
 
 {% block main %}
 
-<div class=\"m-5\">{{ form (form)}}</div>
+<div class=\"container-fluid m-5\">{{ form (form)}}</div>
 
 {% endblock %}
 ", "security/inscription.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\security\\inscription.html.twig");

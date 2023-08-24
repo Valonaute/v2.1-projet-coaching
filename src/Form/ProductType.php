@@ -20,14 +20,25 @@ class ProductType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title', TextType::class)
-            ->add('shortdescription', TextType::class)
+            ->add('title', TextType::class, [
+            'label' => 'Titre'
+            ])
+            ->add('shortdescription', TextType::class, [
+                'label' => 'Courte description'
+                ])
             ->add('description', TextareaType::class)
-            ->add('price', NumberType::class)
+            ->add('price', NumberType::class, [
+                'label' => 'Prix'
+                ])
             ->add('image', FileType::class, [
-                'label' => 'votre image',
+                'label' => 'Image',
                 'mapped' => false,
                 'required' => false,
+                'attr' => [
+                    'class' => 'input-file-text form-control', 
+                    'id' => 'form-file', 
+                    'lang' => 'fr',
+                ],
                 'constraints' => [
                     new File([
                         'maxSize' => '9000k',
@@ -40,10 +51,15 @@ class ProductType extends AbstractType
                 ]
             ])
             ->add('idcategory', EntityType::class, [
+                'label' => 'Catégorie',
                 'class' => Category::class,
                 'choice_label' => 'name'
             ])
-            ->add('Valider', SubmitType::class)
+            ->add('Valider', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-perso'
+                ]
+            ])
         ;
     }
 

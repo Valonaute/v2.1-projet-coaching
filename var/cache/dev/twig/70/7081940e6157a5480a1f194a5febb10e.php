@@ -65,63 +65,65 @@ class __TwigTemplate_53889bf8bd81284bc3660b6c8ed47faa extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 5
-        echo "
-<table class=\"table\">
-    <thead>
-        <tr>
-        <th scope=\"col\">#</th>
-        <th scope=\"col\">Nom</th>
-        <th scope=\"col\">Description</th>
-        <th scope=\"col\">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-    ";
-        // line 16
+        echo "<div class=\"container-fluid my-5\">
+
+    <table class=\"table\">
+        <thead>
+            <tr>
+                <th scope=\"col\">#</th>
+                <th scope=\"col\">Nom</th>
+                <th scope=\"col\">Description</th>
+                <th scope=\"col\">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            ";
+        // line 17
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 16, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 17, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 17
-            echo "    <tr>
-        <th scope=\"row\">";
             // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 18), "html", null, true);
-            echo "</th>
-        <td>";
+            echo "            <tr>
+                <th scope=\"row\">";
             // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 19), "html", null, true);
-            echo "</td>
-        <td>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 19), "html", null, true);
+            echo "</th>
+                <td>";
             // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "description", [], "any", false, false, false, 20), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 20), "html", null, true);
             echo "</td>
-        <td>
-            <a href=\"";
-            // line 22
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_category", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 22)]), "html", null, true);
+                <td>";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "description", [], "any", false, false, false, 21), "html", null, true);
+            echo "</td>
+                <td>
+                    <a href=\"";
+            // line 23
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_category", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 23)]), "html", null, true);
             echo "\" class=\"btn btn-success m-2\">Voir</a>
             <a href=\"";
-            // line 23
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("update_category", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 23)]), "html", null, true);
+            // line 24
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("update_category", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 24)]), "html", null, true);
             echo "\" class=\"btn btn-primary m-2\">modifier</a>
             <a href=\"";
-            // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_category", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo "\" class=\"btn btn-danger m-2\">supprimer</a>
+            // line 25
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_category", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 25)]), "html", null, true);
+            echo "\" class=\"btn btn-danger m-2\" onclick=\"return confirm('Etes-vous sûr de vouloir supprimer ?');\">supprimer</a>
         </td>
     </tr>
-";
+    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
-        echo "
-    </tbody>
-</table>
+        // line 29
+        echo "    
+        </tbody>    
+    </table>
+</div>
 
 <a href=\"";
-        // line 32
+        // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("create_category");
         echo "\" class=\"btn btn-success\">créer une catégorie</a>
 
@@ -146,7 +148,7 @@ class __TwigTemplate_53889bf8bd81284bc3660b6c8ed47faa extends Template
 
     public function getDebugInfo()
     {
-        return array (  125 => 32,  119 => 28,  109 => 24,  105 => 23,  101 => 22,  96 => 20,  92 => 19,  88 => 18,  85 => 17,  81 => 16,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  127 => 34,  120 => 29,  110 => 25,  106 => 24,  102 => 23,  97 => 21,  93 => 20,  89 => 19,  86 => 18,  82 => 17,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -155,36 +157,38 @@ class __TwigTemplate_53889bf8bd81284bc3660b6c8ed47faa extends Template
 
 
 {% block content %}
+<div class=\"container-fluid my-5\">
 
-<table class=\"table\">
-    <thead>
-        <tr>
-        <th scope=\"col\">#</th>
-        <th scope=\"col\">Nom</th>
-        <th scope=\"col\">Description</th>
-        <th scope=\"col\">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for category in categories %}
-    <tr>
-        <th scope=\"row\">{{ category.id }}</th>
-        <td>{{ category.name }}</td>
-        <td>{{ category.description }}</td>
-        <td>
-            <a href=\"{{ path('front_category', {id: category.id})}}\" class=\"btn btn-success m-2\">Voir</a>
+    <table class=\"table\">
+        <thead>
+            <tr>
+                <th scope=\"col\">#</th>
+                <th scope=\"col\">Nom</th>
+                <th scope=\"col\">Description</th>
+                <th scope=\"col\">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for category in categories %}
+            <tr>
+                <th scope=\"row\">{{ category.id }}</th>
+                <td>{{ category.name }}</td>
+                <td>{{ category.description }}</td>
+                <td>
+                    <a href=\"{{ path('front_category', {id: category.id})}}\" class=\"btn btn-success m-2\">Voir</a>
             <a href=\"{{ path('update_category', {id: category.id})}}\" class=\"btn btn-primary m-2\">modifier</a>
-            <a href=\"{{ path('delete_category', {id: category.id})}}\" class=\"btn btn-danger m-2\">supprimer</a>
+            <a href=\"{{ path('delete_category', {id: category.id})}}\" class=\"btn btn-danger m-2\" onclick=\"return confirm('Etes-vous sûr de vouloir supprimer ?');\">supprimer</a>
         </td>
     </tr>
-{% endfor %}
-
-    </tbody>
-</table>
+    {% endfor %}
+    
+        </tbody>    
+    </table>
+</div>
 
 <a href=\"{{ path('create_category')}}\" class=\"btn btn-success\">créer une catégorie</a>
 
 {% endblock %}
-", "category/show.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching\\templates\\category\\show.html.twig");
+", "category/show.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\category\\show.html.twig");
     }
 }

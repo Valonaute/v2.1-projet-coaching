@@ -66,7 +66,7 @@ class __TwigTemplate_a5189a1de7327cb6c00fc24f8f990bee extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
         // line 4
-        echo "Valonaute Inc.
+        echo "EasyWebfactory Inc.
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -87,10 +87,14 @@ class __TwigTemplate_a5189a1de7327cb6c00fc24f8f990bee extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
         // line 8
-        echo "
-<h3> PLus d'infos sur la société Valonaute INC. :</h3>
+        echo "<div class=\"coontainer-fluid my-5\">
 
-
+    <h3 class='my-3'> Plus d'infos sur la société EasyWebFactory INC. :</h3>
+    <p> La société EasyWebFactory va être créer dès la fin de l'année 2023 après obtention d'un dîplome par l'un de ses fondateur !</p>
+    <p> Elle proposera des services de création de site internet et d'applications mobiles. </p>
+    <h4><a href=\"https://valentin-gautier.easywebfactory.com\" target='blank'>En savoir plus</a>  </h4>
+    
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -120,14 +124,18 @@ class __TwigTemplate_a5189a1de7327cb6c00fc24f8f990bee extends Template
         return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}
-Valonaute Inc.
+EasyWebfactory Inc.
 {% endblock title %}
 
 {% block main %}
+<div class=\"coontainer-fluid my-5\">
 
-<h3> PLus d'infos sur la société Valonaute INC. :</h3>
-
-
+    <h3 class='my-3'> Plus d'infos sur la société EasyWebFactory INC. :</h3>
+    <p> La société EasyWebFactory va être créer dès la fin de l'année 2023 après obtention d'un dîplome par l'un de ses fondateur !</p>
+    <p> Elle proposera des services de création de site internet et d'applications mobiles. </p>
+    <h4><a href=\"https://valentin-gautier.easywebfactory.com\" target='blank'>En savoir plus</a>  </h4>
+    
+</div>
 {% endblock main %}", "public/valonauteinc.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\public\\valonauteinc.html.twig");
     }
 }

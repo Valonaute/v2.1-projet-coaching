@@ -5,8 +5,17 @@ Plan du site
 {% endblock title %}
 
 {% block main %}
-
-<h3>Voici le plan du site : </h3>
-
-
+<div class="contrainer-fluid my-5">
+    <h3 class='my-3'>Voici le plan du site : </h3>
+    {% if app.user %}
+    {% if is_granted('ROLE_ADMIN') %}
+    <img src="{{ asset ('assets/img/arbo-admin.png')}}" alt="Arborescence Administrateur du site">
+    {% else %}
+    <img src="{{ asset ('assets/img/arbo-user.png')}}" alt="Arborescence utilisateur du site">
+    {% endif %}
+    {% else %}
+    <img src="{{ asset ('assets/img/arbo-visiteur.png')}}" alt="Arborescence visiteur du site">
+    {% endif %}
+</div>
+    
 {% endblock main %}

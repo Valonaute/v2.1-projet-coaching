@@ -105,75 +105,79 @@ class __TwigTemplate_28b3dc2f48dba4e32066f4d47dbcfa52 extends Template
 ";
         } else {
             // line 15
-            echo "    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Produit</th>
-                <th>Prix</th>
-                <th>Quantité</th>
-                <th>Actions</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            ";
-            // line 26
+            echo "    <div class=\"container-fluid\">
+        <table class=\"table\">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Actions</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                ";
+            // line 27
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["items"]) || array_key_exists("items", $context) ? $context["items"] : (function () { throw new RuntimeError('Variable "items" does not exist.', 26, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["items"]) || array_key_exists("items", $context) ? $context["items"] : (function () { throw new RuntimeError('Variable "items" does not exist.', 27, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-                // line 27
+                // line 28
                 echo "                <tr>
                     <td>";
-                // line 28
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 28), "title", [], "any", false, false, false, 28), "html", null, true);
+                // line 29
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 29), "title", [], "any", false, false, false, 29), "html", null, true);
                 echo "</td>
                     <td>";
-                // line 29
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 29), "price", [], "any", false, false, false, 29), "html", null, true);
+                // line 30
+                echo twig_escape_filter($this->env, twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 30), "price", [], "any", false, false, false, 30), 2, ",", " "), "html", null, true);
                 echo " €</td>
                     <td> <a class=\"btn btn-perso-dark\" href=\"";
-                // line 30
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete_one", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 30), "id", [], "any", false, false, false, 30)]), "html", null, true);
+                // line 31
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete_one", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 31), "id", [], "any", false, false, false, 31)]), "html", null, true);
                 echo "\">-</a> <span class=\"mx-4\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "qty", [], "any", false, false, false, 30), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "qty", [], "any", false, false, false, 31), "html", null, true);
                 echo "</span> <a class=\"btn btn-perso\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 30), "id", [], "any", false, false, false, 30)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 31), "id", [], "any", false, false, false, 31)]), "html", null, true);
                 echo "\">+</a> </td>
                     <td>
                         <a href=\"";
-                // line 32
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 32), "id", [], "any", false, false, false, 32)]), "html", null, true);
-                echo "\">Supprimer l'article</a>
+                // line 33
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 33), "id", [], "any", false, false, false, 33)]), "html", null, true);
+                echo "\" onclick=\"return confirm('Etes-vous sûr de vouloir supprimer l'article du panier ?');\">Supprimer l'article</a>
                     </td>
                 </tr>
-            ";
+                ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 36
-            echo "        </tbody>
-        <tfoot class=\"bold\">
-            <td> Total : </td>
-            <td> ";
-            // line 39
-            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 39, $this->source); })()), 2, ",", " "), "html", null, true);
+            // line 37
+            echo "            </tbody>
+            <tfoot class=\"bold\">
+                <td> Total : </td>
+                <td> ";
+            // line 40
+            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 40, $this->source); })()), 2, ",", " "), "html", null, true);
             echo " €</td>
-            <td > Vider le panier : </td>
-            <td> <a class='btn btn-outline-perso' href=\"";
-            // line 41
+                <td > Vider le panier : </td>
+                <td> <a class='btn btn-outline-perso' href=\"";
+            // line 42
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_remove");
-            echo "\">Supprimer le panier </a></td>
-        </tfoot>
+            echo "\"  onclick=\"return confirm('Etes-vous sûr de vouloir vider tout le panier ?');\">Supprimer le panier </a></td>
+            </tfoot>
+            
+        </table>  
+    </div>
         
-    </table>  
-
-<a class='btn btn-perso my-5' href=\"";
-            // line 46
+        <a class='btn btn-perso my-5' href=\"";
+            // line 48
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_validate");
             echo "\">Valider mon panier </a>
-";
+        ";
         }
+        // line 50
+        echo "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -194,7 +198,7 @@ class __TwigTemplate_28b3dc2f48dba4e32066f4d47dbcfa52 extends Template
 
     public function getDebugInfo()
     {
-        return array (  173 => 46,  165 => 41,  160 => 39,  155 => 36,  145 => 32,  136 => 30,  132 => 29,  128 => 28,  125 => 27,  121 => 26,  108 => 15,  102 => 12,  97 => 10,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  180 => 50,  175 => 48,  166 => 42,  161 => 40,  156 => 37,  146 => 33,  137 => 31,  133 => 30,  129 => 29,  126 => 28,  122 => 27,  108 => 15,  102 => 12,  97 => 10,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -213,42 +217,44 @@ class __TwigTemplate_28b3dc2f48dba4e32066f4d47dbcfa52 extends Template
 <h3 ><a class=\"my-5 btn btn-perso\" href=\"{{ path ('formations')}}\">Visiter la boutique </a></h3>
 
 {% else %}
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Produit</th>
-                <th>Prix</th>
-                <th>Quantité</th>
-                <th>Actions</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in items %}
+    <div class=\"container-fluid\">
+        <table class=\"table\">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Actions</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
                 <tr>
                     <td>{{ item.product.title }}</td>
-                    <td>{{ item.product.price }} €</td>
+                    <td>{{ item.product.price|number_format(2, ',', ' ') }} €</td>
                     <td> <a class=\"btn btn-perso-dark\" href=\"{{ path ('cart_delete_one', {id: item.product.id})}}\">-</a> <span class=\"mx-4\">{{ item.qty }}</span> <a class=\"btn btn-perso\" href=\"{{ path ('cart_add', {id: item.product.id})}}\">+</a> </td>
                     <td>
-                        <a href=\"{{ path('cart_delete', {id: item.product.id })}}\">Supprimer l'article</a>
+                        <a href=\"{{ path('cart_delete', {id: item.product.id })}}\" onclick=\"return confirm('Etes-vous sûr de vouloir supprimer l'article du panier ?');\">Supprimer l'article</a>
                     </td>
                 </tr>
-            {% endfor %}
-        </tbody>
-        <tfoot class=\"bold\">
-            <td> Total : </td>
-            <td> {{ total|number_format(2, ',', ' ') }} €</td>
-            <td > Vider le panier : </td>
-            <td> <a class='btn btn-outline-perso' href=\"{{ path('cart_remove')}}\">Supprimer le panier </a></td>
-        </tfoot>
+                {% endfor %}
+            </tbody>
+            <tfoot class=\"bold\">
+                <td> Total : </td>
+                <td> {{ total|number_format(2, ',', ' ') }} €</td>
+                <td > Vider le panier : </td>
+                <td> <a class='btn btn-outline-perso' href=\"{{ path('cart_remove')}}\"  onclick=\"return confirm('Etes-vous sûr de vouloir vider tout le panier ?');\">Supprimer le panier </a></td>
+            </tfoot>
+            
+        </table>  
+    </div>
         
-    </table>  
-
-<a class='btn btn-perso my-5' href=\"{{ path('cart_validate')}}\">Valider mon panier </a>
-{% endif %}
-{% endblock %}
-
-
-", "cart/index.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\cart\\index.html.twig");
+        <a class='btn btn-perso my-5' href=\"{{ path('cart_validate')}}\">Valider mon panier </a>
+        {% endif %}
+        {% endblock %}
+        
+        
+        ", "cart/index.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\cart\\index.html.twig");
     }
 }

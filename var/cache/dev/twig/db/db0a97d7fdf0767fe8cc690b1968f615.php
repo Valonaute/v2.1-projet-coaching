@@ -87,10 +87,38 @@ class __TwigTemplate_5b75d6841d3e4fa22ae75d88c5bd1cd2 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
         // line 8
-        echo "
-<h3>Voici le plan du site : </h3>
-
-
+        echo "<div class=\"contrainer-fluid my-5\">
+    <h3 class='my-3'>Voici le plan du site : </h3>
+    ";
+        // line 10
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10)) {
+            // line 11
+            echo "    ";
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+                // line 12
+                echo "    <img src=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/arbo-admin.png"), "html", null, true);
+                echo "\" alt=\"Arborescence Administrateur du site\">
+    ";
+            } else {
+                // line 14
+                echo "    <img src=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/arbo-user.png"), "html", null, true);
+                echo "\" alt=\"Arborescence utilisateur du site\">
+    ";
+            }
+            // line 16
+            echo "    ";
+        } else {
+            // line 17
+            echo "    <img src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/arbo-visiteur.png"), "html", null, true);
+            echo "\" alt=\"Arborescence visiteur du site\">
+    ";
+        }
+        // line 19
+        echo "</div>
+    
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -112,7 +140,7 @@ class __TwigTemplate_5b75d6841d3e4fa22ae75d88c5bd1cd2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  120 => 19,  114 => 17,  111 => 16,  105 => 14,  99 => 12,  96 => 11,  94 => 10,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -124,10 +152,19 @@ Plan du site
 {% endblock title %}
 
 {% block main %}
-
-<h3>Voici le plan du site : </h3>
-
-
+<div class=\"contrainer-fluid my-5\">
+    <h3 class='my-3'>Voici le plan du site : </h3>
+    {% if app.user %}
+    {% if is_granted('ROLE_ADMIN') %}
+    <img src=\"{{ asset ('assets/img/arbo-admin.png')}}\" alt=\"Arborescence Administrateur du site\">
+    {% else %}
+    <img src=\"{{ asset ('assets/img/arbo-user.png')}}\" alt=\"Arborescence utilisateur du site\">
+    {% endif %}
+    {% else %}
+    <img src=\"{{ asset ('assets/img/arbo-visiteur.png')}}\" alt=\"Arborescence visiteur du site\">
+    {% endif %}
+</div>
+    
 {% endblock main %}", "public/mapsite.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\public\\mapsite.html.twig");
     }
 }

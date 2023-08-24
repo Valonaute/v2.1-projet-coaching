@@ -10,7 +10,7 @@
     {{ dump(items) }}
 
     {% if items is empty %}
-    <p><b>Votre panier est vide !!</b></p>
+    <p><b>Votre panier est vide !</b></p>
     {% else %}
     <a href="{{ path('cart_clear') }}" onclick="return confirm('Etes-vous sure de vouloir vider tout le panier ?');" class="btn btn-warning mb-2">
         <i class="bi-trash-fill me-1"></i> Vider le panier
@@ -35,7 +35,7 @@
                 <td>{{ item.quantity }}</td>
                 <td>{{ (item.product.price * item.quantity)|number_format(2,',',' ') }} €</td>
                 <td>
-                    <a class="btn btn-danger flex-shrink-0" onclick="return confirm('Suppimer cet élément du panier ?');" href="{{ path('cart_delete', {id: item.product.id})}}">
+                    <a class="btn btn-danger flex-shrink-0" onclick="return confirm('Supprimer cet élément du panier ?');" href="{{ path('cart_delete', {id: item.product.id})}}">
                         <i class="bi-trash-fill me-1"></i>
                     </a>
                 </td>

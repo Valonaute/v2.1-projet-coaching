@@ -85,7 +85,7 @@ class __TwigTemplate_7e11cc3d9805be5acddd4e1285a0e84f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        echo "<div class=\"container\">
+        echo "<div class=\"container-fluid\">
     <form method=\"post\" class=\"form col-4 mx-auto my-5\">
         ";
         // line 8
@@ -184,7 +184,7 @@ class __TwigTemplate_7e11cc3d9805be5acddd4e1285a0e84f extends Template
 {% block title %}Connexion{% endblock %}
 
 {% block content %}
-<div class=\"container\">
+<div class=\"container-fluid\">
     <form method=\"post\" class=\"form col-4 mx-auto my-5\">
         {% if error %}
             <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -232,6 +232,6 @@ class __TwigTemplate_7e11cc3d9805be5acddd4e1285a0e84f extends Template
 </div>
 
 {% endblock %}
-", "security/login.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching\\templates\\security\\login.html.twig");
+", "security/login.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\security\\login.html.twig");
     }
 }

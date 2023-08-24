@@ -21,6 +21,7 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
+                'label' => 'Nom',
                 'attr' => [
                     'placeholder' => 'Prénom Nom'
                 ]
@@ -39,7 +40,11 @@ class ContactType extends AbstractType
                 'constraints' => new Recaptcha3(['message' => 'Il y a eu un problème avec le captcha. Veuillez contacter le service reCaptcha avec ces informations : {{ errorCodes }}']),
                 'action_name' => 'contact',
             ])
-            ->add('Valider', SubmitType::class)
+            ->add('Valider', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-perso'
+                ]
+            ])
         ;
     }
 

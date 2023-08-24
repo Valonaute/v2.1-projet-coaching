@@ -65,7 +65,7 @@ class __TwigTemplate_580bea21f40ed531e89e43ca6c7feb79 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
-        echo "<div class=\"container-fluid\">
+        echo "<div class=\"container-fluid my-5\">
     <div class=\"row\">
         <div class=\"col-6\">
             <img src=\"";
@@ -123,7 +123,7 @@ class __TwigTemplate_580bea21f40ed531e89e43ca6c7feb79 extends Template
         return new Source("{% extends 'base.html.twig' %}
 
 {% block content %}
-<div class=\"container-fluid\">
+<div class=\"container-fluid my-5\">
     <div class=\"row\">
         <div class=\"col-6\">
             <img src=\"{{ asset('uploads/')}}{{ product.0.image }}\" class=\"img-fluid\">

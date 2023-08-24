@@ -12,39 +12,42 @@
 <h3 ><a class="my-5 btn btn-perso" href="{{ path ('formations')}}">Visiter la boutique </a></h3>
 
 {% else %}
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Produit</th>
-                <th>Prix</th>
-                <th>Quantité</th>
-                <th>Actions</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in items %}
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Actions</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
                 <tr>
                     <td>{{ item.product.title }}</td>
-                    <td>{{ item.product.price }} €</td>
+                    <td>{{ item.product.price|number_format(2, ',', ' ') }} €</td>
                     <td> <a class="btn btn-perso-dark" href="{{ path ('cart_delete_one', {id: item.product.id})}}">-</a> <span class="mx-4">{{ item.qty }}</span> <a class="btn btn-perso" href="{{ path ('cart_add', {id: item.product.id})}}">+</a> </td>
                     <td>
-                        <a href="{{ path('cart_delete', {id: item.product.id })}}">Supprimer l'article</a>
+                        <a href="{{ path('cart_delete', {id: item.product.id })}}" onclick="return confirm('Etes-vous sûr de vouloir supprimer l'article du panier ?');">Supprimer l'article</a>
                     </td>
                 </tr>
-            {% endfor %}
-        </tbody>
-        <tfoot class="bold">
-            <td> Total : </td>
-            <td> {{ total|number_format(2, ',', ' ') }} €</td>
-            <td > Vider le panier : </td>
-            <td> <a class='btn btn-outline-perso' href="{{ path('cart_remove')}}">Supprimer le panier </a></td>
-        </tfoot>
+                {% endfor %}
+            </tbody>
+            <tfoot class="bold">
+                <td> Total : </td>
+                <td> {{ total|number_format(2, ',', ' ') }} €</td>
+                <td > Vider le panier : </td>
+                <td> <a class='btn btn-outline-perso' href="{{ path('cart_remove')}}"  onclick="return confirm('Etes-vous sûr de vouloir vider tout le panier ?');">Supprimer le panier </a></td>
+            </tfoot>
+            
+        </table>  
+    </div>
         
-    </table>  
-
-<a class='btn btn-perso my-5' href="{{ path('cart_validate')}}">Valider mon panier </a>
-{% endif %}
-{% endblock %}
-
-
+        <a class='btn btn-perso my-5' href="{{ path('cart_validate')}}">Valider mon panier </a>
+        {% endif %}
+        {% endblock %}
+        
+        
+        

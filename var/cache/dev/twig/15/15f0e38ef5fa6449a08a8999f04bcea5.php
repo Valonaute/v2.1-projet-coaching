@@ -200,7 +200,7 @@ class __TwigTemplate_71b9c2cc23f95a35f9fa095016a88e3c extends Template
             echo "</h5>
                     <h5 class=\"card-title my-4\">";
             // line 55
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 55), "html", null, true);
+            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 55), 2, ",", " "), "html", null, true);
             echo " €</h5>
                     <p class=\"card-text my-4\">";
             // line 56
@@ -210,11 +210,11 @@ class __TwigTemplate_71b9c2cc23f95a35f9fa095016a88e3c extends Template
                     <h4><a href=\"";
             // line 58
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 58)]), "html", null, true);
-            echo "\" class=\"btn btn-perso\">Ajouter au panier</a>
+            echo "\" class=\"btn btn-perso my-2\">Ajouter au panier</a>
                     <a href=\"";
             // line 59
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_product", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 59)]), "html", null, true);
-            echo "\" class=\"btn btn-perso-dark\">Details</a></h4>
+            echo "\" class=\"btn btn-perso-dark my-2\">Details</a></h4>
                   </div>
                 </div>
                 ";
@@ -360,11 +360,11 @@ Accueil
                   <a class=\"my-4\" href=\"{{ path('front_product', {id: product.id})}}\"><img src=\"{{ asset('uploads/')}}{{ product.image }}\" class=\"card-img-top\" alt=\"{{ product.title}}\" title=\"{{ product.title}}\"></a>
                   <div class=\"card-body card-center-perso \">
                     <h5 class=\"card-title my-4\">{{ product.title}}</h5>
-                    <h5 class=\"card-title my-4\">{{ product.price}} €</h5>
+                    <h5 class=\"card-title my-4\">{{ product.price|number_format(2, ',', ' ')}} €</h5>
                     <p class=\"card-text my-4\">{{ product.shortdescription}}</p>
                     <p class=\"guarantee my-3\"> Garantie 100% Satisfait ou remboursé !* </p>
-                    <h4><a href=\"{{ path('cart_add', {id: product.id })}}\" class=\"btn btn-perso\">Ajouter au panier</a>
-                    <a href=\"{{ path('front_product', {id: product.id})}}\" class=\"btn btn-perso-dark\">Details</a></h4>
+                    <h4><a href=\"{{ path('cart_add', {id: product.id })}}\" class=\"btn btn-perso my-2\">Ajouter au panier</a>
+                    <a href=\"{{ path('front_product', {id: product.id})}}\" class=\"btn btn-perso-dark my-2\">Details</a></h4>
                   </div>
                 </div>
                 {% endfor %}
@@ -392,6 +392,6 @@ Accueil
         </section>
         <a class=\"btn btn-perso my-5\" href=\"{{ path ('contact')}}\">Nous Contacter</a>
 
-{% endblock main %}", "public/home.html.twig", "C:\\wamp64\\www\\symfony\\2.6.0 projet-coaching\\templates\\public\\home.html.twig");
+{% endblock main %}", "public/home.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\public\\home.html.twig");
     }
 }
