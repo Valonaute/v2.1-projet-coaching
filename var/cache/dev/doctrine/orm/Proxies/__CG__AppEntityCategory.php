@@ -17,10 +17,14 @@ class Category extends \App\Entity\Category implements \Doctrine\Persistence\Pro
     }
 
     private const LAZY_OBJECT_PROPERTY_SCOPES = [
+        "\0".parent::class."\0".'article' => [parent::class, 'article', null],
+        "\0".parent::class."\0".'articles' => [parent::class, 'articles', null],
         "\0".parent::class."\0".'description' => [parent::class, 'description', null],
         "\0".parent::class."\0".'id' => [parent::class, 'id', null],
         "\0".parent::class."\0".'name' => [parent::class, 'name', null],
         "\0".parent::class."\0".'products' => [parent::class, 'products', null],
+        'article' => [parent::class, 'article', null],
+        'articles' => [parent::class, 'articles', null],
         'description' => [parent::class, 'description', null],
         'id' => [parent::class, 'id', null],
         'name' => [parent::class, 'name', null],

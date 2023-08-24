@@ -25,9 +25,17 @@ class Category
     #[ORM\OneToMany(mappedBy: 'idcategory', targetEntity: Product::class)]
     private Collection $products;
 
+    #[ORM\ManyToMany(targetEntity: Article::class, mappedBy: 'categoryArticle')]
+    private Collection $articles;
+
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Article::class)]
+    private Collection $article;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->articles = new ArrayCollection();
+        $this->article = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -87,5 +95,40 @@ class Category
         }
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Article>
+     */
+    public function getArticles(): Collection
+    {
+        return $this->articles;
+    }
+
+    public function addArticle(Article $article): static
+    {
+        if (!$this->articles->contains($article)) {
+            $this->articles->add($article);
+            $article->addCategoryArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeArticle(Article $article): static
+    {
+        if ($this->articles->removeElement($article)) {
+            $article->removeCategoryArticle($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Article>
+     */
+    public function getArticle(): Collection
+    {
+        return $this->article;
     }
 }

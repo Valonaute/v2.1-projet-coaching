@@ -86,23 +86,23 @@ class __TwigTemplate_420d3754b760d2ef72c4e14c25c0dd9f extends Template
 
         // line 7
         echo "
-<section class=\"menu\">
+<section class=\"menu my-5\">
   <a class=\"on\" href=\"";
         // line 9
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog");
         echo "\"> Tous les articles </a>
   <a class=\"inactive\" href=\"";
         // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("confidence");
-        echo "\"> Confiance en soi </a>
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_confidence", ["id" => 6]);
+        echo "\"> Confiance en soi  </a>
   <a class=\"inactive\" href=\"";
         // line 11
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("relations");
-        echo "\"> Relations </a>
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_relationship", ["id" => 7]);
+        echo "\"> Relations  </a>
   <a class=\"inactive\" href=\"";
         // line 12
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("communications");
-        echo "\"> Communications </a>
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_communication", ["id" => 8]);
+        echo "\"> Communication </a>
 </section>
 
 <div class=\"container-fluid my-5\">
@@ -181,11 +181,11 @@ class __TwigTemplate_420d3754b760d2ef72c4e14c25c0dd9f extends Template
 
 {% block content %}
 
-<section class=\"menu\">
+<section class=\"menu my-5\">
   <a class=\"on\" href=\"{{ path ('blog')}}\"> Tous les articles </a>
-  <a class=\"inactive\" href=\"{{ path ('confidence')}}\"> Confiance en soi </a>
-  <a class=\"inactive\" href=\"{{ path ('relations')}}\"> Relations </a>
-  <a class=\"inactive\" href=\"{{ path ('communications')}}\"> Communications </a>
+  <a class=\"inactive\" href=\"{{ path ('blog_confidence', {id: 6})}}\"> Confiance en soi  </a>
+  <a class=\"inactive\" href=\"{{ path ('blog_relationship', {id: 7})}}\"> Relations  </a>
+  <a class=\"inactive\" href=\"{{ path ('blog_communication', {id: 8})}}\"> Communication </a>
 </section>
 
 <div class=\"container-fluid my-5\">

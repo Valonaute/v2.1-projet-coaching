@@ -28,9 +28,7 @@ return [
         '/checkout' => [[['_route' => 'checkout', '_controller' => 'App\\Controller\\TestStripeController::checkout'], null, null, null, false, false, null]],
         '/cgu' => [[['_route' => 'cgu', '_controller' => 'App\\Controller\\PublicController::showCgu'], null, null, null, false, false, null]],
         '/connexion' => [[['_route' => 'connexion', '_controller' => 'App\\Controller\\PublicController::showConnexion'], null, null, null, false, false, null]],
-        '/blog/confidence' => [[['_route' => 'confidence', '_controller' => 'App\\Controller\\ArticleController::showconfidence'], null, null, null, false, false, null]],
         '/contact' => [[['_route' => 'contact', '_controller' => 'App\\Controller\\ContactController::contactForm'], null, null, null, false, false, null]],
-        '/blog/communications' => [[['_route' => 'communications', '_controller' => 'App\\Controller\\ArticleController::showcommunications'], null, null, null, false, false, null]],
         '/admin/category/create' => [[['_route' => 'create_category', '_controller' => 'App\\Controller\\CategoryController::createCategory'], null, null, null, false, false, null]],
         '/admin/product/create' => [[['_route' => 'create_product', '_controller' => 'App\\Controller\\ProductController::createproduct'], null, null, null, false, false, null]],
         '/admin/article/create' => [[['_route' => 'create_article', '_controller' => 'App\\Controller\\ArticleController::createArticle'], null, null, null, false, false, null]],
@@ -50,7 +48,6 @@ return [
         '/motivation' => [[['_route' => 'motivation', '_controller' => 'App\\Controller\\CategoryController::showMotivation'], null, null, null, false, false, null]],
         '/order/validation' => [[['_route' => 'order_validation', '_controller' => 'App\\Controller\\Order\\OrderConfirmationController::confirm'], null, null, null, false, false, null]],
         '/order/list' => [[['_route' => 'order_customer', '_controller' => 'App\\Controller\\Order\\OrderListController::index'], null, null, null, false, false, null]],
-        '/blog/relations' => [[['_route' => 'relations', '_controller' => 'App\\Controller\\ArticleController::showrelations'], null, null, null, false, false, null]],
         '/review/show' => [[['_route' => 'review_show', '_controller' => 'App\\Controller\\ReviewController::show'], null, null, null, false, false, null]],
         '/rdv' => [[['_route' => 'rdv', '_controller' => 'App\\Controller\\CategoryController::showRdv'], null, null, null, false, false, null]],
         '/rgpd' => [[['_route' => 'rgpd', '_controller' => 'App\\Controller\\PublicController::showRgpd'], null, null, null, false, false, null]],
@@ -87,37 +84,44 @@ return [
                         .'|show/(\\d+)(*:254)'
                     .')'
                 .')'
+                .'|/blog/(?'
+                    .'|co(?'
+                        .'|nfidence/([^/]++)(*:295)'
+                        .'|mmunication/([^/]++)(*:323)'
+                    .')'
+                    .'|relationship/([^/]++)(*:353)'
+                .')'
                 .'|/ca(?'
                     .'|rt/(?'
-                        .'|add/(\\d+)(*:285)'
+                        .'|add/(\\d+)(*:383)'
                         .'|delete(?'
-                            .'|/(\\d+)(*:308)'
-                            .'|one/(\\d+)(*:325)'
+                            .'|/(\\d+)(*:406)'
+                            .'|one/(\\d+)(*:423)'
                         .')'
                     .')'
-                    .'|tegory/(\\d+)(*:347)'
+                    .'|tegory/(\\d+)(*:445)'
                 .')'
                 .'|/a(?'
                     .'|dmin/(?'
                         .'|article/(?'
-                            .'|delete/([^/]++)(*:395)'
-                            .'|update/([^/]++)(*:418)'
+                            .'|delete/([^/]++)(*:493)'
+                            .'|update/([^/]++)(*:516)'
                         .')'
                         .'|category/(?'
-                            .'|delete/([^/]++)(*:454)'
-                            .'|update/([^/]++)(*:477)'
+                            .'|delete/([^/]++)(*:552)'
+                            .'|update/([^/]++)(*:575)'
                         .')'
                         .'|product/(?'
-                            .'|delete/([^/]++)(*:512)'
-                            .'|update/([^/]++)(*:535)'
+                            .'|delete/([^/]++)(*:610)'
+                            .'|update/([^/]++)(*:633)'
                         .')'
                     .')'
-                    .'|rticle/(\\d+)(*:557)'
+                    .'|rticle/(\\d+)(*:655)'
                 .')'
-                .'|/product/(\\d+)(*:580)'
+                .'|/product/(\\d+)(*:678)'
                 .'|/order/(?'
-                    .'|pay/([^/]++)(*:610)'
-                    .'|terminate/(\\d+)(*:633)'
+                    .'|pay/([^/]++)(*:708)'
+                    .'|terminate/(\\d+)(*:731)'
                 .')'
             .')/?$}sDu',
     ],
@@ -132,20 +136,23 @@ return [
         208 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
         236 => [[['_route' => 'review_create', '_controller' => 'App\\Controller\\ReviewController::create'], ['id'], null, null, false, true, null]],
         254 => [[['_route' => 'review_show_one', '_controller' => 'App\\Controller\\ReviewController::showOne'], ['id'], null, null, false, true, null]],
-        285 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null]],
-        308 => [[['_route' => 'cart_delete', '_controller' => 'App\\Controller\\CartController::delete'], ['id'], null, null, false, true, null]],
-        325 => [[['_route' => 'cart_delete_one', '_controller' => 'App\\Controller\\CartController::deleteOne'], ['id'], null, null, false, true, null]],
-        347 => [[['_route' => 'front_category', '_controller' => 'App\\Controller\\CategoryController::showCategoryfront'], ['id'], null, null, false, true, null]],
-        395 => [[['_route' => 'delete_article', '_controller' => 'App\\Controller\\ArticleController::deleteArticle'], ['id'], null, null, false, true, null]],
-        418 => [[['_route' => 'update_article', '_controller' => 'App\\Controller\\ArticleController::updateArticle'], ['id'], null, null, false, true, null]],
-        454 => [[['_route' => 'delete_category', '_controller' => 'App\\Controller\\CategoryController::deleteCategory'], ['id'], null, null, false, true, null]],
-        477 => [[['_route' => 'update_category', '_controller' => 'App\\Controller\\CategoryController::updateCategory'], ['id'], null, null, false, true, null]],
-        512 => [[['_route' => 'delete_product', '_controller' => 'App\\Controller\\ProductController::deleteProduct'], ['id'], null, null, false, true, null]],
-        535 => [[['_route' => 'update_product', '_controller' => 'App\\Controller\\ProductController::updateProduct'], ['id'], null, null, false, true, null]],
-        557 => [[['_route' => 'front_onearticle', '_controller' => 'App\\Controller\\ArticleController::showOneArticleFront'], ['id'], null, null, false, true, null]],
-        580 => [[['_route' => 'front_product', '_controller' => 'App\\Controller\\ProductController::showOneProductFront'], ['id'], null, null, false, true, null]],
-        610 => [[['_route' => 'order_payment_form', '_controller' => 'App\\Controller\\Order\\OrderPaymentController::showCard'], ['id'], null, null, false, true, null]],
-        633 => [
+        295 => [[['_route' => 'blog_confidence', '_controller' => 'App\\Controller\\ArticleController::showArticlesCategory'], ['id'], null, null, false, true, null]],
+        323 => [[['_route' => 'blog_communication', '_controller' => 'App\\Controller\\ArticleController::showArticlesCategory'], ['id'], null, null, false, true, null]],
+        353 => [[['_route' => 'blog_relationship', '_controller' => 'App\\Controller\\ArticleController::showArticlesCategory'], ['id'], null, null, false, true, null]],
+        383 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null]],
+        406 => [[['_route' => 'cart_delete', '_controller' => 'App\\Controller\\CartController::delete'], ['id'], null, null, false, true, null]],
+        423 => [[['_route' => 'cart_delete_one', '_controller' => 'App\\Controller\\CartController::deleteOne'], ['id'], null, null, false, true, null]],
+        445 => [[['_route' => 'front_category', '_controller' => 'App\\Controller\\CategoryController::showCategoryfront'], ['id'], null, null, false, true, null]],
+        493 => [[['_route' => 'delete_article', '_controller' => 'App\\Controller\\ArticleController::deleteArticle'], ['id'], null, null, false, true, null]],
+        516 => [[['_route' => 'update_article', '_controller' => 'App\\Controller\\ArticleController::updateArticle'], ['id'], null, null, false, true, null]],
+        552 => [[['_route' => 'delete_category', '_controller' => 'App\\Controller\\CategoryController::deleteCategory'], ['id'], null, null, false, true, null]],
+        575 => [[['_route' => 'update_category', '_controller' => 'App\\Controller\\CategoryController::updateCategory'], ['id'], null, null, false, true, null]],
+        610 => [[['_route' => 'delete_product', '_controller' => 'App\\Controller\\ProductController::deleteProduct'], ['id'], null, null, false, true, null]],
+        633 => [[['_route' => 'update_product', '_controller' => 'App\\Controller\\ProductController::updateProduct'], ['id'], null, null, false, true, null]],
+        655 => [[['_route' => 'front_onearticle', '_controller' => 'App\\Controller\\ArticleController::showOneArticleFront'], ['id'], null, null, false, true, null]],
+        678 => [[['_route' => 'front_product', '_controller' => 'App\\Controller\\ProductController::showOneProductFront'], ['id'], null, null, false, true, null]],
+        708 => [[['_route' => 'order_payment_form', '_controller' => 'App\\Controller\\Order\\OrderPaymentController::showCard'], ['id'], null, null, false, true, null]],
+        731 => [
             [['_route' => 'order_terminate', '_controller' => 'App\\Controller\\Order\\OrderPaymentSuccessController::success'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

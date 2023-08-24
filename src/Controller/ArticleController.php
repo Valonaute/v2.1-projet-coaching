@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
+use App\Repository\CategoryRepository;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,7 +34,6 @@ class ArticleController extends AbstractController
 
         // Création nouveau formulaire 
         $form = $this->createForm(ArticleType::class, $Article);
-
         $form->handleRequest($request);
 
         // Si le formulaire est remplit : 
@@ -170,6 +171,14 @@ class ArticleController extends AbstractController
         ]);
     }
 
+    public function showArticlesCategory(ArticleRepository $articleRepository, CategoryRepository $categoryRepository, $id)
+    {
+        // Affichage du template article pour le public avec récupération des articles par catégorie 
+        return $this->render('article/showfront.html.twig', [
+            'articles' => $articleRepository->findby(['category' => $id])
+        ]);
+    }
+
     public function showOneArticleFront($id, ArticleRepository $articleRepository)
     {
         // Récupération d'un seul article avec son ID via la methode findBy du repo 
@@ -180,9 +189,5 @@ class ArticleController extends AbstractController
             'article' => $article
         ]);
     }
-
-    
-
-
 }
 

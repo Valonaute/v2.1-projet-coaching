@@ -105,7 +105,7 @@ class __TwigTemplate_a2a3d2f78c77069561429fa9681fa2f6 extends Template
         echo "\"> Communications </a>
 </section>
 
-<div class=\"container-fluid\">
+<div class=\"container-fluid my-5\">
     <div class=\"row\">
         <div class=\"col-6\" style=\"max-width:30rem;\">
             <img src=\"";
@@ -175,7 +175,7 @@ class __TwigTemplate_a2a3d2f78c77069561429fa9681fa2f6 extends Template
   <a class=\"inactive\" href=\"{{ path ('communications')}}\"> Communications </a>
 </section>
 
-<div class=\"container-fluid\">
+<div class=\"container-fluid my-5\">
     <div class=\"row\">
         <div class=\"col-6\" style=\"max-width:30rem;\">
             <img src=\"{{ asset('uploads/')}}{{ article.0.image }}\" class=\"img-fluid\">

@@ -20,6 +20,18 @@ blog:
     path: /blog
     controller: App\Controller\ArticleController::showArticlesFront
 
+blog_confidence:
+    path: /blog/confidence/{id}
+    controller: App\Controller\ArticleController::showArticlesCategory
+
+blog_relationship:
+    path: /blog/relationship/{id}
+    controller: App\Controller\ArticleController::showArticlesCategory
+
+blog_communication:
+    path: /blog/communication/{id}
+    controller: App\Controller\ArticleController::showArticlesCategory
+
 cancel_url:
     path: /cancel
     controller: App\Controller\TestStripeController::cancel
@@ -70,17 +82,9 @@ connexion:
     path: /connexion
     controller: App\Controller\PublicController::showConnexion
 
-confidence:
-    path: /blog/confidence
-    controller: App\Controller\ArticleController::showconfidence
-
 contact:
     path: /contact
     controller: App\Controller\ContactController::contactForm
-
-communications:
-    path: /blog/communications
-    controller: App\Controller\ArticleController::showcommunications
 
 create_category:
     path: /admin/category/create
@@ -197,10 +201,6 @@ order_terminate:
     controller: App\Controller\Order\OrderPaymentSuccessController::success
     requirements:
         id: '\d+'
-
-relations:
-    path: /blog/relations
-    controller: App\Controller\ArticleController::showrelations
 
 review_create:
     path: /review/create/{id}

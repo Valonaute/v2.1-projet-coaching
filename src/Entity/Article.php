@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArticleRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -31,6 +33,20 @@ class Article
 
     #[ORM\ManyToOne(inversedBy: 'articles')]
     private ?User $id_user = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $subject = null;
+
+    #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'articles')]
+    private Collection $categoryArticle;
+
+    #[ORM\ManyToOne(inversedBy: 'article')]
+    private ?category $category = null;
+
+    public function __construct()
+    {
+        $this->categoryArticle = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -105,6 +121,54 @@ class Article
     public function setIdUser(?User $id_user): static
     {
         $this->id_user = $id_user;
+
+        return $this;
+    }
+
+    public function getSubject(): ?string
+    {
+        return $this->subject;
+    }
+
+    public function setSubject(?string $subject): static
+    {
+        $this->subject = $subject;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Category>
+     */
+    public function getCategoryArticle(): Collection
+    {
+        return $this->categoryArticle;
+    }
+
+    public function addCategoryArticle(Category $categoryArticle): static
+    {
+        if (!$this->categoryArticle->contains($categoryArticle)) {
+            $this->categoryArticle->add($categoryArticle);
+        }
+
+        return $this;
+    }
+
+    public function removeCategoryArticle(Category $categoryArticle): static
+    {
+        $this->categoryArticle->removeElement($categoryArticle);
+
+        return $this;
+    }
+
+    public function getCategory(): ?category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?category $category): static
+    {
+        $this->category = $category;
 
         return $this;
     }
