@@ -88,7 +88,7 @@ class __TwigTemplate_0b9ae30c65c153c003e286cd11c7d074 extends Template
         echo "
 <h2 class=\"my-5 text-perso\"> Vous êtes sur la page des avis laissés par nos clients : </h2>
 
-<div class=\"container\">
+<div class=\"container-fluid\">
     <table class=\"table\">
         <thead>
                 <tr>
@@ -182,7 +182,7 @@ class __TwigTemplate_0b9ae30c65c153c003e286cd11c7d074 extends Template
 
 <h2 class=\"my-5 text-perso\"> Vous êtes sur la page des avis laissés par nos clients : </h2>
 
-<div class=\"container\">
+<div class=\"container-fluid\">
     <table class=\"table\">
         <thead>
                 <tr>
@@ -212,6 +212,6 @@ class __TwigTemplate_0b9ae30c65c153c003e286cd11c7d074 extends Template
 </div>
 <a class=\"btn btn-perso my-5\" href=\"{{ path ('formations')}}\"> Devenir client</a>
 {% endblock %}
-", "review/showReviews.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\review\\showReviews.html.twig");
+", "review/showReviews.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\review\\showReviews.html.twig");
     }
 }

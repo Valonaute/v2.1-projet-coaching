@@ -146,7 +146,7 @@ class __TwigTemplate_22909ad488cc11881355ffef13d4eeea extends Template
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dashboard_reviews");
         echo "\"> Avis clients</a></h4>
 
-    <div class=\"container my-5\">
+    <div class=\"container-fluid my-5\">
         <table class=\"table\">
             <thead>
                     <tr>
@@ -276,7 +276,7 @@ Tableau de bord
     <h4><a class=\"my-2 btn btn-outline-dark\" href=\"{{ path ('dashboard_users')}}\"> Liste des utilisateurs </a></h4>
     <h4><a class=\"my-2 btn btn-outline-danger\" href=\"{{ path ('dashboard_reviews')}}\"> Avis clients</a></h4>
 
-    <div class=\"container my-5\">
+    <div class=\"container-fluid my-5\">
         <table class=\"table\">
             <thead>
                     <tr>
@@ -310,6 +310,6 @@ Tableau de bord
 
 <a class=\"my-5 btn btn-perso\" href=\"{{ path ('home')}}\"> Retour Accueil </a>
 
-{% endblock main %}", "admin/reviews.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\admin\\reviews.html.twig");
+{% endblock main %}", "admin/reviews.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\admin\\reviews.html.twig");
     }
 }

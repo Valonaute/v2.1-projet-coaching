@@ -125,7 +125,7 @@ class __TwigTemplate_6fd0007ee125841f8f1a4ba62f9a0963 extends Template
                     <a href=\"";
             // line 25
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 25), "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\"><i class=\"fas fa-trash\">Supprimer</i></a>
+            echo "\"  onclick=\"return confirm('Etes-vous sûr de vouloir du panier ?');\">Supprimer</a>
                 </td>
             </tr>
             ";
@@ -202,7 +202,7 @@ class __TwigTemplate_6fd0007ee125841f8f1a4ba62f9a0963 extends Template
                 <td>{{ item.product.price|number_format(2, ',', ' ') }} €</td>
                 <td> <a class=\"btn btn-perso-dark\" href=\"{{ path ('cart_delete_one', {id: item.product.id})}}\">-</a> <span class=\"mx-4\">{{ item.qty }}</span> <a class=\"btn btn-perso\" href=\"{{ path ('cart_add', {id: item.product.id})}}\">+</a> </td>
                 <td>
-                    <a href=\"{{ path('cart_delete', {id: item.product.id })}}\"><i class=\"fas fa-trash\">Supprimer</i></a>
+                    <a href=\"{{ path('cart_delete', {id: item.product.id })}}\"  onclick=\"return confirm('Etes-vous sûr de vouloir du panier ?');\">Supprimer</a>
                 </td>
             </tr>
             {% endfor %}
@@ -231,6 +231,6 @@ class __TwigTemplate_6fd0007ee125841f8f1a4ba62f9a0963 extends Template
 {% endblock %}
 
 
-", "cart/validateCart.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\cart\\validateCart.html.twig");
+", "cart/validateCart.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\cart\\validateCart.html.twig");
     }
 }

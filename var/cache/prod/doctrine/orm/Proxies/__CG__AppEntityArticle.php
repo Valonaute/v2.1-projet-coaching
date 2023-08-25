@@ -17,19 +17,25 @@ class Article extends \App\Entity\Article implements \Doctrine\Persistence\Proxy
     }
 
     private const LAZY_OBJECT_PROPERTY_SCOPES = [
+        "\0".parent::class."\0".'category' => [parent::class, 'category', null],
+        "\0".parent::class."\0".'categoryArticle' => [parent::class, 'categoryArticle', null],
         "\0".parent::class."\0".'datearticle' => [parent::class, 'datearticle', null],
         "\0".parent::class."\0".'description' => [parent::class, 'description', null],
         "\0".parent::class."\0".'id' => [parent::class, 'id', null],
         "\0".parent::class."\0".'id_user' => [parent::class, 'id_user', null],
         "\0".parent::class."\0".'image' => [parent::class, 'image', null],
         "\0".parent::class."\0".'shortdescription' => [parent::class, 'shortdescription', null],
+        "\0".parent::class."\0".'subject' => [parent::class, 'subject', null],
         "\0".parent::class."\0".'title' => [parent::class, 'title', null],
+        'category' => [parent::class, 'category', null],
+        'categoryArticle' => [parent::class, 'categoryArticle', null],
         'datearticle' => [parent::class, 'datearticle', null],
         'description' => [parent::class, 'description', null],
         'id' => [parent::class, 'id', null],
         'id_user' => [parent::class, 'id_user', null],
         'image' => [parent::class, 'image', null],
         'shortdescription' => [parent::class, 'shortdescription', null],
+        'subject' => [parent::class, 'subject', null],
         'title' => [parent::class, 'title', null],
     ];
 

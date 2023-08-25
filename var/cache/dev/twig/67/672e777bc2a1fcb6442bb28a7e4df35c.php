@@ -135,7 +135,7 @@ class __TwigTemplate_429e60fc381ce34fa34ecdfd7d130033 extends Template
     <h4 class=\"my-4 text-color-perso\"> Consulter des données </h4>
     <h4><a class=\"my-2 btn btn-outline-info\" href=\"\"> Commandes Clients</a></h4>
 
-    <div class=\"container my-5\">
+    <div class=\"container-fluid my-5\">
         <table class=\"table\">
             <thead>
                 <tr>
@@ -271,7 +271,7 @@ Tableau de bord
     <h4 class=\"my-4 text-color-perso\"> Consulter des données </h4>
     <h4><a class=\"my-2 btn btn-outline-info\" href=\"\"> Commandes Clients</a></h4>
 
-    <div class=\"container my-5\">
+    <div class=\"container-fluid my-5\">
         <table class=\"table\">
             <thead>
                 <tr>
@@ -306,6 +306,6 @@ Tableau de bord
 
 <a class=\"my-5 btn btn-perso\" href=\"{{ path ('home')}}\"> Retour Accueil </a>
 
-{% endblock main %}", "admin/orders.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching\\templates\\admin\\orders.html.twig");
+{% endblock main %}", "admin/orders.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\admin\\orders.html.twig");
     }
 }

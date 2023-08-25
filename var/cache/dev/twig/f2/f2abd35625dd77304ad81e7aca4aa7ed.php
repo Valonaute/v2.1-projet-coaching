@@ -103,6 +103,6 @@ class __TwigTemplate_044de67822bb59bdef31e23297990737 extends Template
     <div class=\"container-fluid my-5\">
         {{ form(form)}}
     </div>
-{% endblock %}", "category/create.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\category\\create.html.twig");
+{% endblock %}", "category/create.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\category\\create.html.twig");
     }
 }

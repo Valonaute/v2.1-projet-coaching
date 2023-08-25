@@ -20,16 +20,8 @@ blog:
     path: /blog
     controller: App\Controller\ArticleController::showArticlesFront
 
-blog_confidence:
-    path: /blog/confidence/{id}
-    controller: App\Controller\ArticleController::showArticlesCategory
-
-blog_relationship:
-    path: /blog/relationship/{id}
-    controller: App\Controller\ArticleController::showArticlesCategory
-
-blog_communication:
-    path: /blog/communication/{id}
+blog_category:
+    path: /blog/category/{id}
     controller: App\Controller\ArticleController::showArticlesCategory
 
 cancel_url:

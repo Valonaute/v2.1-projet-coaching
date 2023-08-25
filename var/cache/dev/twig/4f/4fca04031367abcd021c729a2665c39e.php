@@ -205,6 +205,6 @@ class __TwigTemplate_596b3550643fe66430346337c2a9e4bd extends Template
   <a href=\"{{ path('create_article')}}\" class=\"btn btn-success\">créer un article</a>
 </div>
   
-  {%  endblock %}", "article/show.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\article\\show.html.twig");
+  {%  endblock %}", "article/show.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\article\\show.html.twig");
     }
 }

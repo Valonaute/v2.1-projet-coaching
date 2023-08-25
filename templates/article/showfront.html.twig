@@ -7,9 +7,9 @@
 
 <section class="menu my-5">
   <a class="on" href="{{ path ('blog')}}"> Tous les articles </a>
-  <a class="inactive" href="{{ path ('blog_confidence', {id: 6})}}"> Confiance en soi  </a>
-  <a class="inactive" href="{{ path ('blog_relationship', {id: 7})}}"> Relations  </a>
-  <a class="inactive" href="{{ path ('blog_communication', {id: 8})}}"> Communication </a>
+  <a class="inactive" href="{{ path ('blog_category', {id: 6})}}"> Confiance en soi  </a>
+  <a class="inactive" href="{{ path ('blog_category', {id: 7})}}"> Relations  </a>
+  <a class="inactive" href="{{ path ('blog_category', {id: 8})}}"> Communication </a>
 </section>
 
 <div class="container-fluid my-5">
@@ -26,7 +26,6 @@
                 </div>
             </div>
         {% endfor %}
-
     </div>
 </div>
 

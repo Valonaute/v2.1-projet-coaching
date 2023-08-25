@@ -28,7 +28,11 @@ class ReviewType extends AbstractType
             ->add('rating', NumberType::class, [
                 'label' => 'Note sur 10'
             ])
-            ->add('Valider', SubmitType::class)
+            ->add('Valider', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-perso'
+                ]
+            ])
         ;
     }
 

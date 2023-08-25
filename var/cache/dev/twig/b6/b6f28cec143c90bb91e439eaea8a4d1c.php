@@ -93,7 +93,6 @@ class __TwigTemplate_a5189a1de7327cb6c00fc24f8f990bee extends Template
     <p> La société EasyWebFactory va être créer dès la fin de l'année 2023 après obtention d'un dîplome par l'un de ses fondateur !</p>
     <p> Elle proposera des services de création de site internet et d'applications mobiles. </p>
     <h4><a href=\"https://valentin-gautier.easywebfactory.com\" target='blank'>En savoir plus</a>  </h4>
-    
 </div>
 ";
         
@@ -134,8 +133,7 @@ EasyWebfactory Inc.
     <p> La société EasyWebFactory va être créer dès la fin de l'année 2023 après obtention d'un dîplome par l'un de ses fondateur !</p>
     <p> Elle proposera des services de création de site internet et d'applications mobiles. </p>
     <h4><a href=\"https://valentin-gautier.easywebfactory.com\" target='blank'>En savoir plus</a>  </h4>
-    
 </div>
-{% endblock main %}", "public/valonauteinc.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\public\\valonauteinc.html.twig");
+{% endblock main %}", "public/valonauteinc.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\public\\valonauteinc.html.twig");
     }
 }

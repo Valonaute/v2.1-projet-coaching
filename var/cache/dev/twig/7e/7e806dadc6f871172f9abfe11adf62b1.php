@@ -55,7 +55,7 @@ class __TwigTemplate_80bd09127ef7c9cfe97ab2bc905957f4 extends Template
 
 <p> Accédez directement à notre site maintenant : </p>
 
-<a href=\"https://coachingdevperso.fr\">coachingdevperso.fr</a>
+<a href=\"https://coaching-devperso.easywebfactory.com\">Coaching-devperso</a>
 ";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -90,7 +90,7 @@ class __TwigTemplate_80bd09127ef7c9cfe97ab2bc905957f4 extends Template
 
 <p> Accédez directement à notre site maintenant : </p>
 
-<a href=\"https://coachingdevperso.fr\">coachingdevperso.fr</a>
-", "mailer/inscription.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\mailer\\inscription.html.twig");
+<a href=\"https://coaching-devperso.easywebfactory.com\">Coaching-devperso</a>
+", "mailer/inscription.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\mailer\\inscription.html.twig");
     }
 }

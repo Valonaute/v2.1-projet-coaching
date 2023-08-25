@@ -85,21 +85,22 @@ class __TwigTemplate_7341b35f8f5be1bc08406222712083fe extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Changer votre mot de passe</h1>
-
+        echo "<div class=\"container-fluid my-5\">
+    <h1>Changer votre mot de passe</h1>
     ";
         // line 8
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 8, $this->source); })()), 'form_start');
         echo "
-        ";
+    ";
         // line 9
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 9, $this->source); })()), "plainPassword", [], "any", false, false, false, 9), 'row');
         echo "
-        <button class=\"btn btn-perso\">Changer le mot de passe</button>
+    <button class=\"btn btn-perso\">Changer le mot de passe</button>
     ";
         // line 11
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["resetForm"]) || array_key_exists("resetForm", $context) ? $context["resetForm"] : (function () { throw new RuntimeError('Variable "resetForm" does not exist.', 11, $this->source); })()), 'form_end');
         echo "
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -131,13 +132,14 @@ class __TwigTemplate_7341b35f8f5be1bc08406222712083fe extends Template
 {% block title %}Changer votre mot de passe {% endblock %}
 
 {% block body %}
+<div class=\"container-fluid my-5\">
     <h1>Changer votre mot de passe</h1>
-
     {{ form_start(resetForm) }}
-        {{ form_row(resetForm.plainPassword) }}
-        <button class=\"btn btn-perso\">Changer le mot de passe</button>
+    {{ form_row(resetForm.plainPassword) }}
+    <button class=\"btn btn-perso\">Changer le mot de passe</button>
     {{ form_end(resetForm) }}
+</div>
 {% endblock %}
-", "reset_password/reset.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\reset_password\\reset.html.twig");
+", "reset_password/reset.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\reset_password\\reset.html.twig");
     }
 }

@@ -97,7 +97,7 @@ class __TwigTemplate_ced59117960e9d9f6875d68467449abc extends Template
 
 <p> Accédez directement à notre site maintenant : </p>
 
-<a href=\"https://coachingdevperso.fr\">coachingdevperso.fr</a>
+<a href=\"https://coaching-devperso.easywebfactory.com\">coaching-devperso</a>
 
 <p> L'équipe CoachingDevPerso.fr</p>";
         
@@ -155,8 +155,8 @@ class __TwigTemplate_ced59117960e9d9f6875d68467449abc extends Template
 
 <p> Accédez directement à notre site maintenant : </p>
 
-<a href=\"https://coachingdevperso.fr\">coachingdevperso.fr</a>
+<a href=\"https://coaching-devperso.easywebfactory.com\">coaching-devperso</a>
 
-<p> L'équipe CoachingDevPerso.fr</p>", "mailer/successOrder.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\mailer\\successOrder.html.twig");
+<p> L'équipe CoachingDevPerso.fr</p>", "mailer/successOrder.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\mailer\\successOrder.html.twig");
     }
 }

@@ -65,9 +65,12 @@ class __TwigTemplate_47b5c49d1b04fa9fb7d79019b8e346b5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
-        echo "    ";
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form');
+        echo "<div class=\"container-fluid my-5\">
+    ";
+        // line 5
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), 'form');
         echo "
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -89,7 +92,7 @@ class __TwigTemplate_47b5c49d1b04fa9fb7d79019b8e346b5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  68 => 4,  58 => 3,  35 => 1,);
+        return array (  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -97,7 +100,9 @@ class __TwigTemplate_47b5c49d1b04fa9fb7d79019b8e346b5 extends Template
         return new Source("{% extends 'base.html.twig' %}
 
 {% block content %}
+<div class=\"container-fluid my-5\">
     {{ form(form)}}
-{% endblock %}", "review/create.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\review\\create.html.twig");
+</div>
+{% endblock %}", "review/create.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\review\\create.html.twig");
     }
 }

@@ -165,6 +165,6 @@ Plan du site
     {% endif %}
 </div>
     
-{% endblock main %}", "public/mapsite.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\public\\mapsite.html.twig");
+{% endblock main %}", "public/mapsite.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\public\\mapsite.html.twig");
     }
 }

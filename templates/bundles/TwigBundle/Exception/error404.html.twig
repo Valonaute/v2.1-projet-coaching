@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Page non trouvée !
+{% endblock title %}
+
+{% block main %}
+
+<section class="container-fluid my-5">
+    <h1> Page non trouvée ! </h1>
+    <img class="border-bg" src="{{ asset ('assets/img/oops.jpg')}}" alt="oops erreur" title="oops ! Il y a une erreur !">
+    <h2 class="my-5"> Oh non votre page n'a pas été trouvée ! Erreur 404 ! </h2>
+    <a href="{{ path ('home')}}" class="my-5 btn btn-perso"> Retour à l'accueil </a>
+</section>
+
+{% endblock main %}

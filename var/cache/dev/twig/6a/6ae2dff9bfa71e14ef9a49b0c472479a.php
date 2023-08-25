@@ -65,7 +65,7 @@ class __TwigTemplate_4a3734e8c8ba03ca1e9840a8e9e51e5d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Contact Form ";
+        echo "Contact ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -119,13 +119,13 @@ class __TwigTemplate_4a3734e8c8ba03ca1e9840a8e9e51e5d extends Template
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Contact Form {% endblock %}
+{% block title %}Contact {% endblock %}
 
 {% block content %}
     <div class=\"container my-5\">
         {{ form(form)}}
     </div>
 {% endblock %}
-", "mailer/contactForm.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\mailer\\contactForm.html.twig");
+", "mailer/contactForm.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\mailer\\contactForm.html.twig");
     }
 }

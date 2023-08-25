@@ -93,15 +93,15 @@ class __TwigTemplate_420d3754b760d2ef72c4e14c25c0dd9f extends Template
         echo "\"> Tous les articles </a>
   <a class=\"inactive\" href=\"";
         // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_confidence", ["id" => 6]);
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_category", ["id" => 6]);
         echo "\"> Confiance en soi  </a>
   <a class=\"inactive\" href=\"";
         // line 11
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_relationship", ["id" => 7]);
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_category", ["id" => 7]);
         echo "\"> Relations  </a>
   <a class=\"inactive\" href=\"";
         // line 12
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_communication", ["id" => 8]);
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog_category", ["id" => 8]);
         echo "\"> Communication </a>
 </section>
 
@@ -144,8 +144,7 @@ class __TwigTemplate_420d3754b760d2ef72c4e14c25c0dd9f extends Template
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 29
-        echo "
-    </div>
+        echo "    </div>
 </div>
 
 ";
@@ -183,9 +182,9 @@ class __TwigTemplate_420d3754b760d2ef72c4e14c25c0dd9f extends Template
 
 <section class=\"menu my-5\">
   <a class=\"on\" href=\"{{ path ('blog')}}\"> Tous les articles </a>
-  <a class=\"inactive\" href=\"{{ path ('blog_confidence', {id: 6})}}\"> Confiance en soi  </a>
-  <a class=\"inactive\" href=\"{{ path ('blog_relationship', {id: 7})}}\"> Relations  </a>
-  <a class=\"inactive\" href=\"{{ path ('blog_communication', {id: 8})}}\"> Communication </a>
+  <a class=\"inactive\" href=\"{{ path ('blog_category', {id: 6})}}\"> Confiance en soi  </a>
+  <a class=\"inactive\" href=\"{{ path ('blog_category', {id: 7})}}\"> Relations  </a>
+  <a class=\"inactive\" href=\"{{ path ('blog_category', {id: 8})}}\"> Communication </a>
 </section>
 
 <div class=\"container-fluid my-5\">
@@ -202,11 +201,10 @@ class __TwigTemplate_420d3754b760d2ef72c4e14c25c0dd9f extends Template
                 </div>
             </div>
         {% endfor %}
-
     </div>
 </div>
 
 {% endblock %}
-", "article/showfront.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\article\\showfront.html.twig");
+", "article/showfront.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\article\\showfront.html.twig");
     }
 }

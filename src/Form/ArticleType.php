@@ -57,15 +57,12 @@ class ArticleType extends AbstractType
                 'class' => User::class,
                 'choice_label' => 'firstname'
             ])
-            /* ->add('category', ChoiceType::class, [
-                'choices' => [
-                    'Confiance en soi' => Category::class,
-                    'Relations' => 7,
-                    'Communication' => 8,
-                ],
-                'label' => 'Catégorie'
+            ->add('category', EntityType::class, 
+            [
+                'label' => 'Catégorie',
+                'class' => Category::class,
+                'choice_label' => 'name'
             ])
-            */
             ->add('Valider', SubmitType::class, [
                 'attr' => [
                     'class' => 'btn btn-perso'

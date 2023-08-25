@@ -84,44 +84,38 @@ return [
                         .'|show/(\\d+)(*:254)'
                     .')'
                 .')'
-                .'|/blog/(?'
-                    .'|co(?'
-                        .'|nfidence/([^/]++)(*:295)'
-                        .'|mmunication/([^/]++)(*:323)'
-                    .')'
-                    .'|relationship/([^/]++)(*:353)'
-                .')'
+                .'|/blog/category/([^/]++)(*:287)'
                 .'|/ca(?'
                     .'|rt/(?'
-                        .'|add/(\\d+)(*:383)'
+                        .'|add/(\\d+)(*:316)'
                         .'|delete(?'
-                            .'|/(\\d+)(*:406)'
-                            .'|one/(\\d+)(*:423)'
+                            .'|/(\\d+)(*:339)'
+                            .'|one/(\\d+)(*:356)'
                         .')'
                     .')'
-                    .'|tegory/(\\d+)(*:445)'
+                    .'|tegory/(\\d+)(*:378)'
                 .')'
                 .'|/a(?'
                     .'|dmin/(?'
                         .'|article/(?'
-                            .'|delete/([^/]++)(*:493)'
-                            .'|update/([^/]++)(*:516)'
+                            .'|delete/([^/]++)(*:426)'
+                            .'|update/([^/]++)(*:449)'
                         .')'
                         .'|category/(?'
-                            .'|delete/([^/]++)(*:552)'
-                            .'|update/([^/]++)(*:575)'
+                            .'|delete/([^/]++)(*:485)'
+                            .'|update/([^/]++)(*:508)'
                         .')'
                         .'|product/(?'
-                            .'|delete/([^/]++)(*:610)'
-                            .'|update/([^/]++)(*:633)'
+                            .'|delete/([^/]++)(*:543)'
+                            .'|update/([^/]++)(*:566)'
                         .')'
                     .')'
-                    .'|rticle/(\\d+)(*:655)'
+                    .'|rticle/(\\d+)(*:588)'
                 .')'
-                .'|/product/(\\d+)(*:678)'
+                .'|/product/(\\d+)(*:611)'
                 .'|/order/(?'
-                    .'|pay/([^/]++)(*:708)'
-                    .'|terminate/(\\d+)(*:731)'
+                    .'|pay/([^/]++)(*:641)'
+                    .'|terminate/(\\d+)(*:664)'
                 .')'
             .')/?$}sDu',
     ],
@@ -136,23 +130,21 @@ return [
         208 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
         236 => [[['_route' => 'review_create', '_controller' => 'App\\Controller\\ReviewController::create'], ['id'], null, null, false, true, null]],
         254 => [[['_route' => 'review_show_one', '_controller' => 'App\\Controller\\ReviewController::showOne'], ['id'], null, null, false, true, null]],
-        295 => [[['_route' => 'blog_confidence', '_controller' => 'App\\Controller\\ArticleController::showArticlesCategory'], ['id'], null, null, false, true, null]],
-        323 => [[['_route' => 'blog_communication', '_controller' => 'App\\Controller\\ArticleController::showArticlesCategory'], ['id'], null, null, false, true, null]],
-        353 => [[['_route' => 'blog_relationship', '_controller' => 'App\\Controller\\ArticleController::showArticlesCategory'], ['id'], null, null, false, true, null]],
-        383 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null]],
-        406 => [[['_route' => 'cart_delete', '_controller' => 'App\\Controller\\CartController::delete'], ['id'], null, null, false, true, null]],
-        423 => [[['_route' => 'cart_delete_one', '_controller' => 'App\\Controller\\CartController::deleteOne'], ['id'], null, null, false, true, null]],
-        445 => [[['_route' => 'front_category', '_controller' => 'App\\Controller\\CategoryController::showCategoryfront'], ['id'], null, null, false, true, null]],
-        493 => [[['_route' => 'delete_article', '_controller' => 'App\\Controller\\ArticleController::deleteArticle'], ['id'], null, null, false, true, null]],
-        516 => [[['_route' => 'update_article', '_controller' => 'App\\Controller\\ArticleController::updateArticle'], ['id'], null, null, false, true, null]],
-        552 => [[['_route' => 'delete_category', '_controller' => 'App\\Controller\\CategoryController::deleteCategory'], ['id'], null, null, false, true, null]],
-        575 => [[['_route' => 'update_category', '_controller' => 'App\\Controller\\CategoryController::updateCategory'], ['id'], null, null, false, true, null]],
-        610 => [[['_route' => 'delete_product', '_controller' => 'App\\Controller\\ProductController::deleteProduct'], ['id'], null, null, false, true, null]],
-        633 => [[['_route' => 'update_product', '_controller' => 'App\\Controller\\ProductController::updateProduct'], ['id'], null, null, false, true, null]],
-        655 => [[['_route' => 'front_onearticle', '_controller' => 'App\\Controller\\ArticleController::showOneArticleFront'], ['id'], null, null, false, true, null]],
-        678 => [[['_route' => 'front_product', '_controller' => 'App\\Controller\\ProductController::showOneProductFront'], ['id'], null, null, false, true, null]],
-        708 => [[['_route' => 'order_payment_form', '_controller' => 'App\\Controller\\Order\\OrderPaymentController::showCard'], ['id'], null, null, false, true, null]],
-        731 => [
+        287 => [[['_route' => 'blog_category', '_controller' => 'App\\Controller\\ArticleController::showArticlesCategory'], ['id'], null, null, false, true, null]],
+        316 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null]],
+        339 => [[['_route' => 'cart_delete', '_controller' => 'App\\Controller\\CartController::delete'], ['id'], null, null, false, true, null]],
+        356 => [[['_route' => 'cart_delete_one', '_controller' => 'App\\Controller\\CartController::deleteOne'], ['id'], null, null, false, true, null]],
+        378 => [[['_route' => 'front_category', '_controller' => 'App\\Controller\\CategoryController::showCategoryfront'], ['id'], null, null, false, true, null]],
+        426 => [[['_route' => 'delete_article', '_controller' => 'App\\Controller\\ArticleController::deleteArticle'], ['id'], null, null, false, true, null]],
+        449 => [[['_route' => 'update_article', '_controller' => 'App\\Controller\\ArticleController::updateArticle'], ['id'], null, null, false, true, null]],
+        485 => [[['_route' => 'delete_category', '_controller' => 'App\\Controller\\CategoryController::deleteCategory'], ['id'], null, null, false, true, null]],
+        508 => [[['_route' => 'update_category', '_controller' => 'App\\Controller\\CategoryController::updateCategory'], ['id'], null, null, false, true, null]],
+        543 => [[['_route' => 'delete_product', '_controller' => 'App\\Controller\\ProductController::deleteProduct'], ['id'], null, null, false, true, null]],
+        566 => [[['_route' => 'update_product', '_controller' => 'App\\Controller\\ProductController::updateProduct'], ['id'], null, null, false, true, null]],
+        588 => [[['_route' => 'front_onearticle', '_controller' => 'App\\Controller\\ArticleController::showOneArticleFront'], ['id'], null, null, false, true, null]],
+        611 => [[['_route' => 'front_product', '_controller' => 'App\\Controller\\ProductController::showOneProductFront'], ['id'], null, null, false, true, null]],
+        641 => [[['_route' => 'order_payment_form', '_controller' => 'App\\Controller\\Order\\OrderPaymentController::showCard'], ['id'], null, null, false, true, null]],
+        664 => [
             [['_route' => 'order_terminate', '_controller' => 'App\\Controller\\Order\\OrderPaymentSuccessController::success'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

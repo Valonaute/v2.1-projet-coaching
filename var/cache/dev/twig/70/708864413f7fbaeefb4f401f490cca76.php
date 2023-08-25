@@ -91,7 +91,7 @@ class __TwigTemplate_b45842e5d0b424e1736403e335d87e68 extends Template
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 7, $this->source); })()), 0, [], "any", false, false, false, 7), "idcategory", [], "any", false, false, false, 7), "name", [], "any", false, false, false, 7), "html", null, true);
         echo "</h2>
 
-<div class=\"container-fluid\">
+<div class=\"container-fluid my-5\">
     <div class=\"row\">
 
     ";
@@ -176,7 +176,7 @@ class __TwigTemplate_b45842e5d0b424e1736403e335d87e68 extends Template
 
 <h2>{{ products.0.idcategory.name}}</h2>
 
-<div class=\"container-fluid\">
+<div class=\"container-fluid my-5\">
     <div class=\"row\">
 
     {% for product in products %}
@@ -196,6 +196,6 @@ class __TwigTemplate_b45842e5d0b424e1736403e335d87e68 extends Template
     </div>
 </div>
 
-{% endblock %}", "category/showfront.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\category\\showfront.html.twig");
+{% endblock %}", "category/showfront.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\category\\showfront.html.twig");
     }
 }

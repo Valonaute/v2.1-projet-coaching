@@ -98,7 +98,7 @@ class __TwigTemplate_ef5570b528d44db1d75aa0bc179965f1 extends Template
         // line 12
         if (twig_test_empty((isset($context["items"]) || array_key_exists("items", $context) ? $context["items"] : (function () { throw new RuntimeError('Variable "items" does not exist.', 12, $this->source); })()))) {
             // line 13
-            echo "    <p><b>Votre panier est vide !!</b></p>
+            echo "    <p><b>Votre panier est vide !</b></p>
     ";
         } else {
             // line 15
@@ -147,7 +147,7 @@ class __TwigTemplate_ef5570b528d44db1d75aa0bc179965f1 extends Template
                 echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 36), "price", [], "any", false, false, false, 36) * twig_get_attribute($this->env, $this->source, $context["item"], "quantity", [], "any", false, false, false, 36)), 2, ",", " "), "html", null, true);
                 echo " €</td>
                 <td>
-                    <a class=\"btn btn-danger flex-shrink-0\" onclick=\"return confirm('Suppimer cet élément du panier ?');\" href=\"";
+                    <a class=\"btn btn-danger flex-shrink-0\" onclick=\"return confirm('Supprimer cet élément du panier ?');\" href=\"";
                 // line 38
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_delete", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "product", [], "any", false, false, false, 38), "id", [], "any", false, false, false, 38)]), "html", null, true);
                 echo "\">
@@ -223,7 +223,7 @@ class __TwigTemplate_ef5570b528d44db1d75aa0bc179965f1 extends Template
     {{ dump(items) }}
 
     {% if items is empty %}
-    <p><b>Votre panier est vide !!</b></p>
+    <p><b>Votre panier est vide !</b></p>
     {% else %}
     <a href=\"{{ path('cart_clear') }}\" onclick=\"return confirm('Etes-vous sure de vouloir vider tout le panier ?');\" class=\"btn btn-warning mb-2\">
         <i class=\"bi-trash-fill me-1\"></i> Vider le panier
@@ -248,7 +248,7 @@ class __TwigTemplate_ef5570b528d44db1d75aa0bc179965f1 extends Template
                 <td>{{ item.quantity }}</td>
                 <td>{{ (item.product.price * item.quantity)|number_format(2,',',' ') }} €</td>
                 <td>
-                    <a class=\"btn btn-danger flex-shrink-0\" onclick=\"return confirm('Suppimer cet élément du panier ?');\" href=\"{{ path('cart_delete', {id: item.product.id})}}\">
+                    <a class=\"btn btn-danger flex-shrink-0\" onclick=\"return confirm('Supprimer cet élément du panier ?');\" href=\"{{ path('cart_delete', {id: item.product.id})}}\">
                         <i class=\"bi-trash-fill me-1\"></i>
                     </a>
                 </td>
@@ -271,6 +271,6 @@ class __TwigTemplate_ef5570b528d44db1d75aa0bc179965f1 extends Template
     {% endif %}
 </div>
 {% endblock %}
-", "test_stripe/index.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\test_stripe\\index.html.twig");
+", "test_stripe/index.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\test_stripe\\index.html.twig");
     }
 }

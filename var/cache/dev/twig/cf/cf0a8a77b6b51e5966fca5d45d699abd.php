@@ -186,7 +186,7 @@ class __TwigTemplate_c81d11da530b1b9353ef38beafc26693 extends Template
 
 <h3 class=\"text-perso\"> Voici votre historique de commande : </h3>
 
-<div class=\"container my-5\">
+<div class=\"container-fluid my-5\">
     <table class=\"table\">
         <thead>
             <tr>
@@ -228,7 +228,7 @@ class __TwigTemplate_c81d11da530b1b9353ef38beafc26693 extends Template
                 echo " </td>
                     <td> ";
                 // line 75
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "totalamount", [], "any", false, false, false, 75), "html", null, true);
+                echo twig_escape_filter($this->env, twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["order"], "totalamount", [], "any", false, false, false, 75), 2, ",", " "), "html", null, true);
                 echo " € </td>
                     <td>  <a class=\"btn btn-perso mx-1\" href=\" ";
                 // line 76
@@ -334,7 +334,7 @@ class __TwigTemplate_c81d11da530b1b9353ef38beafc26693 extends Template
 
 <h3 class=\"text-perso\"> Voici votre historique de commande : </h3>
 
-<div class=\"container my-5\">
+<div class=\"container-fluid my-5\">
     <table class=\"table\">
         <thead>
             <tr>
@@ -354,7 +354,7 @@ class __TwigTemplate_c81d11da530b1b9353ef38beafc26693 extends Template
                     <th scope=\"row\"> {{ numorder }} </th>
                     <td> {{ order.id }} </td>
                     <td> {{ order.dateorder | date('d/m/Y') }} </td>
-                    <td> {{ order.totalamount }} € </td>
+                    <td> {{ order.totalamount|number_format(2, ',', ' ') }} € </td>
                     <td>  <a class=\"btn btn-perso mx-1\" href=\" {{ path ('review_create', {id: order.id})}}\"> Laisser un Avis</a><a class=\"btn btn-outline-perso mx-1\" href=\"{{ path ('review_show_one', {id: order.id})}}\">Voir l'avis</a></td>
                 </tr>
             {% endif %}
@@ -367,6 +367,6 @@ class __TwigTemplate_c81d11da530b1b9353ef38beafc26693 extends Template
 {% endblock content %}
 
 
-", "security/account.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\security\\account.html.twig");
+", "security/account.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\security\\account.html.twig");
     }
 }

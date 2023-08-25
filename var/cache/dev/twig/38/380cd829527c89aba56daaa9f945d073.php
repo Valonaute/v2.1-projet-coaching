@@ -86,10 +86,12 @@ class __TwigTemplate_c5b60c0b364754c8e14a01b94dccd88b extends Template
 
         // line 6
         echo "
-<div class=\"m-5\">";
-        // line 7
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'form');
-        echo "</div>
+<div class=\"container-fluid m-5\">
+    ";
+        // line 8
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), 'form');
+        echo "
+</div>
 
 ";
         
@@ -112,7 +114,7 @@ class __TwigTemplate_c5b60c0b364754c8e14a01b94dccd88b extends Template
 
     public function getDebugInfo()
     {
-        return array (  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -123,9 +125,11 @@ class __TwigTemplate_c5b60c0b364754c8e14a01b94dccd88b extends Template
 
 {% block main %}
 
-<div class=\"m-5\">{{ form (form)}}</div>
+<div class=\"container-fluid m-5\">
+    {{ form (form)}}
+</div>
 
 {% endblock %}
-", "security/update.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\security\\update.html.twig");
+", "security/update.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\security\\update.html.twig");
     }
 }
