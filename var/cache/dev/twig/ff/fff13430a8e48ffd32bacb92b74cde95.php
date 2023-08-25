@@ -968,6 +968,6 @@ class __TwigTemplate_6b1f3f1a52555a53d5e7c0a6376e6379 extends Template
         {% endautoescape %}</script>
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/time.html.twig", "C:\\wamp64\\www\\symfony\\2.6.0 projet-coaching\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\time.html.twig");
+", "@WebProfiler/Collector/time.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\time.html.twig");
     }
 }

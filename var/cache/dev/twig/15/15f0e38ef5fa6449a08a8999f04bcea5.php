@@ -392,6 +392,6 @@ Accueil
         </section>
         <a class=\"btn btn-perso my-5\" href=\"{{ path ('contact')}}\">Nous Contacter</a>
 
-{% endblock main %}", "public/home.html.twig", "C:\\wamp64\\www\\symfony\\2.6.1 projet-coaching prod\\templates\\public\\home.html.twig");
+{% endblock main %}", "public/home.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\public\\home.html.twig");
     }
 }

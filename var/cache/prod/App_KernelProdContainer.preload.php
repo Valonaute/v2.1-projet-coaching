@@ -553,19 +553,19 @@ $classes[] = 'Symfony\Component\Validator\Constraints\NotCompromisedPasswordVali
 $classes[] = 'Symfony\Component\Validator\Constraints\WhenValidator';
 
 $preloaded = Preloader::preload($classes);
-require_once __DIR__.'/doctrine/orm/Proxies/__CG__AppEntityArticle.php';
-require_once __DIR__.'/doctrine/orm/Proxies/__CG__AppEntityCategory.php';
-require_once __DIR__.'/doctrine/orm/Proxies/__CG__AppEntityContact.php';
-require_once __DIR__.'/doctrine/orm/Proxies/__CG__AppEntityOrder.php';
-require_once __DIR__.'/doctrine/orm/Proxies/__CG__AppEntityOrderItem.php';
-require_once __DIR__.'/doctrine/orm/Proxies/__CG__AppEntityOrderedItem.php';
-require_once __DIR__.'/doctrine/orm/Proxies/__CG__AppEntityProduct.php';
-require_once __DIR__.'/doctrine/orm/Proxies/__CG__AppEntityResetPasswordRequest.php';
-require_once __DIR__.'/doctrine/orm/Proxies/__CG__AppEntityReview.php';
-require_once __DIR__.'/doctrine/orm/Proxies/__CG__AppEntityUser.php';
-require_once __DIR__.'/doctrine/orm/Proxies/__CG__ConnectHollandCookieConsentBundleEntityCookieConsentLog.php';
 
 $classes = [];
 $classes[] = 'Doctrine\\ORM\\Mapping\\ClassMetadata';
 $classes[] = 'Doctrine\\ORM\\Id\\IdentityGenerator';
+$classes[] = 'C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\var\\cache\\prod/doctrine/orm/Proxies/__CG__AppEntityArticle.php';
+$classes[] = 'C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\var\\cache\\prod/doctrine/orm/Proxies/__CG__AppEntityCategory.php';
+$classes[] = 'C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\var\\cache\\prod/doctrine/orm/Proxies/__CG__AppEntityContact.php';
+$classes[] = 'C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\var\\cache\\prod/doctrine/orm/Proxies/__CG__AppEntityOrder.php';
+$classes[] = 'C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\var\\cache\\prod/doctrine/orm/Proxies/__CG__AppEntityOrderItem.php';
+$classes[] = 'C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\var\\cache\\prod/doctrine/orm/Proxies/__CG__AppEntityOrderedItem.php';
+$classes[] = 'C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\var\\cache\\prod/doctrine/orm/Proxies/__CG__AppEntityProduct.php';
+$classes[] = 'C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\var\\cache\\prod/doctrine/orm/Proxies/__CG__AppEntityResetPasswordRequest.php';
+$classes[] = 'C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\var\\cache\\prod/doctrine/orm/Proxies/__CG__AppEntityReview.php';
+$classes[] = 'C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\var\\cache\\prod/doctrine/orm/Proxies/__CG__AppEntityUser.php';
+$classes[] = 'C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\var\\cache\\prod/doctrine/orm/Proxies/__CG__ConnectHollandCookieConsentBundleEntityCookieConsentLog.php';
 $preloaded = Preloader::preload($classes, $preloaded);

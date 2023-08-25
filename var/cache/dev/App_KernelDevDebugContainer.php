@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerH3actfx\App_KernelDevDebugContainer([
     'container.build_hash' => 'H3actfx',
-    'container.build_id' => '5084e4bf',
-    'container.build_time' => 1692957403,
+    'container.build_id' => 'b965ae0a',
+    'container.build_time' => 1692971763,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerH3actfx');

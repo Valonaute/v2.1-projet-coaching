@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelProdContainer::class, false)) {
 
 return new \ContainerXvFWVqi\App_KernelProdContainer([
     'container.build_hash' => 'XvFWVqi',
-    'container.build_id' => '7819cd3c',
-    'container.build_time' => 1692959148,
+    'container.build_id' => '4f2a8bca',
+    'container.build_time' => 1692971667,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerXvFWVqi');
