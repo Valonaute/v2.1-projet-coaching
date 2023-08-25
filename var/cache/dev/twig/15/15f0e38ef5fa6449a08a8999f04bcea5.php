@@ -125,7 +125,7 @@ class __TwigTemplate_71b9c2cc23f95a35f9fa095016a88e3c extends Template
         echo "\">Connexion</a> pour acheter des produits et devenir un membre actif de notre forum. </h4>
             
         </section>
-        <section id=\"lastArticles\">
+        <section id=\"lastArticles\" class=\"card-section\">
             <h2 class=\"my-5\"> Voici nos derniers articles du blog : </h2>
             <div class=\"container-fluid\">
                 <div class=\"row\">
@@ -135,7 +135,7 @@ class __TwigTemplate_71b9c2cc23f95a35f9fa095016a88e3c extends Template
         $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 32, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
             // line 33
-            echo "                        <div class=\"card col-4 \" style=\"max-width: 25rem; min-height:40rem;\">
+            echo "                        <div class=\"card col-6 \" style=\"max-width: 25rem; min-height:40rem;\">
                             <img src=\"";
             // line 34
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/"), "html", null, true);
@@ -171,7 +171,7 @@ class __TwigTemplate_71b9c2cc23f95a35f9fa095016a88e3c extends Template
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog");
         echo "\"> Accéder au blog </a></h3>
         </section>
-        <section id=\"bestSellers\">
+        <section id=\"bestSellers\" class=\"card-section\">
             <h2 class=\"my-5\"> Voici nos meilleurs produits et formations : </h2>
             <div class=\"container-fluid my-5\">
                 <div class=\"row\">
@@ -333,12 +333,12 @@ Accueil
             <h4> Ensuite <a href=\"{{ path ('connexion') }}\">Connexion</a> pour acheter des produits et devenir un membre actif de notre forum. </h4>
             
         </section>
-        <section id=\"lastArticles\">
+        <section id=\"lastArticles\" class=\"card-section\">
             <h2 class=\"my-5\"> Voici nos derniers articles du blog : </h2>
             <div class=\"container-fluid\">
                 <div class=\"row\">
                     {% for article in articles %}
-                        <div class=\"card col-4 \" style=\"max-width: 25rem; min-height:40rem;\">
+                        <div class=\"card col-6 \" style=\"max-width: 25rem; min-height:40rem;\">
                             <img src=\"{{ asset('uploads/')}}{{ article.image }}\" class=\"card-img-top\" alt=\"{{ article.title}}\">
                             <div class=\"card-body card-center-perso\">
                                 <h5 class=\"card-title\">{{ article.title}}</h5>
@@ -351,7 +351,7 @@ Accueil
             </div>
             <h3 ><a class=\"btn btn-perso my-5\" href=\"{{ path ('blog')}}\"> Accéder au blog </a></h3>
         </section>
-        <section id=\"bestSellers\">
+        <section id=\"bestSellers\" class=\"card-section\">
             <h2 class=\"my-5\"> Voici nos meilleurs produits et formations : </h2>
             <div class=\"container-fluid my-5\">
                 <div class=\"row\">
@@ -392,6 +392,6 @@ Accueil
         </section>
         <a class=\"btn btn-perso my-5\" href=\"{{ path ('contact')}}\">Nous Contacter</a>
 
-{% endblock main %}", "public/home.html.twig", "C:\\Users\\formation\\Desktop\\2.6.1 projet-coaching prod\\templates\\public\\home.html.twig");
+{% endblock main %}", "public/home.html.twig", "C:\\wamp64\\www\\symfony\\2.6.2 projet-coaching prod\\templates\\public\\home.html.twig");
     }
 }

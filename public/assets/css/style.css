@@ -138,6 +138,12 @@ ul {
     min-width: 50px;
     max-width: 8vw;
 }
+.badge-perso {
+    color: var(--link);
+}
+.badge-perso:hover {
+    color: var(--background);
+}
 .btn {
     border-radius: 10px;
     font-weight: 600;
@@ -440,18 +446,92 @@ ul {
     }
 }
 
-/* ----- Smartphone responsive design ----- */
-
-@media screen and (max-width: 767px){
 
 
-}
+/* ----- responsive components ----- */
 
-/* ----- Tablet Responsive Design ----- */
+/* Side nave menu + btn burger */
+
+/* Sidenav menu */
+.sidenav {
+    height: 700px;
+    width: 260px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    /* left: -250px; */
+    right: -260px;
+    background-color: var(--background);
+    padding-top: 60px;
+    transition: right 0.7s ease;
+  }
+  
+  /* Sidenav menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--link);
+    display: block;
+    transition: 0.4s;
+  }
+  
+  .sidenav a:hover {
+    color: var(--background);
+    background-color: var(--buttons);
+  }
+  
+  .sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Active class */
+  .sidenav.active {
+    right: 0;
+  }
+  
+  /* Close btn */
+  .sidenav .close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+  /* Icône burger */
+  .burger-icon span {
+    display: none;
+    width: 35px;
+    height: 5px;
+    background-color: var(--link);
+    margin: 6px 0;
+  }
+
+/* ----- Tablet and smartphone Responsive Design ----- */
 
 @media screen and (min-width: 768px) and (max-width:1023px){
 
-
+    .burger-icon span {
+        display: block; 
+        margin-left: 50vw;
+    }
+    .nav-desktop {
+        display: none; 
+    }
+    header {
+        min-height: 8vh;
+    }
+    p {
+        font-size: 1.5em;
+    }
+    body {
+        margin-top: 10vh;
+    }
+    .card-section {
+        
+    }
 
 
 }

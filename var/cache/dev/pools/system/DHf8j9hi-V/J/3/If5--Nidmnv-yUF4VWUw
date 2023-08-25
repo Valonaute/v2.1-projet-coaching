@@ -1,0 +1,3 @@
+<?php //App%255CController%255CAdminSecurityController%2523showStats
+
+return [PHP_INT_MAX, []];

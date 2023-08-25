@@ -25,12 +25,12 @@ Accueil
             <h4> Ensuite <a href="{{ path ('connexion') }}">Connexion</a> pour acheter des produits et devenir un membre actif de notre forum. </h4>
             
         </section>
-        <section id="lastArticles">
+        <section id="lastArticles" class="card-section">
             <h2 class="my-5"> Voici nos derniers articles du blog : </h2>
             <div class="container-fluid">
                 <div class="row">
                     {% for article in articles %}
-                        <div class="card col-4 " style="max-width: 25rem; min-height:40rem;">
+                        <div class="card col-6 " style="max-width: 25rem; min-height:40rem;">
                             <img src="{{ asset('uploads/')}}{{ article.image }}" class="card-img-top" alt="{{ article.title}}">
                             <div class="card-body card-center-perso">
                                 <h5 class="card-title">{{ article.title}}</h5>
@@ -43,7 +43,7 @@ Accueil
             </div>
             <h3 ><a class="btn btn-perso my-5" href="{{ path ('blog')}}"> Accéder au blog </a></h3>
         </section>
-        <section id="bestSellers">
+        <section id="bestSellers" class="card-section">
             <h2 class="my-5"> Voici nos meilleurs produits et formations : </h2>
             <div class="container-fluid my-5">
                 <div class="row">
