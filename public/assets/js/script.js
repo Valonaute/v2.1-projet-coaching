@@ -18,13 +18,26 @@ let closeBtn = document.getElementById("closeBtn");
 openBtn.onclick = openNav;
 closeBtn.onclick = closeNav;
 
-/* Set the width of the side navigation to 250px */
 function openNav() {
   sidenav.classList.add("active");
 }
 
-/* Set the width of the side navigation to 0 */
 function closeNav() {
   sidenav.classList.remove("active");
 }
 
+// Création du carousel 
+
+document.body.onload=function() {
+  nb= 3;
+  p=0;
+  container=document.getElementById("container-carousel");
+  g=document.getElementById("g");
+  d=document.getElementById("d");
+  container.style.width=(800*nb)+"px";
+  for(i=1; i<=nb;i++){
+    div=document.createElement("div");
+    div.className="card-carousel";
+    container.appendChild(div);
+  }
+}

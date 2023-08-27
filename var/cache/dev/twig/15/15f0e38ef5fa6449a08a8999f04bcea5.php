@@ -125,36 +125,49 @@ class __TwigTemplate_71b9c2cc23f95a35f9fa095016a88e3c extends Template
         echo "\">Connexion</a> pour acheter des produits et devenir un membre actif de notre forum. </h4>
             
         </section>
+        <section id=\"carousel\">
+            <div id=\"container-carousel\">
+                <img src=\"";
+        // line 30
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/bouton.png"), "html", null, true);
+        echo "\" alt=\"bouton carousel\" id=\"g\" class=\"bouton-carousel\">
+                <img src=\"";
+        // line 31
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/bouton.png"), "html", null, true);
+        echo "\" alt=\"bouton carousel\" id=\"d\" class=\"bouton-carousel\">
+            </div>
+            
+        </section>
         <section id=\"lastArticles\" class=\"card-section\">
             <h2 class=\"my-5\"> Voici nos derniers articles du blog : </h2>
             <div class=\"container-fluid\">
                 <div class=\"row\">
                     ";
-        // line 32
+        // line 39
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 32, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 39, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 33
+            // line 40
             echo "                        <div class=\"card col-6 \" style=\"max-width: 25rem; min-height:40rem;\">
                             <img src=\"";
-            // line 34
+            // line 41
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/"), "html", null, true);
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "image", [], "any", false, false, false, 34), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "image", [], "any", false, false, false, 41), "html", null, true);
             echo "\" class=\"card-img-top\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 34), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 41), "html", null, true);
             echo "\">
                             <div class=\"card-body card-center-perso\">
                                 <h5 class=\"card-title\">";
-            // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 36), "html", null, true);
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 43), "html", null, true);
             echo "</h5>
                                 <p class=\"card-text\">";
-            // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "shortdescription", [], "any", false, false, false, 37), "html", null, true);
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "shortdescription", [], "any", false, false, false, 44), "html", null, true);
             echo "</p>
                                 <a href=\"";
-            // line 38
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_onearticle", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 38)]), "html", null, true);
+            // line 45
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_onearticle", ["id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 45)]), "html", null, true);
             echo "\" class=\"btn btn-perso\">Lire l'article</a>
                             </div>
                         </div>
@@ -163,11 +176,11 @@ class __TwigTemplate_71b9c2cc23f95a35f9fa095016a88e3c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 42
+        // line 49
         echo "                </div>
             </div>
             <h3 ><a class=\"btn btn-perso my-5\" href=\"";
-        // line 44
+        // line 51
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog");
         echo "\"> Accéder au blog </a></h3>
         </section>
@@ -176,44 +189,44 @@ class __TwigTemplate_71b9c2cc23f95a35f9fa095016a88e3c extends Template
             <div class=\"container-fluid my-5\">
                 <div class=\"row\">
                 ";
-        // line 50
+        // line 57
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["bestsellers"]) || array_key_exists("bestsellers", $context) ? $context["bestsellers"] : (function () { throw new RuntimeError('Variable "bestsellers" does not exist.', 50, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["bestsellers"]) || array_key_exists("bestsellers", $context) ? $context["bestsellers"] : (function () { throw new RuntimeError('Variable "bestsellers" does not exist.', 57, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 51
+            // line 58
             echo "                <div class=\"card col-4 card-center-perso\" style=\"max-width: 25rem; min-height:40rem;\">
                   <a class=\"my-4\" href=\"";
-            // line 52
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_product", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 52)]), "html", null, true);
+            // line 59
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_product", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 59)]), "html", null, true);
             echo "\"><img src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/"), "html", null, true);
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "image", [], "any", false, false, false, 52), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "image", [], "any", false, false, false, 59), "html", null, true);
             echo "\" class=\"card-img-top\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 52), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 59), "html", null, true);
             echo "\" title=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 52), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 59), "html", null, true);
             echo "\"></a>
                   <div class=\"card-body card-center-perso \">
                     <h5 class=\"card-title my-4\">";
-            // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 54), "html", null, true);
+            // line 61
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "title", [], "any", false, false, false, 61), "html", null, true);
             echo "</h5>
                     <h5 class=\"card-title my-4\">";
-            // line 55
-            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 55), 2, ",", " "), "html", null, true);
+            // line 62
+            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 62), 2, ",", " "), "html", null, true);
             echo " €</h5>
                     <p class=\"card-text my-4\">";
-            // line 56
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "shortdescription", [], "any", false, false, false, 56), "html", null, true);
+            // line 63
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "shortdescription", [], "any", false, false, false, 63), "html", null, true);
             echo "</p>
                     <p class=\"guarantee my-3\"> Garantie 100% Satisfait ou remboursé !* </p>
                     <h4><a href=\"";
-            // line 58
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 58)]), "html", null, true);
+            // line 65
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 65)]), "html", null, true);
             echo "\" class=\"btn btn-perso my-2\">Ajouter au panier</a>
                     <a href=\"";
-            // line 59
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_product", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 59)]), "html", null, true);
+            // line 66
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_product", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 66)]), "html", null, true);
             echo "\" class=\"btn btn-perso-dark my-2\">Details</a></h4>
                   </div>
                 </div>
@@ -222,11 +235,11 @@ class __TwigTemplate_71b9c2cc23f95a35f9fa095016a88e3c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 63
+        // line 70
         echo "                </div>
             </div>
             <h3><a class=\"btn btn-perso\" href=\"";
-        // line 65
+        // line 72
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("formations");
         echo "\"> Accéder à la boutique </a></h3>
         </section>
@@ -235,36 +248,36 @@ class __TwigTemplate_71b9c2cc23f95a35f9fa095016a88e3c extends Template
             <p> Entrepreneur, coach et conseiller de particuliers et top performers, passionné des dernières avancées en neurosciences, EasyWebFactory bouscule depuis plus de dix mois le paysage du business coaching et du développement personnel.<p>Comptant une équipe de plus de 2 personnes, EasyWebFactory comptent pour clients ses parents, sa soeur, sa copine, des amis et des volontaires du métro parisien.</p><p> Ils accompagnent ces personnalités à améliorer leur performance ou la croissance de leur business mais aussi des dizaines de particuliers sur le plan du développement personnel et de la confiance en soi. </p><p>Fascinés par comment de petits changements peuvent radicalement transformer notre vie ou nos résultats, leur obsession réside dans le fait de partager des outils concrets de la manière la plus captivante et pédagogique possible.</p><p>Le tout validé, ou invalidé, par des recherches scientifiques que leur équipe de chercheurs mène. </p>
         </section>
         <h3 ><a class=\"btn btn-perso my-5\" href=\"";
-        // line 71
+        // line 78
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog");
         echo "\"> Accéder au blog </a></h3>
         <section id=\"temoignages\">
             <h2 class=\"my-5\"> Nos meilleurs avis clients : </h2>
             <div class=\"container-fluid\">
                 ";
-        // line 75
+        // line 82
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["bestreviews"]) || array_key_exists("bestreviews", $context) ? $context["bestreviews"] : (function () { throw new RuntimeError('Variable "bestreviews" does not exist.', 75, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["bestreviews"]) || array_key_exists("bestreviews", $context) ? $context["bestreviews"] : (function () { throw new RuntimeError('Variable "bestreviews" does not exist.', 82, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["review"]) {
-            // line 76
+            // line 83
             echo "                    <div class=\"row\">
                         <h5 class=\"my-5\"> \"";
-            // line 77
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "title", [], "any", false, false, false, 77), "html", null, true);
+            // line 84
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "title", [], "any", false, false, false, 84), "html", null, true);
             echo "\" </h5>
                         <p class=\"my-3\"> \"";
-            // line 78
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "comment", [], "any", false, false, false, 78), "html", null, true);
+            // line 85
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "comment", [], "any", false, false, false, 85), "html", null, true);
             echo "\"</p>
                         <h4 class=\"my-3\">";
-            // line 79
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "rating", [], "any", false, false, false, 79), "html", null, true);
+            // line 86
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "rating", [], "any", false, false, false, 86), "html", null, true);
             echo "/10</h4>
                         <p> Avis laissé le ";
-            // line 80
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "date", [], "any", false, false, false, 80), "d/m/Y"), "html", null, true);
+            // line 87
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "date", [], "any", false, false, false, 87), "d/m/Y"), "html", null, true);
             echo " par <span class=\"bold\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "pseudo", [], "any", false, false, false, 80), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["review"], "pseudo", [], "any", false, false, false, 87), "html", null, true);
             echo "</span> </p>
                     </div>
                 ";
@@ -272,11 +285,11 @@ class __TwigTemplate_71b9c2cc23f95a35f9fa095016a88e3c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['review'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 83
+        // line 90
         echo "            </div>
         </section>
         <a class=\"btn btn-perso my-5\" href=\"";
-        // line 85
+        // line 92
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\">Nous Contacter</a>
 
@@ -301,7 +314,7 @@ class __TwigTemplate_71b9c2cc23f95a35f9fa095016a88e3c extends Template
 
     public function getDebugInfo()
     {
-        return array (  280 => 85,  276 => 83,  265 => 80,  261 => 79,  257 => 78,  253 => 77,  250 => 76,  246 => 75,  239 => 71,  230 => 65,  226 => 63,  216 => 59,  212 => 58,  207 => 56,  203 => 55,  199 => 54,  187 => 52,  184 => 51,  180 => 50,  171 => 44,  167 => 42,  157 => 38,  153 => 37,  149 => 36,  141 => 34,  138 => 33,  134 => 32,  124 => 25,  120 => 24,  114 => 21,  110 => 20,  106 => 19,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  293 => 92,  289 => 90,  278 => 87,  274 => 86,  270 => 85,  266 => 84,  263 => 83,  259 => 82,  252 => 78,  243 => 72,  239 => 70,  229 => 66,  225 => 65,  220 => 63,  216 => 62,  212 => 61,  200 => 59,  197 => 58,  193 => 57,  184 => 51,  180 => 49,  170 => 45,  166 => 44,  162 => 43,  154 => 41,  151 => 40,  147 => 39,  136 => 31,  132 => 30,  124 => 25,  120 => 24,  114 => 21,  110 => 20,  106 => 19,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -331,6 +344,13 @@ Accueil
             </article>
             <h4> Vous pouvez également créer un espace membre grâce à l'outil <a href=\"{{ path ('inscription') }}\">Inscription</a> </h4>
             <h4> Ensuite <a href=\"{{ path ('connexion') }}\">Connexion</a> pour acheter des produits et devenir un membre actif de notre forum. </h4>
+            
+        </section>
+        <section id=\"carousel\">
+            <div id=\"container-carousel\">
+                <img src=\"{{ asset ('assets/img/bouton.png')}}\" alt=\"bouton carousel\" id=\"g\" class=\"bouton-carousel\">
+                <img src=\"{{ asset ('assets/img/bouton.png')}}\" alt=\"bouton carousel\" id=\"d\" class=\"bouton-carousel\">
+            </div>
             
         </section>
         <section id=\"lastArticles\" class=\"card-section\">

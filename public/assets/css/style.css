@@ -509,9 +509,51 @@ ul {
     margin: 6px 0;
   }
 
+/* ----- Carousel ----- */
+
+#carousel {
+    width: 70vw;
+    height: 50vh;
+    border: solid 3px black;
+    box-shadow: 0 0 14px rgba(0,0,0,0.3);
+}
+
+#container-carousel {
+    width: 70vw;
+    height: 50vh;
+}
+
+.bouton-carousel {
+    width: 70px;
+    cursor: pointer;
+    top: 150px;
+}
+#g {
+    left: 0;
+    opacity: 0.4;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+}
+#d {
+    right: 0;
+    opacity: 0.4;
+    transform: rotate(180deg);
+    transition: all 0.3s ease;
+}
+#g:hover {
+    transform: rotate(0deg) scale(1.1);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+#d:hover {
+    transform: rotate(180deg) scale(1.1);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
 /* ----- Tablet and smartphone Responsive Design ----- */
 
-@media screen and (min-width: 768px) and (max-width:1023px){
+@media screen and (max-width:1023px){
 
     .burger-icon span {
         display: block; 
@@ -529,9 +571,10 @@ ul {
     body {
         margin-top: 10vh;
     }
-    .card-section {
-        
+    /*.card-section {
+       display: none; 
     }
+    */
 
 
 }
